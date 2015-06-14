@@ -1,0 +1,388 @@
+h1, h2, h3, h4, h5, h6 {font-family: "Raleway";font-weight: 800;}body, .sub-menu a {font-family: Open Sans;font-weight: 500;}.menu-item {font-family: Open Sans;font-weight: 600;}html, body { font-size: 14px; }
+.mpcth-bar, .mpcth-logo-triangle { border-left-color: }
+#header_main {
+    background-color:;
+}
+#header_main .mpcth-logo h2 {
+    color: #333333;
+}
+#header_main small.mpcth-description {
+    color: #333333;
+}
+body.mpcth-portfolio-single #mpcth_wrapper,
+#mpcth_wrapper.mpcth-blog-wide,
+#mpcth_wrapper.mpcth-blog-narrow,
+#mpcth_wrapper.mpcth-portfolio-dt,
+#mpcth_wrapper.mpcth-single-post {
+    background: #444349;
+}
+.mpcth-triangle-top,
+.search-results .mpcth-article-top,
+.search.search-no-results .mpcth-article-top,
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-triangle-top,
+.mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+.mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
+.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
+.mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
+.mpcth-blog .mpcth-article-top,
+.mpcth-home-wide-triangle{
+    border-right-color: #FCC83D;
+}
+.mpcth-home-wide-triangle {
+    border-bottom-color: #FCC83D;
+}
+.mpcth-triangle-bottom,
+.search-results .mpcth-article-bottom,
+.search.search-no-results .mpcth-article-bottom,
+.mpcth-footer-left-side,
+.mpcth-blog .mpcth-article-bottom,
+.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top,
+.mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
+.mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+.mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top {
+    border-left-color: #FCC83D;
+}
+.mpcth-search-form .mpcth-sb {
+    border-color: #FCC83D;
+}
+.mpcth-filters-wrap li a.portfolio-active-category,
+.mpcth-filters-wrap li a:hover,
+.mpcth-intro li a:hover,
+.mpcth-intro li.current-cat a,
+.widget .comment-author-link, .widget #calendar_wrap a,
+.widget a:hover,
+.widget p a, .widget #wp-calendar a,
+#mpcth_main_menu ul li:hover a,
+#mpcth_main_menu ul li:hover li a:hover,
+#mpcth_main_menu li.current_page_item a,
+#mpcth_main_menu li.current-menu-item a,
+#mpcth_main_menu li.current-menu-ancestor a,
+#mpcth_main_menu li.current-menu-parent a,
+#mpcth_main_menu li.current-menu-ancestor li.current-menu-parent a,
+#mpcth_main_menu li.current-menu-ancestor li.current-menu-parent li.current-menu-item a,
+#mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-tl,
+#mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-br,
+#mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-tl,
+#mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-br,
+.menu-item:hover .mpcth-border-tl,
+.menu-item:hover .mpcth-border-br,
+.page_item:hover .mpcth-border-tl,
+.page_item:hover .mpcth-border-br,
+.mpcth-flip-icon:hover .fa.mpcth-icon-hover,
+#searchform input,
+.mpcth-post-pagination a.mpcth-next-post,
+section#footer .mpcth-post-pagination a:hover.mpcth-next-post{
+    color: #FCC83D;
+}
+#mpcth_main_menu li.current-menu-ancestor li.current-menu-parent,
+#mpcth_main_menu li.current-menu-parent li.current-menu-item a,
+#mpcth_main_menu li.current-menu-parent li.page_item a {
+    color: #FCC83D;
+    background: #ffffff;
+}
+#mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
+.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
+.mpcth-portfolio-single .mpcth-portfolio-content,
+#mpcth_main_menu ul ul,
+#mpcth_main_menu ul ul ul,
+.search-results article,
+.search.search-no-results article,
+.mpcth-blog article {
+    background: #FCC83D;
+}
+.mpcth-portfolio-single .mpcth-portfolio-title,
+.mpcth-portfolio-title a,
+.search-results .mpcth-post-title,
+.search-results .mpcth-post-title a,
+.mpcth-blog-wide .mpcth-post-title,
+.mpcth-blog-wide .mpcth-post-title a,
+.mpcth-blog-narrow .mpcth-post-title,
+.mpcth-blog-narrow .mpcth-post-title a,
+.mpcth-pagination .page-numbers {
+    color: #ffffff;
+}
+.mpcth-single-post.mpcth-blog article a,
+.mpcth-blog.mpcth-blog-narrow .mpcth-post-meta a:hover,
+.mpcth-blog.mpcth-blog-wide .mpcth-post-meta a:hover,
+.mpcth-blog.mpcth-search-page .mpcth-post-meta a:hover,
+.mpcth-post-pagination a:hover,
+.mpcth-post-pagination span.current,
+.mpcth-post-pagination a:hover,
+.mpcth-post-pagination span.current,
+.mpcth-blog article a:hover,
+.mpcth-portfolio-title a:hover {
+    color: #444444;
+}
+#mpcth_content.mpcth-home .mpcth-home-widget {
+    color: #ffffff;
+}
+.mpcth-blog.mpcth-search-page .mpcth-post-meta a,
+.mpcth-blog.mpcth-blog-narrow .mpcth-post-meta a,
+.mpcth-blog.mpcth-blog-wide .mpcth-post-meta a,
+.mpcth-blog.mpcth-blog-narrow article,
+.mpcth-blog.mpcth-blog-wide article,
+.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
+.mpcth-portfolio-single .mpcth-portfolio-content,
+#mpcth_main_menu ul ul, .mpcth-blog article,
+.mpcth-portfolio-single .mpcth-portfolio-main-content,
+.mpcth-blog article a,
+.mpcth-blog article a.mpcth-button:hover,
+.mpcth-button {
+    color: #ffffff;
+}
+.mpcth-intro,
+.mpcth-intro li a {
+    color: #ffffff;
+}
+.comment-form .form-submit input:hover,
+.mpcth-contact-btn .wpcf7-submit:hover,
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a:hover,
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a.portfolio-active-category,
+.mpcth-blog .mpcth-post-meta a:hover,
+#mpcth_content .mpcth-comments a:hover {
+    color: #FCC83D;
+}
+textarea:focus ~ span,
+input:focus ~ span,
+.comment-form .form-submit input:hover ~ span,
+.mpcth-contact-btn .wpcf7-submit:hover ~ span {
+    border-color: #FCC83D;
+}
+#mpcth_wrapper,
+#mpcth_wrapper.mpcth-single-page,
+#mpcth_wrapper.mpcth-portfolio-mp-alt,
+.mpcth-portfolio-single-alt #mpcth_wrapper.mpcth-single-post {
+    background: #ededed;
+}
+#respond .comment-form,
+.mpcth-full-width article,
+.mpcth-blog.mpcth-single-page article,
+.mpcth-blog.mpcth-single-post article,
+#mpcth_comments_wrap,
+#mpcth-respond-wrapper {
+    background: #f5f5f5; color: #444444;
+}
+.mpcth-blog article a.mpc-sc-lightbox,
+.mpcth-blog .mpcth-post-meta a,
+.mpcth-single-page article a {
+    color: #444444;
+}
+.mpcth-full-width .mpcth-article-top,
+.mpcth-blog.mpcth-single-page .mpcth-article-top,
+.mpcth-blog.mpcth-single-post .mpcth-article-top {
+    border-right-color: #f5f5f5;
+}
+.mpcth-full-width .mpcth-article-bottom,
+.mpcth-blog.mpcth-single-page .mpcth-article-bottom,
+.mpcth-blog.mpcth-single-post .mpcth-article-bottom {
+    border-left-color: #f5f5f5;
+}
+.mpcth-single-page .mpcth-post-title a,
+.mpcth-single-page .mpcth-post-title,
+.mpcth-full-width .mpcth-post-title a,
+.mpcth-full-width .mpcth-post-title,
+.mpcth-post-title a,
+.mpcth-post-title,
+.comment-reply-title,
+.mpcth-comments-title {
+    color: #333333;
+}
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-intro,
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a,
+.mpcth-portfolio-single-alt .mpcth-intro {
+    color: #333333;
+}h1, h2, h3, h4, h5, h6 {font-family: "Raleway";font-weight: 800;}body, .sub-menu a {font-family: Open Sans;font-weight: 500;}.menu-item {font-family: Open Sans;font-weight: 600;}html, body { font-size: 14px; }
+.mpcth-bar, .mpcth-logo-triangle { border-left-color: }
+#header_main {
+    background-color:;
+}
+#header_main .mpcth-logo h2 {
+    color: #333333;
+}
+#header_main small.mpcth-description {
+    color: #333333;
+}
+body.mpcth-portfolio-single #mpcth_wrapper,
+#mpcth_wrapper.mpcth-blog-wide,
+#mpcth_wrapper.mpcth-blog-narrow,
+#mpcth_wrapper.mpcth-portfolio-dt,
+#mpcth_wrapper.mpcth-single-post {
+    background: #444349;
+}
+.mpcth-triangle-top,
+.search-results .mpcth-article-top,
+.search.search-no-results .mpcth-article-top,
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-triangle-top,
+.mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+.mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
+.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
+.mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
+.mpcth-blog .mpcth-article-top,
+.mpcth-home-wide-triangle{
+    border-right-color: #FCC83D;
+}
+.mpcth-home-wide-triangle {
+    border-bottom-color: #FCC83D;
+}
+.mpcth-triangle-bottom,
+.search-results .mpcth-article-bottom,
+.search.search-no-results .mpcth-article-bottom,
+.mpcth-footer-left-side,
+.mpcth-blog .mpcth-article-bottom,
+.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top,
+.mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
+.mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+.mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top {
+    border-left-color: #FCC83D;
+}
+.mpcth-search-form .mpcth-sb {
+    border-color: #FCC83D;
+}
+.mpcth-filters-wrap li a.portfolio-active-category,
+.mpcth-filters-wrap li a:hover,
+.mpcth-intro li a:hover,
+.mpcth-intro li.current-cat a,
+.widget .comment-author-link, .widget #calendar_wrap a,
+.widget a:hover,
+.widget p a, .widget #wp-calendar a,
+#mpcth_main_menu ul li:hover a,
+#mpcth_main_menu ul li:hover li a:hover,
+#mpcth_main_menu li.current_page_item a,
+#mpcth_main_menu li.current-menu-item a,
+#mpcth_main_menu li.current-menu-ancestor a,
+#mpcth_main_menu li.current-menu-parent a,
+#mpcth_main_menu li.current-menu-ancestor li.current-menu-parent a,
+#mpcth_main_menu li.current-menu-ancestor li.current-menu-parent li.current-menu-item a,
+#mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-tl,
+#mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-br,
+#mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-tl,
+#mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-br,
+.menu-item:hover .mpcth-border-tl,
+.menu-item:hover .mpcth-border-br,
+.page_item:hover .mpcth-border-tl,
+.page_item:hover .mpcth-border-br,
+.mpcth-flip-icon:hover .fa.mpcth-icon-hover,
+#searchform input,
+.mpcth-post-pagination a.mpcth-next-post,
+section#footer .mpcth-post-pagination a:hover.mpcth-next-post{
+    color: #FCC83D;
+}
+#mpcth_main_menu li.current-menu-ancestor li.current-menu-parent,
+#mpcth_main_menu li.current-menu-parent li.current-menu-item a,
+#mpcth_main_menu li.current-menu-parent li.page_item a {
+    color: #FCC83D;
+    background: #ffffff;
+}
+#mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
+.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
+.mpcth-portfolio-single .mpcth-portfolio-content,
+#mpcth_main_menu ul ul,
+#mpcth_main_menu ul ul ul,
+.search-results article,
+.search.search-no-results article,
+.mpcth-blog article {
+    background: #FCC83D;
+}
+.mpcth-portfolio-single .mpcth-portfolio-title,
+.mpcth-portfolio-title a,
+.search-results .mpcth-post-title,
+.search-results .mpcth-post-title a,
+.mpcth-blog-wide .mpcth-post-title,
+.mpcth-blog-wide .mpcth-post-title a,
+.mpcth-blog-narrow .mpcth-post-title,
+.mpcth-blog-narrow .mpcth-post-title a,
+.mpcth-pagination .page-numbers {
+    color: #ffffff;
+}
+.mpcth-single-post.mpcth-blog article a,
+.mpcth-blog.mpcth-blog-narrow .mpcth-post-meta a:hover,
+.mpcth-blog.mpcth-blog-wide .mpcth-post-meta a:hover,
+.mpcth-blog.mpcth-search-page .mpcth-post-meta a:hover,
+.mpcth-post-pagination a:hover,
+.mpcth-post-pagination span.current,
+.mpcth-post-pagination a:hover,
+.mpcth-post-pagination span.current,
+.mpcth-blog article a:hover,
+.mpcth-portfolio-title a:hover {
+    color: #444444;
+}
+#mpcth_content.mpcth-home .mpcth-home-widget {
+    color: #ffffff;
+}
+.mpcth-blog.mpcth-search-page .mpcth-post-meta a,
+.mpcth-blog.mpcth-blog-narrow .mpcth-post-meta a,
+.mpcth-blog.mpcth-blog-wide .mpcth-post-meta a,
+.mpcth-blog.mpcth-blog-narrow article,
+.mpcth-blog.mpcth-blog-wide article,
+.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
+.mpcth-portfolio-single .mpcth-portfolio-content,
+#mpcth_main_menu ul ul, .mpcth-blog article,
+.mpcth-portfolio-single .mpcth-portfolio-main-content,
+.mpcth-blog article a,
+.mpcth-blog article a.mpcth-button:hover,
+.mpcth-button {
+    color: #ffffff;
+}
+.mpcth-intro,
+.mpcth-intro li a {
+    color: #ffffff;
+}
+.comment-form .form-submit input:hover,
+.mpcth-contact-btn .wpcf7-submit:hover,
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a:hover,
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a.portfolio-active-category,
+.mpcth-blog .mpcth-post-meta a:hover,
+#mpcth_content .mpcth-comments a:hover {
+    color: #FCC83D;
+}
+textarea:focus ~ span,
+input:focus ~ span,
+.comment-form .form-submit input:hover ~ span,
+.mpcth-contact-btn .wpcf7-submit:hover ~ span {
+    border-color: #FCC83D;
+}
+#mpcth_wrapper,
+#mpcth_wrapper.mpcth-single-page,
+#mpcth_wrapper.mpcth-portfolio-mp-alt,
+.mpcth-portfolio-single-alt #mpcth_wrapper.mpcth-single-post {
+    background: #ededed;
+}
+#respond .comment-form,
+.mpcth-full-width article,
+.mpcth-blog.mpcth-single-page article,
+.mpcth-blog.mpcth-single-post article,
+#mpcth_comments_wrap,
+#mpcth-respond-wrapper {
+    background: #f5f5f5; color: #444444;
+}
+.mpcth-blog article a.mpc-sc-lightbox,
+.mpcth-blog .mpcth-post-meta a,
+.mpcth-single-page article a {
+    color: #444444;
+}
+.mpcth-full-width .mpcth-article-top,
+.mpcth-blog.mpcth-single-page .mpcth-article-top,
+.mpcth-blog.mpcth-single-post .mpcth-article-top {
+    border-right-color: #f5f5f5;
+}
+.mpcth-full-width .mpcth-article-bottom,
+.mpcth-blog.mpcth-single-page .mpcth-article-bottom,
+.mpcth-blog.mpcth-single-post .mpcth-article-bottom {
+    border-left-color: #f5f5f5;
+}
+.mpcth-single-page .mpcth-post-title a,
+.mpcth-single-page .mpcth-post-title,
+.mpcth-full-width .mpcth-post-title a,
+.mpcth-full-width .mpcth-post-title,
+.mpcth-post-title a,
+.mpcth-post-title,
+.comment-reply-title,
+.mpcth-comments-title {
+    color: #333333;
+}
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-intro,
+.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a,
+.mpcth-portfolio-single-alt .mpcth-intro {
+    color: #333333;
+}#mpcth_main_content .mpcth-post-content { font-weight: 500!important; }
+

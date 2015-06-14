@@ -1,0 +1,1021 @@
+/* ========================================================================== *
+ * Table of Content:
+ *   1. Row
+ *   2. Columns
+ *   3. Full width
+ *   4. Tabs
+ *   5. Toggles
+ *   6. Accordions
+ *   7. Embed
+ *   8. Drop caps
+ *   9. Highlight
+ *  10. Lightbox
+ *  11. Divider
+ *  12. Text divider
+ *  13. Icon
+ *  14. Button
+ *  15. Side gallery
+ *  16. Lists
+ *  17. Slider
+ *  18. Tooltip
+ *  19. Deco header
+ *  20. Other
+ * ========================================================================== */
+/* ========================================================================== *
+ * 1. Row
+ * ========================================================================== */
+.mpc-sc-row:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.mpc-sc-row.table {
+    display: table;
+}
+.mpc-sc-row.fancy-content {
+    position: relative;
+}
+/* ========================================================================== *
+ * 2. Columns
+ * ========================================================================== */
+.mpc-sc-column {
+    float: left;
+    /*padding: 0 15px 0 0;*/
+    padding: 0 22.5px 0 22.5px;
+}
+.table .mpc-sc-column {
+    float: none;
+    display: table-cell;
+}
+.mpc-sc-column > *:last-child {
+    /*margin-bottom: 0 !important;*/
+}
+.mpc-sc-column:first-of-type {
+    padding: 0 22.5px 0 0;
+}
+.mpc-sc-column:last-of-type {
+    padding: 0 0 0 22.5px;
+}
+.mpc-sc-column:only-of-type {
+    padding: 0;
+}
+.mpc-column-w1 {
+    width: 16.66%;
+}
+.mpc-column-w2 {
+    width: 33.33%;
+}
+.mpc-column-w3 {
+    width: 50%;
+}
+.mpc-column-w4 {
+    width: 66.66%;
+}
+.mpc-column-w5 {
+    width: 83.33%;
+}
+.mpc-column-w6 {
+    width: 100%;
+}
+@media only screen and (max-width: 48em) {
+    .mpc-sc-row.table {
+        display: block;
+    }
+    .table .mpc-sc-column {
+        float: left;
+        display: block;
+        min-height: 300px;
+    }
+    .mpc-sc-column {
+        padding: 0 22.5px !important;
+    }
+    .mpc-column-w1,
+    .mpc-column-w2,
+    .mpc-column-w3,
+    .mpc-column-w4,
+    .mpc-column-w5,
+    .mpc-column-w6 {
+        width: 100%;
+    }
+    .mpc-non-responsive .mpc-column-w1 {
+        width: 16.66%;
+    }
+    .mpc-non-responsive .mpc-column-w2 {
+        width: 33.33%;
+    }
+    .mpc-non-responsive .mpc-column-w3 {
+        width: 50%;
+    }
+    .mpc-non-responsive .mpc-column-w4 {
+        width: 66.66%;
+    }
+    .mpc-non-responsive .mpc-column-w5 {
+        width: 83.33%;
+    }
+    .mpc-non-responsive .mpc-column-w6 {
+        width: 100%;
+    }
+}
+/* ========================================================================== *
+ * 3. Full width
+ * ========================================================================== */
+.mpc-sc-fw {
+}
+.mpc-sc-fw-text.mpc-sc-fw {
+    background: #ffffff;
+    color: #333333;
+    padding: 2rem;
+    margin: 2.5em 0;
+}
+@media only screen and (max-width: 48em) {
+    .mpc-sc-fw {
+        width: 100%;
+        margin: 0 !important;
+    }
+}
+/* ========================================================================== *
+ * 4. Tabs
+ * ========================================================================== */
+.mpc-sh-tabs-wrap {
+    margin: 0 0 2em 0;
+}
+.mpc-sh-tabs-wrap ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/*.mpc-sh-tabs-wrap ul li {
+	list-style: none;
+}*/
+.mpc-sh-tabs-wrap ul > li {
+    display: inline-block;
+    margin: 0 .8rem .7rem 0;
+    padding: 0;
+}
+.mpc-sh-tabs-wrap .mpc-sh-tabs-title {
+    display: inline-block;
+    color: inherit;
+    border: 0;
+    background: none;
+    padding: .5rem .25rem;
+    margin: 0 0 0 22px;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+}
+.mpc-sh-tabs-wrap .mpc-sh-tabs-title h5 {
+    background: #eeeeee;
+    color: #fdc83d;
+    font-size: 1.29rem;
+    line-height: 1.5;
+    font-weight: 800;
+    position: relative;
+    padding: .7rem;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpcth-tabs-triangle-left {
+    border-top: 3.3rem solid transparent;
+    border-left: 0;
+    border-right: 26px solid #eeeeee;
+    border-bottom: 0px solid transparent;
+    position: absolute;
+    right: auto;
+    left: -26px;
+    bottom: 0;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpcth-tabs-triangle-right {
+    border-bottom: 3.3rem solid transparent;
+    border-right: 0;
+    border-left: 26px solid #eeeeee;
+    border-top: 0px solid transparent;
+    position: absolute;
+    right: -26px;
+    top: 0;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.ui-state-hover .mpc-sh-tabs-title h5,
+.ui-state-active .mpc-sh-tabs-title h5 {
+    background: #fdc83d;
+    color: #ffffff;
+}
+.mpcth-blog-wide .mpc-sh-tabs-wrap .mpc-sh-tabs-title h5,
+.mpcth-blog-narrow .mpc-sh-tabs-wrap .mpc-sh-tabs-title h5 {
+    background: #ffffff;
+    color: #fdc83d;
+}
+.mpcth-blog-wide .ui-state-hover .mpc-sh-tabs-title h5,
+.mpcth-blog-wide .ui-state-active .mpc-sh-tabs-title h5,
+.mpcth-blog-narrow .ui-state-hover .mpc-sh-tabs-title h5,
+.mpcth-blog-narrow .ui-state-active .mpc-sh-tabs-title h5 {
+    color: #333333;
+}
+.mpcth-blog-wide .mpcth-tabs-triangle-left,
+.mpcth-blog-narrow .mpcth-tabs-triangle-left {
+    border-right-color: #ffffff;
+}
+.mpcth-blog-wide .mpcth-tabs-triangle-right,
+.mpcth-blog-narrow .mpcth-tabs-triangle-right {
+    border-left-color: #ffffff;
+}
+.mpc-sh-tab-content {
+    padding: 0;
+}
+/* ========================================================================== *
+ * 5. Toggles
+ * ========================================================================== */
+.mpc-sh-toggle-wrap {
+    margin: 0 2rem 2.5rem 0rem;
+}
+/*.mpc-sh-toggle-wrap ul li {
+	list-style: none;
+}*/
+.mpc-sh-toggle-wrap + .mpc-sh-toggle-wrap {
+    margin-top: -2rem;
+}
+.mpc-sh-toggle-wrap .mpc-sh-toggle-title {
+    display: block;
+    color: inherit;
+    cursor: pointer;
+    padding: .4rem 0;
+    outline: none;
+}
+.mpc-sh-toggle-wrap .mpc-sh-toggle-title h5 {
+    background: #eeeeee;
+    color: inherit;
+    font-size: 1.29rem;
+    font-weight: 800;
+    padding: .7rem;
+    position: relative;
+    display: inline-block;
+    margin: 0 0 0 2rem;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpc-sh-toggle-content-wrap {
+    display: none;
+}
+.mpc-sh-toggle-content {
+    position: relative;
+    padding: .5rem 1rem 1rem;
+    /*margin-bottom: 2.5em;*/
+}
+.mpcth-toggle-triangle-left {
+    border-top: 3.3rem solid transparent;
+    border-left: 0;
+    border-right: 26px solid #eeeeee;
+    border-bottom: 0px solid transparent;
+    position: absolute;
+    right: auto;
+    left: -26px;
+    bottom: 0;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpcth-toggle-triangle-right {
+    border-bottom: 3.3rem solid transparent;
+    border-right: 0;
+    border-left: 26px solid #eeeeee;
+    border-top: 0px solid transparent;
+    position: absolute;
+    right: -26px;
+    top: 0;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpc-sh-toggle-title:hover h5,
+.ui-state-active.mpc-sh-toggle-title h5 {
+    background: #fdc83d;
+    color: #ffffff;
+}
+.mpcth-blog-wide .mpc-sh-toggle-title:hover h5,
+.mpcth-blog-wide .ui-state-active h5,
+.mpcth-blog-narrow .mpc-sh-toggle-title:hover h5,
+.mpcth-blog-narrow .ui-state-active.mpc-sh-toggle-title h5 {
+    background: #ffffff;
+    color: #333333;
+}
+.mpcth-blog-wide .mpc-sh-toggle-title:hover .mpcth-toggle-triangle-right,
+.mpcth-blog-wide .ui-state-active.mpc-sh-toggle-title .mpcth-toggle-triangle-right,
+.mpcth-blog-narrow .mpc-sh-toggle-title:hover .mpcth-toggle-triangle-right,
+.mpcth-blog-narrow .ui-state-active.mpc-sh-toggle-title .mpcth-toggle-triangle-right {
+    border-left-color: #ffffff;
+}
+.mpcth-blog-wide .mpc-sh-toggle-title:hover .mpcth-toggle-triangle-left,
+.mpcth-blog-wide .ui-state-active.mpc-sh-toggle-title .mpcth-toggle-triangle-left,
+.mpcth-blog-narrow .mpc-sh-toggle-title:hover .mpcth-toggle-triangle-left,
+.mpcth-blog-narrow .ui-state-active.mpc-sh-toggle-title .mpcth-toggle-triangle-left {
+    border-right-color: #ffffff;
+}
+/* ========================================================================== *
+ * 6. Accordions
+ * ========================================================================== */
+.mpc-sh-accordion-wrap {
+    margin-bottom: 2em;
+}
+.mpc-sh-accordion-wrap .mpc-sh-accordion-title {
+    display: block;
+    color: #333333;
+    padding: .5rem 0;
+    cursor: pointer;
+    outline: none;
+    text-align: left;
+}
+.mpc-sh-accordion-wrap .mpc-sh-accordion-title h5 {
+    background: #eeeeee;
+    color: inherit;
+    font-size: 1.29rem;
+    line-height: 1.5;
+    font-weight: 800;
+    padding: .7rem 3.55rem .7rem .7rem;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpc-sh-accordion-content {
+    position: relative;
+    padding: .5rem 1rem 1rem;
+    margin-bottom: .5rem;
+}
+.mpcth-accord-triangle {
+    border-bottom: 3.3rem solid transparent;
+    border-right: 0;
+    border-left: 26px solid #eeeeee;
+    border-top: 0px solid transparent;
+    position: absolute;
+    right: -26px;
+    top: 0;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpcth-blog-narrow .ui-state-hover.mpc-sh-accordion-title h5,
+.mpcth-blog-wide .ui-state-hover.mpc-sh-accordion-title h5,
+.mpcth-blog-narrow .ui-accordion-header-active.mpc-sh-accordion-title h5,
+.mpcth-blog-wide .ui-accordion-header-active.mpc-sh-accordion-title h5 {
+    background: #ffffff;
+    color: #333333;
+}
+/* ========================================================================== *
+ * 7. Embed
+ * ========================================================================== */
+.mpc-sc-embed {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    padding-top: 6em;
+    margin: 0 0 1.5em;
+}
+@media only screen and (max-width: 48em) {
+    .mpc-sc-embed {
+        padding-top: 0;
+        margin: 0 0 1.5em 0;
+    }
+}
+.mpc-sc-embed iframe,
+.mpc-sc-embed object,
+.mpc-sc-embed embed,
+.mpc-sc-embed img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media only screen and (min-width: 48em) {
+    .mpc-sc-fw .mpc-sc-embed {
+        padding-bottom: 20%;
+    }
+}
+/* ========================================================================== *
+ * 8. Drop caps
+ * ========================================================================== */
+.mpc-sc-dropcaps {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    line-height: .8;
+    float: left;
+    margin: 0 .1em 0 0;
+}
+.mpc-sc-dropcaps.mpc-sc-dropcaps-size-small {
+    font-size: 2em;
+    margin-top: -.15em;
+}
+.mpc-sc-dropcaps.mpc-sc-dropcaps-size-normal {
+    font-size: 3em;
+    margin-top: -.35em;
+}
+.mpc-sc-dropcaps.mpc-sc-dropcaps-size-large {
+    font-size: 4em;
+    margin-top: -.1em;
+}
+.mpc-sc-dropcaps.mpc-sc-dropcaps-size-huge {
+    font-size: 5em;
+    margin-top: -.2em;
+}
+/* ========================================================================== *
+ * 9. Highlight
+ * ========================================================================== */
+.mpc-sc-highlight {
+    padding: 0 0.25em;
+}
+/* ========================================================================== *
+ * 10. Lightbox
+ * ========================================================================== */
+.mfp-close {
+    outline: none;
+}
+/* ========================================================================== *
+ * 11. Divider
+ * ========================================================================== */
+.mpc-sc-divider {
+    width: auto;
+    margin: 1.5em auto;
+    text-align: center;
+    line-height: 1em;
+    height: 1.5em;
+}
+.mpcth-divider-part {
+    background: green;
+    display: inline-block;
+    height: 1px;
+    margin: 0 -1px;
+    width: 6px;
+}
+.mpcth-divider-part-left {
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.mpcth-divider-part-right {
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* ========================================================================== *
+ * 12. Text divider
+ * ========================================================================== */
+.mpc-sc-text-divider-wrap {
+    display: table;
+    width: 100%;
+    margin: 1.5em 0;
+}
+.mpc-sc-text-divider-wrap .mpc-sep-holder {
+    display: table-cell;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+.mpc-sep-holder .mpc-sep-line {
+    height: 1px;
+    border-top: 1px solid;
+    display: block;
+    position: relative;
+    top: 1px;
+    width: 100%;
+    max-width: 100px;
+    min-width: 50px;
+}
+.mpc-sep-holder-l {
+    top: -4px;
+    text-align: right
+}
+.mpc-sep-holder-r {
+    top: -4px;
+    text-align: left
+}
+.mpc-sc-text-divider-wrap .mpc-text {
+    font-family: 'Open Sans', serif;
+    font-size: 12px;
+    line-height: 2em;
+    height: 1.5em;
+    display: table-cell;
+    white-space: pre;
+    padding: 0 1.2em;
+}
+/* ========================================================================== *
+ * 13. Icon
+ * ========================================================================== */
+.mpc-sc-icon-wrap {
+    display: block;
+    padding: 0;
+    margin: 0;
+    line-height: 1em;
+    border: 0 !important;
+}
+.mpc-sc-icon-wrap.mpc-sc-inline {
+    display: inline-block;
+    margin: 0 .25rem;
+}
+.mpc-sc-icon-size-small {
+    font-size: 1rem !important;
+    margin-top: 1rem;
+}
+.mpc-sc-icon-size-normal {
+    font-size: 2rem !important;
+    margin-top: .5rem;
+}
+.mpc-sc-icon-size-large {
+    font-size: 3.5rem !important;
+    margin-top: .33rem;
+}
+.mpc-sc-icon-size-huge {
+    font-size: 6rem !important;
+    margin-top: .25rem;
+}
+.mpc-sc-icon-align-left {
+    text-align: left;
+}
+.mpc-sc-icon-align-center {
+    text-align: center;
+}
+.mpc-sc-icon-align-right {
+    text-align: right;
+}
+.mpcth-post-content .mpc-sc-icon-wrap + h1,
+.mpcth-post-content .mpc-sc-icon-wrap + h2,
+.mpcth-post-content .mpc-sc-icon-wrap + h3,
+.mpcth-post-content .mpc-sc-icon-wrap + h4,
+.mpcth-post-content .mpc-sc-icon-wrap + h5,
+.mpcth-post-content .mpc-sc-icon-wrap + h6 {
+    margin-top: 0;
+}
+/* ========================================================================== *
+ * 14. Button
+ * ========================================================================== */
+.mpcth-sc-btn-wrapper {
+    display: inline-block;
+    margin: 0 30px 1.5rem 0;
+    position: relative;
+    width: auto;
+}
+.mpc-sc-button-wrap {
+    font-size: 0.88em;
+    display: inline-block;
+    padding: 1rem;
+    line-height: 1rem;
+    font-style: normal !important;
+    font-size: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-font-smoothing: initial;
+}
+.btn_large .mpc-sc-button-wrap {
+    font-size: 1.2rem !important;
+    line-height: 1.2rem;
+    padding: .7rem;
+}
+.btn_normal .mpc-sc-button-wrap {
+    font-size: .95rem !important;
+    padding: .5rem 11px;
+}
+.mpc-sc-button-wrap .mpc-flip {
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+.mpc-sc-button-wrap:hover .mpc-flip .fa {
+    top: -1.2em;
+}
+.mpc-sc-button-wrap:hover .mpc-flip .fa.mpc-hover {
+    top: 0;
+}
+.mpcth-sc-btn-wrapper .mpcth-in-border-left,
+.mpcth-sc-btn-wrapper .mpcth-in-border-right,
+.mpcth-sc-btn-wrapper .mpcth-in-border-top,
+.mpcth-sc-btn-wrapper .mpcth-in-border-bottom {
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -ms-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+.mpcth-sc-btn-wrapper .mpcth-in-border-left {
+    border-left: 1px solid #dddddd;
+    top: 0;
+    left: 0;
+    bottom: 10px;
+}
+.mpcth-sc-btn-wrapper .mpcth-in-border-right {
+    border-left: 1px solid #dddddd;
+    top: 0.71rem;
+    bottom: 0;
+    right: 0;
+}
+.mpcth-sc-btn-wrapper .mpcth-in-border-top {
+    border-top: 1px solid #dddddd;
+    right: 0.71rem;
+    left: 0;
+    top: 0;
+}
+.mpcth-sc-btn-wrapper .mpcth-in-border-bottom {
+    border-top: 1px solid #dddddd;
+    left: 0.71rem;
+    right: 0;
+    bottom: 0;
+}
+.mpcth-sc-btn-wrapper .mpcth-in-border-ver {
+    height: auto;
+}
+.mpcth-sc-btn-wrapper .mpcth-in-border-hor {
+    width: auto;
+}
+.mpcth-sc-btn-wrapper:hover .mpcth-in-border-left,
+.mpcth-sc-btn-wrapper:focus .mpcth-in-border-left,
+.mpcth-sc-btn-wrapper:hover .mpcth-in-border-left,
+.mpcth-sc-btn-wrapper:hover a .mpcth-in-border-left,
+.mpcth-sc-btn-wrapper:focus a .mpcth-in-border-left,
+.mpcth-sc-btn-wrapper:hover a .mpcth-in-border-left {
+    bottom: 0;
+}
+.mpcth-sc-btn-wrapper:hover .mpcth-in-border-right,
+.mpcth-sc-btn-wrapper:focus .mpcth-in-border-right,
+.mpcth-sc-btn-wrapper:hover .mpcth-in-border-right,
+.mpcth-sc-btn-wrapper:hover a .mpcth-in-border-right,
+.mpcth-sc-btn-wrapper:focus a .mpcth-in-border-right,
+.mpcth-sc-btn-wrapper:hover a .mpcth-in-border-right {
+    top: 0;
+}
+.mpcth-sc-btn-wrapper:hover .mpcth-in-border-top,
+.mpcth-sc-btn-wrapper:focus .mpcth-in-border-top,
+.mpcth-sc-btn-wrapper:hover .mpcth-in-border-top,
+.mpcth-sc-btn-wrapper:hover a .mpcth-in-border-top,
+.mpcth-sc-btn-wrapper:focus a .mpcth-in-border-top,
+.mpcth-sc-btn-wrapper:hover a .mpcth-in-border-top {
+    right: 0;
+}
+.mpcth-sc-btn-wrapper:hover .mpcth-in-border-bottom,
+.mpcth-sc-btn-wrapper:focus .mpcth-in-border-bottom,
+.mpcth-sc-btn-wrapper:hover .mpcth-in-border-bottom,
+.mpcth-sc-btn-wrapper:hover a .mpcth-in-border-bottom,
+.mpcth-sc-btn-wrapper:focus a .mpcth-in-border-bottom,
+.mpcth-sc-btn-wrapper:hover a .mpcth-in-border-bottom {
+    left: 0;
+}
+/* ========================================================================== *
+ * 15. Side gallery
+ * ========================================================================== */
+.mpc-sc-side-image-wrap {
+    position: relative;
+}
+.mpc-sc-side-image-wrap img {
+    position: absolute;
+    top: 0;
+}
+.mpc-sc-side-image-wrap.mpc-side-image-align-left img {
+    right: 100%;
+    margin-right: 2em;
+}
+.mpc-sc-side-image-wrap.mpc-side-image-align-right img {
+    left: 100%;
+    margin-left: 2em;
+}
+.mpc-sc-side-gallery-wrap {
+    position: relative;
+}
+.mpc-sc-side-gallery-wrap .mpc-sc-side-gallery-icon {
+    position: absolute;
+    top: .3em;
+    color: inherit;
+    line-height: 1;
+}
+.mpc-sc-side-gallery-wrap .mpc-flip {
+    font-size: 1.5em;
+}
+.mpc-sc-side-gallery-wrap .mpc-flip .fa {
+    color: #dddddd;
+}
+.mpc-sc-side-gallery-wrap .mpc-flip .fa.mpc-hover {
+    color: inherit;
+}
+.mpc-sc-side-gallery-wrap:hover .mpc-flip .fa {
+    top: -1.2em;
+}
+.mpc-sc-side-gallery-wrap:hover .mpc-flip .fa.mpc-hover {
+    top: 0;
+}
+.mpc-sc-side-gallery-wrap .mpc-tooltip {
+    position: absolute;
+    color: #ffffff;
+    top: -.1em;
+    padding: .6em .75em;
+    white-space: nowrap;
+    font-size: .75em;
+    pointer-events: none;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpc-side-gallery-side-left .mpc-tooltip {
+    margin-right: 1.5em;
+    right: 100%;
+}
+.mpc-side-gallery-side-right .mpc-tooltip {
+    margin-left: 1.5em;
+    left: 100%;
+}
+.mpc-side-gallery-side-left:hover .mpc-tooltip {
+    margin-right: 1em;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.mpc-side-gallery-side-right:hover .mpc-tooltip {
+    margin-left: 1em;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.mpc-sc-side-gallery-wrap .mpc-tooltip:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    border: .5em solid transparent;
+}
+.mpc-side-gallery-side-left .mpc-tooltip:after {
+    right: -.8em;
+    border-left-color: inherit;
+}
+.mpc-side-gallery-side-right .mpc-tooltip:after {
+    left: -.8em;
+    border-right-color: inherit;
+}
+.mfp-arrow {
+    outline: none;
+}
+.mfp-arrow .fa {
+    font-size: 3em;
+    color: #ffffff;
+}
+.mfp-wrap .mfp-arrow:after,
+.mfp-wrap .mfp-arrow:before {
+    display: none;
+}
+.mfp-wrap .mfp-content .mfp-close {
+    width: 1em;
+    right: 0;
+    outline: none;
+}
+@media only screen and (max-width: 48em) {
+    .mpc-side-gallery-side-left .mpc-sc-side-gallery-icon {
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+        padding: .6em 1em .6em 0;
+    }
+    .mpc-side-gallery-side-right .mpc-sc-side-gallery-icon {
+        position: relative;
+        top: 0;
+        right: 0;
+        float: right;
+        padding: .6em 0 .6em 1em;
+    }
+    .mpc-sc-side-gallery-wrap .mpc-tooltip {
+        display: none;
+    }
+}
+/* ========================================================================== *
+ * 16. Lists
+ * ========================================================================== */
+.mpc-sh-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+.mpc-sh-list li {
+    margin-bottom: .5em;
+}
+.mpc-sh-list li:last-child {
+    margin-bottom: 0;
+}
+.mpc-sh-list .mpc-flip {
+    margin-right: 1rem;
+    margin-bottom: -.2rem;
+}
+.mpc-sh-list li:hover .mpc-flip .fa {
+    top: -1.2em;
+}
+.mpc-sh-list li:hover .mpc-flip .fa.mpc-hover {
+    top: 0;
+}
+/* ========================================================================== *
+ * 17. Slider
+ * ========================================================================== */
+.home .mpc-sc-fw .mpc-sc-slider {
+    height: auto;
+    width: auto;
+}
+.mpc-sc-fw .mpc-sc-slider {
+    width: 660px;
+    margin: 0 auto;
+}
+.mpcth-blog-narrow .mpc-sc-fw .mpc-sc-slider {
+    width: 458px;
+}
+.mpc-sc-slider .slick-prev,
+.mpc-sc-slider .slick-next {
+    opacity: .25;
+    filter: alpha(opacity=25);
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpcth-blog-narrow .mpc-sc-slider.mpcth-slider .slick-slide img,
+.mpc-sc-slider.mpcth-slider .slick-slide img {
+    height: auto;
+}
+.mpc-sc-slider .slick-prev:hover,
+.mpc-sc-slider .slick-next:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.mpc-sc-slider .slick-prev {
+    height: 30px;
+    left: -30px;
+}
+.mpc-sc-slider .slick-next {
+    height: 30px;
+    right: -30px;
+}
+.mpc-sc-slider .slick-list {
+    overflow: hidden;
+}
+.mpc-sc-slider .slick-slide .mpcth-slide-wrap {
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpc-sc-slider .slick-center .mpcth-slide-wrap {
+    padding: 0;
+}
+@media only screen and (max-width: 1000px) {
+    .mpc-sc-fw .mpc-sc-slider {
+        width: 100%;
+    }
+    .mpc-sc-slider .slick-slide .mpcth-slide-wrap {
+        padding: 0 5px;
+    }
+}
+/* ========================================================================== *
+ * 18. Tooltip
+ * ========================================================================== */
+.mpc-sc-tooltip-wrap {
+    position: relative;
+}
+.mpc-sc-tooltip-wrap .mpc-sc-tooltip-text {
+    border-bottom: 1px dotted #707070;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+.mpc-sc-tooltip-wrap .mpc-sc-tooltip-message {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    line-height: 1.25em;
+    margin-bottom: 1em !important;
+    padding: 0.4em 0.6em;
+    border-radius: 2px;
+    font-size: 1em;
+    white-space: nowrap;
+    visibility: hidden;
+    z-index: 1000;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+.mpc-sc-tooltip-wrap .mpc-sc-tooltip-message:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 1em;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-top-color: inherit;
+}
+.mpc-sc-tooltip-wrap .mpc-sc-tooltip-text:hover + .mpc-sc-tooltip-message {
+    visibility: visible;
+    margin-bottom: 0.5em !important;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.ie .mpc-sc-tooltip-wrap .mpc-sc-tooltip-message {
+    display: none;
+    visibility: visible;
+    margin-bottom: 0.5em !important;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.ie .mpc-sc-tooltip-wrap .mpc-sc-tooltip-text:hover + .mpc-sc-tooltip-message {
+    display: block;
+}
+/* ========================================================================== *
+ * 19. Deco header
+ * ========================================================================== */
+.mpcth-post-content .mpc-sc-deco-header {
+    background: transparent url('../img/mpcth-devider-intro.png') no-repeat bottom;
+    position: relative;
+    text-align: center;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+.mpcth-post-content h5.mpc-sc-deco-header {
+    padding-bottom: .7em;
+    margin-bottom: .7em;
+}
+.mpcth-post-content h6.mpc-sc-deco-header {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+/* ========================================================================== *
+ * 20. Other
+ * ========================================================================== */
+.mpc-flip {
+    position: relative;
+    display: inline-block;
+    height: 1.1em;
+    overflow: hidden;
+    line-height: 1.1em;
+}
+.mpc-flip .fa {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+.mpc-flip .fa.mpc-hover {
+    position: absolute;
+    top: 1.2em;
+}
+.mpc-flip:hover .fa {
+    top: -1.2em;
+}
+.mpc-flip:hover .fa.mpc-hover {
+    top: 0;
+}
+
+/* TEMP */
+.ui-state-active .mpcth-tabs-triangle-right, .mpc-sh-tabs-title:hover .mpcth-tabs-triangle-right {
+  border-left-color: #fdc83d;
+}
+.ui-state-active .mpcth-tabs-triangle-left, .mpc-sh-tabs-title:hover .mpcth-tabs-triangle-left {
+  border-right-color: #fdc83d;
+}

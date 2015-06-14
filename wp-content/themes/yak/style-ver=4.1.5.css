@@ -1,0 +1,6924 @@
+/*
+Theme Name:   Yak
+Theme URI:    http://themeforest.net/user/mpc
+Description:  Creative Portfolio WP Theme
+Author:       massivePixelCreation
+Author URI:   http://themeforest.net/user/mpc
+License:      Commercial
+License URI:  http://themeforest.net/licenses/regular_extended
+Tags:         dark, light, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Version:      1.0.1
+Text Domain:  mpcth
+Domain Path:  /languages
+*/
+/* ========================================================================== *
+ * Table of Content:
+ *   1. Normalize
+ *   	1.1. Defaults
+ *   2. Layout
+ *     2.1. Header
+ *     2.2. Sidebar
+ *     2.3. Footer
+ *   3. Page
+ *     3.1. Archive
+ *     3.2. Blog
+ *     3.3. Portfolio
+ *     3.4. Single Post
+ *     3.5. Single Portfolio
+ *     3.6. Home Page
+ *   4. Post Formats
+ *   5. Elements
+ *     5.1. Comments
+ *     5.2. Contact
+ *     5.3. Menu
+ *     5.4. Pagination
+ *     5.5. Socials
+ *   6. Widgets
+ *   7. Preloader
+ *   8. Responsive
+ * ========================================================================== */
+/* line 128, _mixins.scss */
+.animation-slided {
+  visibility: visible;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 139, _mixins.scss */
+input[type="text"], input[type="email"], input[type="search"], input[type="password"], textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none; /* mobile firefox too! */
+}
+.transition, a, .comment-form-comment label,
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label, .comment-form-comment textarea,
+.comment-form-comment input,
+.comment-form-author textarea,
+.comment-form-author input,
+.comment-form-email textarea,
+.comment-form-email input,
+.comment-form-url textarea,
+.comment-form-url input, .wpcf7 .contact-form-message .wpcf7-not-valid-tip,
+.wpcf7 .your-name .wpcf7-not-valid-tip,
+.wpcf7 .your-email .wpcf7-not-valid-tip,
+.wpcf7 .your-website .wpcf7-not-valid-tip, .wpcf7 input,
+.wpcf7 textarea, .mfp-fade.mfp-bg, .mfp-fade.mfp-wrap .mfp-content {
+  -webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+  -ms-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+
+/* line 148, _mixins.scss */
+.box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ========================================================================== *
+ * 1. Normalize
+ * ========================================================================== */
+/* line 13, _normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 30, _normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/* line 39, _normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 47, _normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* line 59, _normalize.scss */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 67, _normalize.scss */
+body {
+  margin: 0;
+}
+
+/* line 77, _normalize.scss */
+a {
+  background: transparent;
+}
+
+/* line 83, _normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 89, _normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* line 101, _normalize.scss */
+h1 {
+  font-size: 2rem;
+  margin: 0.67rem 0;
+}
+
+/* line 108, _normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 114, _normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 121, _normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 127, _normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* line 135, _normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 142, _normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: .9em;
+}
+
+/* line 152, _normalize.scss */
+pre {
+  white-space: pre-wrap;
+}
+
+/* line 158, _normalize.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* line 164, _normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 170, _normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 178, _normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 182, _normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 192, _normalize.scss */
+img {
+  border: 0;
+}
+
+/* line 198, _normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 208, _normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* line 218, _normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 227, _normalize.scss */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/* line 236, _normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* line 247, _normalize.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/* line 257, _normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 266, _normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 276, _normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* line 284, _normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 293, _normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 302, _normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 309, _normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 318, _normalize.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 329, _normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ========================================================================== *
+ * 1.1. Defaults
+ * ========================================================================== */
+/* line 5, _defaults.scss */
+html, body {
+  background: #ededed;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 100%;
+  min-height: 100%;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: white;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 21, _defaults.scss */
+body {
+  overflow-x: hidden;
+}
+
+/* line 26, _defaults.scss */
+html ::selection, body ::selection {
+  background: #ddd;
+}
+/* line 29, _defaults.scss */
+html ::-moz-selection, body ::-moz-selection {
+  background: #ddd;
+}
+
+/* line 34, _defaults.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  margin-top: 0;
+  text-transform: uppercase;
+  -webkit-font-smoothing: initial;
+}
+
+/* line 40, _defaults.scss */
+h1 {
+  font-size: 2.86rem;
+}
+
+/* line 41, _defaults.scss */
+h2 {
+  font-size: 2.43rem;
+}
+
+/* line 42, _defaults.scss */
+h3 {
+  font-size: 2.14rem;
+}
+
+/* line 43, _defaults.scss */
+h4 {
+  font-size: 1.71rem;
+}
+
+/* line 44, _defaults.scss */
+h5 {
+  font-size: 1.43rem;
+}
+
+/* line 45, _defaults.scss */
+h6 {
+  font-size: 1.14rem;
+}
+
+/* line 47, _defaults.scss */
+.mpcth-widget-title {
+  font-weight: 800;
+  font-size: 1.71rem;
+}
+
+/* line 56, _defaults.scss */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 61, _defaults.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* line 67, _defaults.scss */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* line 71, _defaults.scss */
+.mpcth-clear {
+  clear: both;
+  display: block;
+  height: 0;
+}
+
+/* line 77, _defaults.scss */
+.mpcth-hidden {
+  display: none;
+}
+
+/* line 78, _defaults.scss */
+.mpcth-left {
+  float: left;
+}
+
+/* line 79, _defaults.scss */
+.mpcth-right {
+  float: right;
+}
+
+/* line 80, _defaults.scss */
+.mpcth-upper {
+  text-transform: uppercase;
+}
+
+/* line 82, _defaults.scss */
+b, strong {
+  font-size: 1.14rem;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+
+/* line 87, _defaults.scss */
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0;
+}
+
+/* line 97, _defaults.scss */
+a:hover {
+  text-decoration: none;
+  outline: 0;
+}
+
+/* line 102, _defaults.scss */
+a:focus {
+  outline: 0;
+}
+
+/* line 104, _defaults.scss */
+th, td {
+  padding: .25rem .5rem;
+}
+
+/* line 107, _defaults.scss */
+tr:nth-child(even),
+thead {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* line 112, _defaults.scss */
+blockquote {
+  font-style: italic;
+  font-size: 1.14rem;
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 2.14rem 2.86rem;
+}
+/* line 119, _defaults.scss */
+blockquote p {
+  margin-bottom: 0;
+}
+/* line 121, _defaults.scss */
+blockquote span {
+  position: absolute;
+}
+/* line 124, _defaults.scss */
+blockquote .mpcth-blockquote-border-left {
+  border-right: 3px solid #444444;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-color: inherit;
+}
+/* line 132, _defaults.scss */
+blockquote .mpcth-blockquote-border-right {
+  border-right: 3px solid #444444;
+  border-color: inherit;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 140, _defaults.scss */
+blockquote .mpcth-blockquote-border-top {
+  border-bottom: 3px solid #444444;
+  border-color: inherit;
+  top: 0;
+  left: 0;
+  right: 2.86rem;
+}
+/* line 148, _defaults.scss */
+blockquote .mpcth-blockquote-border-bottom {
+  border-bottom: 3px solid #444444;
+  border-color: inherit;
+  bottom: 0;
+  left: 2.86rem;
+  right: 0;
+}
+
+/* line 156, _defaults.scss */
+.mpc-sc-column blockquote {
+  margin: 0;
+}
+
+/* line 161, _defaults.scss */
+blockquote cite {
+  font-style: normal;
+  display: block;
+  text-align: right;
+  margin-top: 1em;
+  font-size: .88em;
+}
+
+/* line 168, _defaults.scss */
+blockquote > *:first-child {
+  margin-top: 0;
+}
+
+/* line 169, _defaults.scss */
+blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+/* line 171, _defaults.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 172, _defaults.scss */
+dd {
+  margin-bottom: .5em;
+}
+
+/* line 174, _defaults.scss */
+ul, ol {
+  padding-left: 2em;
+}
+
+/* line 176, _defaults.scss */
+acronym[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 180, _defaults.scss */
+code, kbd, pre, samp {
+  font-size: .88em;
+  padding: .1em .5em;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* line 186, _defaults.scss */
+pre {
+  padding: 1rem;
+  white-space: pre-wrap;
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.04) 50%);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.04) 50%);
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.04) 50%);
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.04) 50%);
+  background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.04) 50%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, rgba(0, 0, 0, 0.01)), color-stop(0.5, rgba(0, 0, 0, 0.04)));
+  background-size: 3rem 3rem;
+  background-position: 0 1rem;
+}
+
+/* line 200, _defaults.scss */
+q {
+  font-style: italic;
+}
+
+/* line 203, _defaults.scss */
+.sticky {
+  border-width: 1px;
+}
+
+/* line 204, _defaults.scss */
+.wp-caption-text {
+  font-style: italic;
+}
+
+/* line 205, _defaults.scss */
+.gallery-caption {
+  font-style: italic;
+}
+
+/* line 206, _defaults.scss */
+.alignright {
+  float: right;
+  margin-left: 1rem;
+}
+
+/* line 207, _defaults.scss */
+.alignleft {
+  float: left;
+  margin-right: 1rem;
+}
+
+/* line 208, _defaults.scss */
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 209, _defaults.scss */
+.bypostauthor .mpcth-comment-header .fa {
+  display: inline-block;
+}
+
+/* line 211, _defaults.scss */
+.wp-caption {
+  max-width: 100%;
+}
+
+/* line 212, _defaults.scss */
+.wp-caption-text {
+  margin-top: 0;
+}
+
+/* line 214, _defaults.scss */
+.mpcth-flip {
+  position: relative;
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 1.1;
+  overflow: hidden;
+}
+/* line 222, _defaults.scss */
+.mpcth-flip .fa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 1.1;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 232, _defaults.scss */
+.mpcth-flip .fa.mpcth-hover {
+  top: 1.4rem;
+}
+/* line 235, _defaults.scss */
+.mpcth-flip:hover .fa {
+  top: -1.2rem;
+}
+/* line 236, _defaults.scss */
+.mpcth-flip:hover .fa.mpcth-hover {
+  top: 0;
+}
+
+/* line 240, _defaults.scss */
+table {
+  margin: 0 0 1.5rem 0;
+}
+
+/* line 244, _defaults.scss */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* line 250, _defaults.scss */
+iframe,
+embed {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* line 258, _defaults.scss */
+.comment-form .form-submit .mpcth-in-border-left,
+.comment-form .form-submit .mpcth-in-border-right,
+.comment-form .form-submit .mpcth-in-border-top,
+.comment-form .form-submit .mpcth-in-border-bottom,
+.mpcth-contact-btn .mpcth-in-border-left,
+.mpcth-contact-btn .mpcth-in-border-right,
+.mpcth-contact-btn .mpcth-in-border-top,
+.mpcth-contact-btn .mpcth-in-border-bottom {
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 265, _defaults.scss */
+.comment-form .form-submit .mpcth-in-border-left,
+.mpcth-contact-btn .mpcth-in-border-left {
+  border-left: 1px solid #dddddd;
+  top: 0;
+  left: 0;
+  bottom: 10px;
+}
+/* line 272, _defaults.scss */
+.comment-form .form-submit .mpcth-in-border-right,
+.mpcth-contact-btn .mpcth-in-border-right {
+  border-left: 1px solid #dddddd;
+  top: 10px;
+  bottom: 0;
+  right: 0;
+}
+/* line 279, _defaults.scss */
+.comment-form .form-submit .mpcth-in-border-top,
+.mpcth-contact-btn .mpcth-in-border-top {
+  border-top: 1px solid #dddddd;
+  right: 10px;
+  left: 0;
+  top: 0;
+}
+/* line 286, _defaults.scss */
+.comment-form .form-submit .mpcth-in-border-bottom,
+.mpcth-contact-btn .mpcth-in-border-bottom {
+  border-top: 1px solid #dddddd;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+}
+/* line 293, _defaults.scss */
+.comment-form .form-submit .mpcth-in-border-ver,
+.mpcth-contact-btn .mpcth-in-border-ver {
+  height: auto;
+}
+/* line 294, _defaults.scss */
+.comment-form .form-submit .mpcth-in-border-hor,
+.mpcth-contact-btn .mpcth-in-border-hor {
+  width: auto;
+}
+/* line 297, _defaults.scss */
+.comment-form .form-submit:hover span,
+.mpcth-contact-btn:hover span {
+  border-color: #f7ca18;
+}
+/* line 301, _defaults.scss */
+.comment-form .form-submit:hover .mpcth-in-border-left,
+.mpcth-contact-btn:hover .mpcth-in-border-left {
+  bottom: 0;
+}
+/* line 302, _defaults.scss */
+.comment-form .form-submit:hover .mpcth-in-border-right,
+.mpcth-contact-btn:hover .mpcth-in-border-right {
+  top: 0;
+}
+/* line 303, _defaults.scss */
+.comment-form .form-submit:hover .mpcth-in-border-top,
+.mpcth-contact-btn:hover .mpcth-in-border-top {
+  right: 0;
+}
+/* line 304, _defaults.scss */
+.comment-form .form-submit:hover .mpcth-in-border-bottom,
+.mpcth-contact-btn:hover .mpcth-in-border-bottom {
+  left: 0;
+}
+
+/* ========================================================================== *
+ * 2. Layout
+ * ========================================================================== */
+/* line 5, layout\_layout.scss */
+.mpcth-sidebar-active {
+  overflow: hidden;
+}
+
+/* lightbox */
+/* line 11, layout\_layout.scss */
+.mfp-container .mfp-close {
+  display: none;
+}
+/* line 15, layout\_layout.scss */
+.mfp-container button.mfp-arrow {
+  background: #ffffff;
+}
+/* line 19, layout\_layout.scss */
+.mfp-container .mfp-arrow-left:before,
+.mfp-container .mfp-arrow-right:before {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+/* line 26, layout\_layout.scss */
+.mfp-container .mfp-arrow-right:before,
+.mfp-container .mfp-arrow-right .mfp-b {
+  border-left: 17px solid #3f3f3f;
+}
+/* line 31, layout\_layout.scss */
+.mfp-container .mfp-arrow:before,
+.mfp-container .mfp-arrow .mfp-b {
+  border-top-width: 14px;
+  border-bottom-width: 14px;
+}
+/* line 37, layout\_layout.scss */
+.mfp-container .mfp-arrow {
+  width: 45px;
+  height: 62px;
+  margin-top: -31px;
+}
+/* line 43, layout\_layout.scss */
+.mfp-container .mfp-arrow:active {
+  margin-top: -31px;
+}
+/* line 47, layout\_layout.scss */
+.mfp-container .mfp-arrow:before,
+.mfp-container .mfp-arrow:after,
+.mfp-container .mfp-arrow .mfp-b,
+.mfp-container .mfp-arrow .mfp-a {
+  margin-top: 17px;
+  margin-left: 17px;
+}
+/* line 55, layout\_layout.scss */
+.mfp-container .mfp-arrow-left:before,
+.mfp-container .mfp-arrow-left .mfp-b {
+  margin-left: 7px;
+  border-right: 17px solid #3f3f3f;
+}
+
+/* line 63, layout\_layout.scss */
+#mpcth_wrapper {
+  position: relative;
+  padding-top: 45px;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+/* line 69, layout\_layout.scss */
+#mpcth_wrapper .mpcth-article-wrapper {
+  margin: 0 auto 70px auto;
+  position: relative;
+  width: 1200px;
+}
+/* line 74, layout\_layout.scss */
+#mpcth_wrapper .mpcth-article-wrapper article {
+  width: 1200px;
+}
+/* line 78, layout\_layout.scss */
+#mpcth_wrapper .mpcth-article-wrapper .mpcth-post-content {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 660px;
+}
+/* line 83, layout\_layout.scss */
+#mpcth_wrapper .mpcth-article-wrapper .mpcth-post-content .mpc-sc-fw {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100%;
+  height: auto;
+}
+/* line 90, layout\_layout.scss */
+#mpcth_wrapper .mpcth-article-wrapper .mpcth-post-content .mpc-sc-fw .mpc-sc-slider {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+/* line 95, layout\_layout.scss */
+#mpcth_wrapper .mpcth-article-wrapper .mpcth-post-content .mpc-sc-fw .mpc-sc-slider .slick-list {
+  height: auto;
+}
+
+/* line 104, layout\_layout.scss */
+.mpcth-post-content h1, .mpcth-post-content h2, .mpcth-post-content h3, .mpcth-post-content h4, .mpcth-post-content h5, .mpcth-post-content h6 {
+  margin: 1.5rem 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+/* line 111, layout\_layout.scss */
+#mpcth_wrapper.mpcth-blog-narrow #mpcth_blog_content {
+  margin: 0 auto;
+  width: 1220px;
+}
+/* line 116, layout\_layout.scss */
+#mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper {
+  margin-left: 30px;
+  width: 1220px;
+}
+/* line 121, layout\_layout.scss */
+#mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper {
+  margin-bottom: 80px;
+  width: 610px;
+}
+/* line 125, layout\_layout.scss */
+#mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper article {
+  width: 570px;
+}
+/* line 129, layout\_layout.scss */
+#mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper .mpcth-post-content {
+  width: 480px;
+  padding: 25px 0 25px 0;
+}
+
+/* line 137, layout\_layout.scss */
+#mpcth_wrapper.mpcth-full-width .mpcth-article-wrapper,
+#mpcth_wrapper.mpcth-full-width article {
+  width: 100%;
+  margin-bottom: -20px;
+}
+/* line 143, layout\_layout.scss */
+#mpcth_wrapper.mpcth-full-width .mpcth-post-content {
+  width: 1200px;
+}
+/* line 147, layout\_layout.scss */
+#mpcth_wrapper.mpcth-full-width .mpcth-post-content {
+  padding: 0;
+}
+
+/* line 153, layout\_layout.scss */
+#mpcth_wrapper.mpcth-contact-template .mpcth-article-wrapper,
+#mpcth_wrapper.mpcth-contact-template article {
+  margin-bottom: 20px;
+}
+
+/* line 159, layout\_layout.scss */
+.mpcth-post-meta {
+  margin: .4rem 0 1.5rem 0;
+  text-transform: uppercase;
+}
+/* line 163, layout\_layout.scss */
+.mpcth-post-meta a {
+  text-decoration: none;
+}
+
+/* line 169, layout\_layout.scss */
+.mpcth-full-width .mpcth-post-thumbnail {
+  width: 100%;
+}
+
+/* line 174, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-post {
+  padding-top: 110px;
+}
+/* line 179, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-post .mpcth-post-thumbnail.mpcth-post-thumbnail-gallery {
+  height: auto;
+}
+/* line 182, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-post .mpcth-post-thumbnail.mpcth-post-thumbnail-gallery .mpcth-slider,
+#mpcth_wrapper.mpcth-single-post .mpcth-post-thumbnail.mpcth-post-thumbnail-gallery .slick-list {
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 193, layout\_layout.scss */
+#mpcth_wrapper .mpcth-post-thumbnail.mpcth-post-thumbnail-alt {
+  height: auto;
+  min-height: 0;
+  line-height: 0;
+}
+/* line 198, layout\_layout.scss */
+#mpcth_wrapper .mpcth-post-thumbnail.mpcth-post-thumbnail-alt img {
+  width: 100%;
+  height: auto;
+}
+/* line 203, layout\_layout.scss */
+#mpcth_wrapper .mpcth-post-thumbnail.mpcth-post-thumbnail-alt img.mpcth-post-thumbnail-smaller {
+  width: 110%;
+  height: 110%;
+  max-width: 110%;
+}
+
+/* line 215, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page .mpcth-article-wrapper {
+  width: 100%;
+}
+/* line 220, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-thumbnail {
+  margin-bottom: -65px;
+}
+/* line 225, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail {
+  height: auto;
+  min-height: 0;
+  margin-bottom: -160px;
+  width: 100%;
+}
+/* line 231, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail.mpcth-content-header {
+  position: relative;
+}
+/* line 235, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail .mpcth-content-header-holder {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 1.5rem;
+}
+/* line 243, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail .mpcth-content-header-holder div {
+  display: inline-block;
+}
+/* line 248, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail .mpcth-content-header-holder:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+}
+/* line 258, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page.mpcth-contact-template article {
+  margin-top: 0px;
+}
+/* line 263, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page article {
+  margin: 65px auto 0;
+}
+/* line 267, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail ~ .mpcth-content-header {
+  overflow: visible;
+}
+/* line 271, layout\_layout.scss */
+#mpcth_wrapper.mpcth-single-page.mpcth-contact-template .mpcth-post-thumbnail {
+  margin-bottom: 0;
+}
+
+/* line 277, layout\_layout.scss */
+.mpcth-post-thumbnail {
+  min-height: 500px;
+  background-position: center;
+  background-repeat: center;
+  background-size: cover;
+  webkit-background-size: cover;
+  moz-background-size: cover;
+  o-background-size: cover;
+  margin: 0 auto;
+  position: relative;
+  width: 1200px;
+  overflow: hidden;
+  line-height: 0.1;
+}
+/* line 291, layout\_layout.scss */
+.mpcth-post-thumbnail.mpcth-post-thumbnail-gallery {
+  overflow: visible;
+}
+/* line 295, layout\_layout.scss */
+.mpcth-post-thumbnail .mpcth-post-thumbnail-smaller {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  webkit-background-size: cover;
+  moz-background-size: cover;
+  o-background-size: cover;
+  opacity: 0;
+  position: absolute;
+  left: -50px;
+  right: -50px;
+  top: -50px;
+  bottom: -50px;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+/* line 312, layout\_layout.scss */
+.mpcth-post-thumbnail .mpcth-post-thumbnail-smaller .mpcth-smaller-overlay {
+  position: absolute;
+  display: block;
+  background: black;
+  width: 100%;
+  height: 100%;
+  opacity: .25;
+  top: 0;
+}
+/* line 324, layout\_layout.scss */
+.mpcth-post-thumbnail:hover .mpcth-post-thumbnail-smaller,
+.mobile .mpcth-post-thumbnail .mpcth-post-thumbnail-smaller {
+  left: 15px;
+  right: 15px;
+  top: 15px;
+  bottom: 15px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 332, layout\_layout.scss */
+.mpcth-post-thumbnail:hover i,
+.mobile .mpcth-post-thumbnail i {
+  display: block;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 337, layout\_layout.scss */
+.mpcth-post-thumbnail i {
+  color: white;
+  font-size: 3rem;
+  margin-top: -3.5rem;
+  margin-left: -3rem;
+  text-align: center;
+  position: absolute;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(204, 0, 102, 0);
+  border: 6px solid #ffffff;
+  height: 90px;
+  width: 90px;
+  -moz-border-radius: 45px;
+  -webkit-border-radius: 45px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.5s 0.25s ease-out 0.25s ease-out;
+  -moz-transition: all 0.5s 0.25s ease-out 0.25s ease-out;
+  -ms-transition: all 0.5s 0.25s ease-out 0.25s ease-out;
+  -o-transition: all 0.5s 0.25s ease-out 0.25s ease-out;
+  transition: all 0.5s 0.25s ease-out 0.25s ease-out;
+}
+/* line 358, layout\_layout.scss */
+.mpcth-post-thumbnail i.fa-music:before {
+  position: relative;
+  top: 1.15rem;
+  left: -0.1rem;
+}
+/* line 364, layout\_layout.scss */
+.mpcth-post-thumbnail i.fa-play:before {
+  position: relative;
+  top: 1.35rem;
+  left: .3rem;
+}
+/* line 370, layout\_layout.scss */
+.mpcth-post-thumbnail i.fa-expand:before {
+  position: relative;
+  top: 1.35rem;
+  left: 0;
+}
+
+/* line 377, layout\_layout.scss */
+.mpcth-bg-image {
+  background-position: center !important;
+  background-repeat: center !important;
+  background-size: cover !important;
+  webkit-background-size: cover !important;
+  moz-background-size: cover !important;
+  o-background-size: cover !important;
+}
+
+/* line 386, layout\_layout.scss */
+.slick-slider {
+  margin-bottom: 0 !important;
+}
+
+/* line 391, layout\_layout.scss */
+.mpcth-blog .mpcth-slider, .mpcth-blog .slick-list {
+  height: 500px;
+}
+
+/* line 396, layout\_layout.scss */
+.mpc-sh-accordion-wrap .mpc-sh-accordion-title h5 {
+  max-width: calc(100% - 38px);
+}
+
+/* ========================================================================== *
+ * 2.1. Header
+ * ========================================================================== */
+/* line 5, layout\_header.scss */
+body.mpcth-overlay-active {
+  overflow: hidden;
+}
+
+/* line 9, layout\_header.scss */
+.logged-in #header_main {
+  margin-top: 32px;
+}
+
+/* line 13, layout\_header.scss */
+#header_main {
+  background: white;
+  min-height: 45px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 101;
+}
+/* line 21, layout\_header.scss */
+#header_main .mpcth-social-icons-wrapper {
+  position: fixed;
+  z-index: 30;
+}
+/* line 26, layout\_header.scss */
+#header_main small.mpcth-description {
+  color: #bbbbbb;
+  font-size: 0.87rem;
+  margin-left: -97px;
+  margin-right: 10px;
+  position: relative;
+  top: .8rem;
+  text-transform: uppercase;
+}
+/* line 36, layout\_header.scss */
+#header_main .mpcth-logo {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  margin: 20px 0 0 30px;
+  position: relative;
+}
+/* line 41, layout\_header.scss */
+#header_main .mpcth-logo h2 {
+  color: #333333;
+  font-size: 2.14rem;
+  font-weight: 800;
+  position: relative;
+  z-index: 20;
+  margin-bottom: 0;
+}
+/* line 49, layout\_header.scss */
+#header_main .mpcth-logo h2 a {
+  text-decoration: none;
+}
+/* line 54, layout\_header.scss */
+#header_main .mpcth-logo img {
+  max-height: 90px;
+}
+@media only screen and (max-width: 54.87rem) {
+  #header_main .mpcth-logo {
+    margin: 0 0 0 20px;
+  }
+  .mpcth-logo-triangle {
+    display: none;
+  }
+}
+
+/* line 61, layout\_header.scss */
+.mpcth-bar {
+  border-left: 15px solid white;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+/* line 69, layout\_header.scss */
+.mpcth-logo-triangle {
+  border-top: 0px solid transparent;
+  border-left: 80px solid white;
+  border-bottom: 85px solid transparent;
+  position: absolute;
+  left: -2.2rem;
+  top: 15px;
+  z-index: 20;
+}
+
+/* line 79, layout\_header.scss */
+.mpcth-sidebar-none .mpcth-sidebar-icon {
+  display: none;
+}
+
+/* line 83, layout\_header.scss */
+.mpcth-social-icons {
+  margin-left: 30px;
+}
+
+/* line 87, layout\_header.scss */
+.mpcth-icons,
+.mpcth-icons li,
+.mpcth-social-icons,
+.mpcth-social-icons li {
+  display: inline-block;
+}
+
+/* line 94, layout\_header.scss */
+.mpcth-icons ul,
+.mpcth-social-icons ul {
+  list-style: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+/* line 101, layout\_header.scss */
+.mpcth-icons a,
+.mpcth-social-icons a {
+  color: #444444;
+  display: inline-block;
+  margin: 0 .5rem;
+  /*height: 1rem;
+  width: 1rem;*/
+}
+
+/* line 110, layout\_header.scss */
+.mpcth-flip-icon {
+  position: relative;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  overflow: hidden;
+}
+
+/* line 118, layout\_header.scss */
+.mpcth-flip-icon .fa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  opacity: 0.35;
+  filter: alpha(opacity=35);
+}
+
+/* line 128, layout\_header.scss */
+.mpcth-icons .mpcth-flip-icon .fa {
+  color: #333333;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 133, layout\_header.scss */
+.fa.mpcth-icon-hover {
+  top: 1.1rem;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 138, layout\_header.scss */
+.mpcth-icons {
+  margin-right: 1.07rem;
+  margin-left: -.5rem;
+}
+/* line 141, layout\_header.scss */
+.mpcth-icons li .mpcth-flip-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+/* line 144, layout\_header.scss */
+.mpcth-icons li .mpcth-flip-icon i {
+  font-size: 1.3rem;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+/* line 150, layout\_header.scss */
+.mpcth-icons .fa.mpcth-icon-hover {
+  top: 1.3rem;
+}
+/* line 154, layout\_header.scss */
+.mpcth-icons .mpcth-flip-icon:hover .fa {
+  top: -1.3rem;
+}
+
+/* line 160, layout\_header.scss */
+.mpcth-flip-icon:hover .fa {
+  top: -1.1rem;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 166, layout\_header.scss */
+.mpcth-flip-icon:hover .fa.mpcth-icon-hover {
+  color: #fcc83d;
+  top: 0;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 174, layout\_header.scss */
+#mpcth_seach_form_holder .mpcth-search-form {
+  position: absolute;
+  left: 11%;
+}
+
+/* line 179, layout\_header.scss */
+#searchform input,
+#mpcth_seach_form_holder,
+#mpcth_overlay {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 186, layout\_header.scss */
+.mpcth-overlay-active #mpcth_seach_form_holder {
+  height: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 194, layout\_header.scss */
+.mpcth-overlay-active #mpcth_overlay {
+  background: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 105;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+/* line 207, layout\_header.scss */
+#searchform input {
+  background: rgba(16, 16, 16, 0.3);
+  border: none;
+  color: #fcc83d;
+  font-size: 4.29rem;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 221, layout\_header.scss */
+.mpcth-overlay-active #searchform {
+  margin-top: 50px;
+  width: 78%;
+  opacity: 1;
+}
+/* line 226, layout\_header.scss */
+.mpcth-overlay-active #searchform input {
+  letter-spacing: 2px;
+  margin-top: 0px;
+}
+
+/* line 232, layout\_header.scss */
+#searchform input:focus {
+  outline: 0;
+}
+
+/* line 236, layout\_header.scss */
+.mpcth-sb {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 243, layout\_header.scss */
+.mpcth-sb.mpcth-sb-l {
+  border-left: 3px solid #fcc83d;
+  top: 0;
+  left: 0;
+  bottom: auto;
+}
+
+/* line 250, layout\_header.scss */
+.mpcth-sb.mpcth-sb-r {
+  border-right: 3px solid #fcc83d;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 256, layout\_header.scss */
+.mpcth-sb.mpcth-sb-t {
+  border-bottom: 3px solid #fcc83d;
+  top: 0;
+  left: 0;
+}
+
+/* line 262, layout\_header.scss */
+.mpcth-sb.mpcth-sb-b {
+  border-bottom: 3px solid #fcc83d;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 269, layout\_header.scss */
+.mpcth-input-focus.mpcth-sb.mpcth-sb-l {
+  height: 85%;
+}
+/* line 273, layout\_header.scss */
+.mpcth-input-focus.mpcth-sb.mpcth-sb-r {
+  height: 85%;
+}
+/* line 277, layout\_header.scss */
+.mpcth-input-focus.mpcth-sb.mpcth-sb-t {
+  width: 97.5%;
+}
+/* line 281, layout\_header.scss */
+.mpcth-input-focus.mpcth-sb.mpcth-sb-b {
+  width: 97.5%;
+}
+
+/* ========================================================================== *
+ * 2.2. Sidebar
+ * ========================================================================== */
+/* line 5, layout\_sidebar.scss */
+body.mpcth-sidebar-none #mpcth_sidebar {
+  display: none;
+}
+
+/* line 10, layout\_sidebar.scss */
+#mpcth_sidebar {
+  background: #333333;
+  color: white;
+  font-weight: 500;
+  height: 100%;
+  width: 300px;
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  z-index: 15;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 22, layout\_sidebar.scss */
+#mpcth_sidebar .mpcth-sidebar-widgets {
+  list-style: none;
+  padding: 50px 30px;
+  margin: 0;
+}
+/* line 28, layout\_sidebar.scss */
+#mpcth_sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+/* line 33, layout\_sidebar.scss */
+#mpcth_sidebar .widget-title {
+  font-size: 1.71rem;
+  line-height: 2rem;
+  padding: 0;
+  margin: 0 0 30px 0;
+  text-align: left;
+}
+/* line 41, layout\_sidebar.scss */
+#mpcth_sidebar .mpcth-active {
+  right: 0px !important;
+}
+
+/* sidebar right side */
+/* line 47, layout\_sidebar.scss */
+.mpcth-sidebar-right #mpcth_sidebar {
+  right: -300px;
+}
+/* line 50, layout\_sidebar.scss */
+.mpcth-sidebar-right #mpcth_sidebar.mpcth-active {
+  right: 0;
+}
+
+/* line 55, layout\_sidebar.scss */
+.mpcth-sidebar-right #mpcth_wrapper {
+  left: 0;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 59, layout\_sidebar.scss */
+.mpcth-sidebar-right.mpcth-sidebar-active #mpcth_wrapper {
+  left: -300px !important;
+}
+
+/* ========================================================================== *
+ * 2.3. Footer
+ * ========================================================================== */
+/* line 4, layout\_footer.scss */
+section#footer {
+  background: #333333;
+  color: #ebebeb;
+  margin-top: 120px;
+  position: relative;
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+/* line 15, layout\_footer.scss */
+section#footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+/* line 20, layout\_footer.scss */
+section#footer .mpcth-footer-widgets {
+  width: 850px;
+}
+/* line 23, layout\_footer.scss */
+section#footer .mpcth-footer-widgets li.widget {
+  float: left;
+  display: inline-block;
+  padding-left: 35px;
+  vertical-align: top;
+  text-align: left;
+}
+/* line 31, layout\_footer.scss */
+section#footer .mpcth-footer-widgets.mpcth-footer-columns-5 li.widget {
+  width: 170px;
+}
+/* line 35, layout\_footer.scss */
+section#footer .mpcth-footer-widgets.mpcth-footer-columns-4 li.widget {
+  width: 212px;
+}
+/* line 39, layout\_footer.scss */
+section#footer .mpcth-footer-widgets.mpcth-footer-columns-3 li.widget {
+  width: 283px;
+}
+/* line 43, layout\_footer.scss */
+section#footer .mpcth-footer-widgets.mpcth-footer-columns-2 li.widget {
+  width: 425px;
+}
+/* line 47, layout\_footer.scss */
+section#footer .mpcth-footer-widgets.mpcth-footer-columns-1 li.widget {
+  width: 100%;
+}
+
+/* line 53, layout\_footer.scss */
+.mpcth-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 5;
+}
+
+/* line 60, layout\_footer.scss */
+.mpcth-footer-left-side {
+  border-top: 160px solid transparent;
+  border-left: 500px solid #f7ca18;
+  border-right: 0;
+  border-bottom: 0px solid transparent;
+  top: -140px;
+}
+
+/* line 68, layout\_footer.scss */
+.mpcth-footer-right-side {
+  border-top: 195px solid transparent;
+  border-right: 700px solid #ffffff;
+  border-bottom: 0px solid transparent;
+  right: 0;
+  top: -175px;
+}
+
+/* line 76, layout\_footer.scss */
+.mpcth-footer-top {
+  border-top: 60px solid transparent;
+  border-left: 0;
+  border-right: 700px solid #333333;
+  border-bottom: 0px solid transparent;
+  top: -40px;
+}
+
+/* line 84, layout\_footer.scss */
+#mpcth_footer {
+  margin: 0rem auto;
+  text-align: center;
+  width: 1200px;
+  padding: 40px 0 0 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 93, layout\_footer.scss */
+#mpcth_footer .footer-widget-title {
+  color: white;
+  font-size: 1.7rem;
+  line-height: 100%;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+/* line 101, layout\_footer.scss */
+#footer .mpcth-footer-widgets {
+  float: left;
+}
+
+/* line 105, layout\_footer.scss */
+#footer .mpcth-widget-place {
+  background: transparent url("assets/images/mpcth-divider.png") no-repeat right center;
+  float: left;
+  margin-left: 0;
+  min-width: 300px;
+  margin: 0;
+  padding-right: 40px;
+  position: relative;
+  width: 300px;
+}
+
+/* line 116, layout\_footer.scss */
+.mpcth-post-footer {
+  clear: both;
+}
+
+/* ========================================================================== *
+ * 3. Page
+ * ========================================================================== */
+/* line 4, pages\_page.scss */
+.mpcth-post-title,
+.mpcth-post-title a {
+  color: white;
+  font-size: 3.43rem;
+  line-height: 3.7rem;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* line 13, pages\_page.scss */
+article {
+  position: relative;
+  color: #444444;
+  font-weight: 500;
+}
+/* line 18, pages\_page.scss */
+article .mpcth-article-top {
+  border-top: 25px solid transparent;
+  border-left: 0;
+  border-right: 1200px solid #fcc83d;
+  border-bottom: 0px solid transparent;
+  position: absolute;
+  right: 0;
+  top: -25px;
+}
+/* line 28, pages\_page.scss */
+article .mpcth-article-bottom {
+  border-bottom: 25px solid transparent;
+  border-right: 0;
+  border-left: 1200px solid #fcc83d;
+  border-top: 0px solid transparent;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+}
+
+/* line 39, pages\_page.scss */
+.mpcth-post-meta {
+  font-size: .87rem;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  padding-bottom: 10px;
+}
+
+/* line 46, pages\_page.scss */
+#mpcth_wrapper.mpcth-page .mpcth-article-wrapper {
+  background: #f5f5f5;
+  margin-top: 45px;
+  margin-bottom: 65px;
+}
+/* line 52, pages\_page.scss */
+#mpcth_wrapper.mpcth-page article {
+  color: #444444;
+  padding: 45px 0;
+}
+/* line 56, pages\_page.scss */
+#mpcth_wrapper.mpcth-page article a:hover {
+  color: #fcc83d;
+}
+/* line 60, pages\_page.scss */
+#mpcth_wrapper.mpcth-page article.has-post-thumbnail {
+  margin-top: -140px;
+}
+/* line 65, pages\_page.scss */
+#mpcth_wrapper.mpcth-page .mpcth-post-title {
+  font-size: 3.43rem;
+  line-height: 105%;
+  margin: 0;
+}
+/* line 71, pages\_page.scss */
+#mpcth_wrapper.mpcth-page .mpcth-post-meta a {
+  color: #444444;
+  text-decoration: none;
+}
+/* line 77, pages\_page.scss */
+#mpcth_wrapper.mpcth-page.mpcth-page-full article {
+  padding: 45px 95px;
+}
+
+/* line 86, pages\_page.scss */
+#mpcth_wrapper.mpcth-full-width article {
+  padding: 40px 100px;
+}
+
+/* line 94, pages\_page.scss */
+.mpcth-article-top {
+  border-top: 25px solid transparent;
+  border-left: 0;
+  border-right: 1200px solid #f5f5f5;
+  border-bottom: 0px solid transparent;
+  position: absolute;
+  right: 0;
+  top: -25px;
+}
+
+/* line 104, pages\_page.scss */
+.mpcth-article-bottom {
+  border-bottom: 25px solid transparent;
+  border-right: 0;
+  border-left: 1200px solid #f5f5f5;
+  border-top: 0px solid transparent;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+}
+
+/* line 116, pages\_page.scss */
+.mpcth-google-map iframe {
+  height: 570px;
+}
+
+/* line 120, pages\_page.scss */
+.place-card,
+.login-control,
+.default-card {
+  margin-top: 400px;
+}
+
+/* ========================================================================== *
+ * 3.1. Archive
+ * ========================================================================== */
+/* line 5, pages\_archive.scss */
+.archive .mpcth-post-thumbnail img {
+  width: 100%;
+}
+/* line 9, pages\_archive.scss */
+.archive #mpcth_filters ul {
+  display: inline;
+  padding: 0;
+}
+
+/* line 15, pages\_archive.scss */
+.mpcth-archive-header {
+  text-align: center;
+  padding: 10rem 0;
+}
+
+/* line 20, pages\_archive.scss */
+.mpcth-archive-header .mpcth-title {
+  display: block;
+  padding-bottom: .2rem;
+  position: relative;
+}
+
+/* line 26, pages\_archive.scss */
+.mpcth-archive-header .mpcth-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 0;
+  width: 100px;
+  margin-left: -50px;
+  border-bottom: 1px solid;
+}
+
+/* line 37, pages\_archive.scss */
+.mpcth-archive-header h1 {
+  margin: 0 auto;
+  max-width: 47.14rem;
+}
+
+/* line 43, pages\_archive.scss */
+.error404 .mpcth-search-page .mpcth-post-not-found,
+.search .mpcth-search-page .mpcth-post-not-found {
+  margin: 0 auto 80px auto;
+  width: 1200px;
+}
+/* line 48, pages\_archive.scss */
+.error404 .mpcth-search-page .mpcth-post-not-found .mpcth-post-content,
+.search .mpcth-search-page .mpcth-post-not-found .mpcth-post-content {
+  margin: 0 auto;
+  padding: 45px 0 25px 0;
+  width: 660px;
+}
+
+/* line 55, pages\_archive.scss */
+.error404 .mpcth-search-page .mpcth-intro h2,
+.search .mpcth-search-page .mpcth-intro h2 {
+  color: white;
+}
+
+/* line 60, pages\_archive.scss */
+.error404 .mpcth-search-page .mpcth-post-not-found,
+.search .mpcth-search-page .mpcth-search-post-title {
+  color: #ffffff;
+}
+
+/* line 66, pages\_archive.scss */
+.mpcth-post-not-found #searchform {
+  margin: 1.5rem 0;
+}
+
+/* line 70, pages\_archive.scss */
+.mpcth-post-not-found #searchform #s {
+  background: rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  display: block;
+  margin: 0;
+  width: 100%;
+  padding: 14px 28px;
+}
+
+/* line 79, pages\_archive.scss */
+.mpcth-post-not-found #searchform #searchsubmit {
+  display: none !important;
+}
+
+/* line 83, pages\_archive.scss */
+.mpcth-post-meta .mpcth-cat-separator:last-child {
+  display: none;
+}
+
+@media only screen and (max-width: 51.14rem) {
+  /* line 89, pages\_archive.scss */
+  .error404 .mpcth-post-wrap,
+  .search .mpcth-post-wrap,
+  .archive .mpcth-post-wrap {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+/* ========================================================================== *
+ * 3.2. Blog
+ * ========================================================================== */
+/* line 4, pages\_blog.scss */
+#mpcth_wrapper.mpcth-single-post,
+#mpcth_wrapper.mpcth-portfolio-mp,
+#mpcth_wrapper.mpcth-blog {
+  background: #444349;
+}
+
+/* line 10, pages\_blog.scss */
+#mpcth_wrapper,
+#mpcth_wrapper.mpcth-single-page,
+#mpcth_wrapper.mpcth-portfolio-mp-alt {
+  background: #ededed;
+}
+
+/* line 17, pages\_blog.scss */
+.mpcth-blog {
+  background: #444349;
+}
+/* line 20, pages\_blog.scss */
+.mpcth-blog .mpcth-post-meta,
+.mpcth-blog .mpcth-post-meta a {
+  color: white;
+}
+/* line 25, pages\_blog.scss */
+.mpcth-blog .mpcth-post-meta a:hover {
+  color: #444444;
+}
+
+/* line 33, pages\_blog.scss */
+.mpcth-blog.mpcth-single-page .mpcth-post-meta,
+.mpcth-blog.mpcth-single-page .mpcth-post-meta a,
+.mpcth-blog.mpcth-single-post .mpcth-post-meta,
+.mpcth-blog.mpcth-single-post .mpcth-post-meta a {
+  color: #444444;
+}
+
+/* line 39, pages\_blog.scss */
+.mpcth-intro {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 190px 0 110px 0;
+  margin: 0 auto;
+  width: 660px;
+}
+/* line 46, pages\_blog.scss */
+.mpcth-intro h2 {
+  font-size: 4.29rem;
+  line-height: 100%;
+  margin: 0;
+}
+/* line 52, pages\_blog.scss */
+.mpcth-intro .mpcth-post-title {
+  line-height: 105%;
+}
+
+/* line 57, pages\_blog.scss */
+.mpcth-blog-page {
+  margin: 0 auto;
+  width: 1200px;
+}
+/* line 62, pages\_blog.scss */
+.mpcth-blog-page.mpcth-blog-wide .mpcth-article-wrapper {
+  background: #fcc83d;
+}
+/* line 64, pages\_blog.scss */
+.mpcth-blog-page.mpcth-blog-wide .mpcth-article-wrapper article {
+  margin: 0 auto 60px;
+  padding: 40px 0px;
+  width: 660px;
+}
+/* line 70, pages\_blog.scss */
+.mpcth-blog-page.mpcth-blog-wide .mpcth-article-wrapper .mpcth-article-bottom {
+  border-left-color: #fcc83d;
+}
+/* line 74, pages\_blog.scss */
+.mpcth-blog-page.mpcth-blog-wide .mpcth-article-wrapper .mpcth-article-top {
+  border-right-color: #fcc83d;
+}
+
+/* line 81, pages\_blog.scss */
+.mpcth-filters-wrap {
+  text-transform: uppercase;
+}
+/* line 84, pages\_blog.scss */
+.mpcth-filters-wrap ul {
+  padding: 0;
+}
+/* line 88, pages\_blog.scss */
+.mpcth-filters-wrap li {
+  display: inline;
+  list-style: none;
+}
+/* line 92, pages\_blog.scss */
+.mpcth-filters-wrap li:last-child .mpcth-cat-separator {
+  display: none;
+}
+/* line 97, pages\_blog.scss */
+.mpcth-filters-wrap a {
+  text-decoration: none;
+}
+/* line 101, pages\_blog.scss */
+.mpcth-filters-wrap a.portfolio-active-category,
+.mpcth-filters-wrap a:hover {
+  color: #fcc83d;
+}
+
+/* line 108, pages\_blog.scss */
+.mpcth-button {
+  color: white;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 5px;
+  position: relative;
+  padding: .35rem 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* line 120, pages\_blog.scss */
+.mpcth-button.more-link {
+  display: block;
+  font-weight: 600;
+  margin-top: 20px;
+  width: 8.3em;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+}
+/* line 127, pages\_blog.scss */
+.mpcth-button.more-link:hover {
+  text-decoration: none !important;
+}
+/* line 132, pages\_blog.scss */
+.mpcth-button:hover .mpcth-in-border-left {
+  bottom: 0;
+}
+/* line 133, pages\_blog.scss */
+.mpcth-button:hover .mpcth-in-border-right {
+  top: 0;
+}
+/* line 134, pages\_blog.scss */
+.mpcth-button:hover .mpcth-in-border-top {
+  right: 0;
+}
+/* line 135, pages\_blog.scss */
+.mpcth-button:hover .mpcth-in-border-bottom {
+  left: 0;
+}
+/* line 139, pages\_blog.scss */
+.mpcth-button .mpcth-in-border {
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 143, pages\_blog.scss */
+.mpcth-button .mpcth-in-border-ver {
+  height: auto;
+}
+/* line 144, pages\_blog.scss */
+.mpcth-button .mpcth-in-border-hor {
+  width: auto;
+}
+/* line 146, pages\_blog.scss */
+.mpcth-button .mpcth-in-border-left {
+  border-left: 1px solid white;
+  top: 0;
+  left: 0;
+  bottom: 10px;
+  border-color: inherit;
+}
+/* line 154, pages\_blog.scss */
+.mpcth-button .mpcth-in-border-right {
+  border-left: 1px solid white;
+  top: 10px;
+  bottom: 0;
+  right: 0;
+  border-color: inherit;
+}
+/* line 162, pages\_blog.scss */
+.mpcth-button .mpcth-in-border-top {
+  border-top: 1px solid white;
+  right: 10px;
+  top: 0;
+  left: 0;
+  border-color: inherit;
+}
+/* line 170, pages\_blog.scss */
+.mpcth-button .mpcth-in-border-bottom {
+  border-top: 1px solid white;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  border-color: inherit;
+}
+
+/* line 181, pages\_blog.scss */
+.mpcth-blog.mpcth-blog-narrow .mpcth-article-wrapper {
+  clear: none;
+  margin-left: 0 !important;
+  margin-right: 40px;
+}
+/* line 187, pages\_blog.scss */
+.mpcth-blog.mpcth-blog-narrow .mpcth-slider, .mpcth-blog.mpcth-blog-narrow .slick-list {
+  height: 370px;
+}
+/* line 191, pages\_blog.scss */
+.mpcth-blog.mpcth-blog-narrow .mpcth-post-thumbnail {
+  height: 370px;
+  min-height: 370px;
+  margin: 0;
+  width: 570px;
+}
+/* line 198, pages\_blog.scss */
+.mpcth-blog.mpcth-blog-narrow article {
+  width: 570px;
+}
+/* line 202, pages\_blog.scss */
+.mpcth-blog.mpcth-blog-narrow .mpcth-article-top {
+  border-right-width: 570px;
+  border-top: 40px solid transparent;
+  top: -40px;
+}
+/* line 208, pages\_blog.scss */
+.mpcth-blog.mpcth-blog-narrow .mpcth-article-bottom {
+  border-left-width: 570px;
+  border-bottom: 40px solid transparent;
+  bottom: -40px;
+}
+/* line 214, pages\_blog.scss */
+.mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top {
+  border-right: 0;
+  border-left: 570px solid #fcc83d;
+}
+/* line 219, pages\_blog.scss */
+.mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom {
+  border-left: 0;
+  border-right: 570px solid #fcc83d;
+}
+
+/* ========================================================================== *
+ * 3.3. Portfolio
+ * ========================================================================== */
+/* line 4, pages\_portfolio.scss */
+#mpcth_blog_content,
+#mpcth_portfolio_content,
+.single .mpcth-article-wrapper,
+.mpcth-single-page .mpcth-article-wrapper {
+  opacity: 0;
+  top: 50px;
+}
+
+/* line 12, pages\_portfolio.scss */
+#mpcth_portfolio_content {
+  margin: 40px auto 0 auto;
+  width: 1200px;
+}
+
+/* line 17, pages\_portfolio.scss */
+.mpcth-portfolio-mp-alt #mpcth_portfolio_content {
+  margin-top: 20px;
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+/* line 25, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail {
+  float: left;
+  height: 380px;
+  min-height: 380px;
+  width: 580px;
+}
+/* line 32, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content {
+  float: left;
+  position: relative;
+  width: 580px;
+}
+/* line 37, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content {
+  background: #fcc83d;
+  height: 340px;
+  margin-top: 40px;
+  padding: 20px 40px 15px;
+  overflow-y: auto;
+}
+/* line 46, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp article {
+  background: none;
+  margin: 0 20px 40px 20px;
+  padding: 0;
+  width: 1160px;
+}
+/* line 52, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp article .more-link {
+  display: none;
+}
+
+/* line 58, pages\_portfolio.scss */
+.mpcth-portfolio-triangle.mpcth-portfolio-triangle-top {
+  border-top: 40px solid transparent;
+  border-right: 0;
+  border-left: 580px solid #fcc83d;
+  border-bottom: 0px solid transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 68, pages\_portfolio.scss */
+.mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom {
+  border-bottom: 41px solid transparent;
+  border-left: 0;
+  border-right: 580px solid #fcc83d;
+  border-top: 0px solid transparent;
+  position: absolute;
+  right: 0;
+  bottom: -41px;
+}
+
+/* line 78, pages\_portfolio.scss */
+.mpcth-portfolio-title {
+  font-size: 3.43rem;
+  line-height: 100%;
+  letter-spacing: 1px;
+  margin: 0 0 .5rem 0;
+}
+/* line 84, pages\_portfolio.scss */
+.mpcth-portfolio-title a {
+  text-decoration: none;
+}
+
+/* line 89, pages\_portfolio.scss */
+.mpc_portfolio .mpcth-portfolio-cat-item ul {
+  font-size: 0.86rem;
+  padding: 0;
+  margin: 0 0 28px 0;
+}
+/* line 94, pages\_portfolio.scss */
+.mpc_portfolio .mpcth-portfolio-cat-item ul li {
+  display: inline-block;
+  list-style: none;
+  text-transform: uppercase;
+}
+/* line 99, pages\_portfolio.scss */
+.mpc_portfolio .mpcth-portfolio-cat-item ul li a {
+  text-decoration: none;
+}
+/* line 103, pages\_portfolio.scss */
+.mpc_portfolio .mpcth-portfolio-cat-item ul li a:hover {
+  color: #444444;
+}
+/* line 108, pages\_portfolio.scss */
+.mpc_portfolio .mpcth-portfolio-cat-item ul li:last-child .mpcth-cat-separator {
+  display: none;
+}
+
+/* line 115, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .slick-slider {
+  margin-bottom: 0;
+}
+/* line 119, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt #mpcth_main {
+  margin: 0;
+  width: 100%;
+}
+/* line 124, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-content {
+  height: 0;
+  margin-top: 0;
+  padding: 0;
+  opacity: 0;
+}
+/* line 131, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a {
+  color: #444444;
+}
+/* line 135, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt li a:hover,
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt li a.portfolio-active-category {
+  color: #fcc83d;
+}
+/* line 140, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-post-thumbnail {
+  float: none;
+  height: 400px !important;
+  min-height: 400px;
+  width: 100%;
+}
+/* line 147, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .format-standard .mpcth-post-thumbnail-smaller {
+  display: none;
+}
+/* line 151, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt article {
+  margin: 0;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-top: 60px;
+  margin-bottom: -50px;
+  width: 100%;
+}
+/* line 160, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-pagination article {
+  padding-left: 0;
+}
+/* line 164, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt a.mpcth-lightbox {
+  position: absolute;
+  top: 59px;
+  right: 40px;
+  height: 90px;
+  width: 90px;
+}
+/* line 172, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt i {
+  position: absolute;
+  z-index: 50;
+  opacity: 1;
+  color: white;
+  font-size: 3rem;
+  display: none;
+  text-align: center;
+  background-color: rgba(204, 0, 102, 0);
+  border: 6px solid #ffffff;
+  height: 90px;
+  width: 90px;
+  border-radius: 45px;
+  -ms-border-radius: 45px;
+  -moz-border-radius: 45px;
+  -webkit-border-radius: 45px;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 189, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt i:before {
+  position: relative;
+  top: 1.35rem;
+  left: .3rem;
+}
+/* line 195, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt i.fa-music:before {
+  position: relative;
+  top: 1.15rem;
+  left: -0.1rem;
+}
+/* line 201, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt i.fa-play:before {
+  position: relative;
+  top: 1.35rem;
+  left: .3rem;
+}
+/* line 207, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-content {
+  height: 0;
+  margin: 0;
+  width: 580px;
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  z-index: 100;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 218, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-content .mpcth-portfolio-main-content {
+  height: 400px;
+  margin-top: 60px;
+  padding: 20px 40px 15px;
+  overflow-y: auto;
+}
+/* line 226, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-header .mpcth-portfolio-filter a:hover {
+  color: #444444;
+}
+/* line 230, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-triangle-top {
+  border-top: 0rem solid transparent;
+  border-left: 0;
+  border-right: 580px solid #fcc83d;
+  border-bottom: 0px solid transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 241, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt article:hover .mpcth-portfolio-content {
+  height: 100%;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 246, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt article:hover .mpcth-portfolio-content .mpcth-portfolio-triangle-top {
+  border-top-width: 60px;
+}
+/* line 250, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt article:hover .mpcth-portfolio-content i {
+  display: block;
+}
+/* line 254, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt article:hover article:hover .mpcth-portfolio-content .mpcth-portfolio-main-content {
+  height: 400px;
+  margin-top: 60px;
+  padding: 35px 40px 14px;
+  opacity: 1;
+}
+/* line 262, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-fa-present .mpcth-portfolio-title {
+  width: 75%;
+}
+/* line 266, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-intro {
+  color: #444444;
+}
+/* line 270, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-slider .slick-prev {
+  left: 25px;
+  top: 46%;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+/* line 276, pages\_portfolio.scss */
+#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-slider .slick-next {
+  right: 25px;
+  top: 46%;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+/* ========================================================================== *
+ * 3.4. Single Post
+ * ========================================================================== */
+/* ========================================================================== *
+ * 3.5. Single Portfolio
+ * ========================================================================== */
+/* line 4, pages\_single-portfolio.scss */
+body.mpcth-portfolio-single {
+  background: #444349;
+}
+
+/* line 8, pages\_single-portfolio.scss */
+.mpcth-mobile-gate {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* line 18, pages\_single-portfolio.scss */
+.mpcth-portfolio-single #mpcth_wrapper {
+  background: #444349;
+  padding-top: 16px;
+}
+/* line 22, pages\_single-portfolio.scss */
+.mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content {
+  padding: 0;
+  width: 1200px;
+}
+/* line 28, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-single-post article {
+  background: none;
+  margin: 130px auto 100px;
+}
+/* line 33, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-portfolio-content {
+  background: #fcc83d;
+  float: left;
+  margin-top: 35px;
+  width: 400px;
+}
+/* line 39, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-portfolio-content .mpcth-portfolio-filter a {
+  color: white;
+}
+/* line 44, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-article-top {
+  display: none;
+}
+/* line 48, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-portfolio-main-content {
+  height: 94%;
+  margin-top: 35px;
+  padding: 0 40px 14px 40px;
+  overflow: auto;
+}
+/* line 55, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-portfolio-title {
+  color: white;
+  font-size: 4.29rem;
+  line-height: 95%;
+}
+/* line 60, pages\_single-portfolio.scss */
+.mpcth-portfolio-single article {
+  background: none !important;
+  padding: 0;
+}
+/* line 65, pages\_single-portfolio.scss */
+.mpcth-portfolio-single article .mpcth-article-bottom {
+  display: none;
+}
+/* line 69, pages\_single-portfolio.scss */
+.mpcth-portfolio-single article .mpcth-post-content {
+  max-width: inherit;
+  position: relative;
+  width: inherit;
+}
+/* line 74, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-post-thumbnail {
+  float: none;
+  height: auto;
+  min-height: 100%;
+  width: 800px;
+}
+/* line 81, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-post-thumbnail.mpcth-thumbnail-extra-image {
+  height: auto !important;
+  line-height: 0;
+}
+/* line 84, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-post-thumbnail.mpcth-thumbnail-extra-image img {
+  position: relative !important;
+}
+/* line 88, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-post-thumbnail.mpcth-thumbnail-extra-image .mpcth-smaller-overlay {
+  top: 0;
+}
+/* line 93, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-post-thumbnail-gallery {
+  width: auto;
+}
+/* line 97, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-post-thumbnail .hide_thumbnail {
+  display: none;
+}
+/* line 101, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top {
+  border-top: 35px solid transparent;
+  border-left: 0 !important;
+  border-right: 400px solid #fcc83d;
+  border-bottom: 0px solid transparent;
+  position: absolute;
+  right: auto;
+  left: 0;
+  top: 0;
+}
+/* line 112, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom {
+  border-bottom: 35px solid transparent;
+  border-right: 0 !important;
+  border-left: 400px solid #fcc83d;
+  border-top: 0px solid transparent;
+  position: absolute;
+  right: auto;
+  left: 0;
+  bottom: -35px;
+}
+/* line 124, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .format-gallery .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom {
+  bottom: -15px;
+}
+/* line 129, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-extra-images {
+  margin-left: 400px;
+}
+/* line 133, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-extra-images .mpcth-post-thumbnail {
+  float: none;
+}
+/* line 137, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-slider .slick-prev {
+  left: 25px;
+  top: 48%;
+  /*@include opacity(.8)*/
+}
+/* line 143, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-slider .slick-next {
+  right: 25px;
+  top: 48%;
+  /*@include opacity(.8)*/
+}
+/* line 149, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-slider .slick-slide img {
+  height: auto;
+}
+/* line 153, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-slider,
+.mpcth-portfolio-single .slick-list {
+  height: auto;
+}
+/* line 158, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .slick-slider {
+  overflow: hidden;
+}
+/* line 162, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .mpcth-slide-wrap img {
+  height: inherit;
+}
+/* line 166, pages\_single-portfolio.scss */
+.mpcth-portfolio-single .slick-slider, .mpcth-portfolio-single .mpcth-portfolio-single .slick-list,
+.mpcth-portfolio-single .slick-track, .mpcth-portfolio-single .mpcth-portfolio-single .mpcth-slide,
+.mpcth-portfolio-single .mpcth-slide-wrap {
+  margin: 0;
+}
+
+/* line 174, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper #mpcth_wrapper {
+  background: #ededed;
+}
+/* line 178, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-article-wrapper {
+  width: 100%;
+}
+/* line 182, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-title {
+  font-size: 4.29rem;
+}
+/* line 186, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper article {
+  padding: 0;
+  margin-bottom: -137px;
+  width: 100%;
+}
+/* line 191, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper article .mpcth-post-content {
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+/* line 199, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+}
+/* line 206, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail:hover .mpcth-post-thumbnail-smaller,
+.mobile.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail .mpcth-post-thumbnail-smaller {
+  left: 30px;
+}
+/* line 210, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail:hover .mpcth-post-thumbnail-smaller img,
+.mobile.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail .mpcth-post-thumbnail-smaller img {
+  position: absolute;
+}
+/* line 215, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail img {
+  height: auto;
+  width: 100%;
+}
+/* line 220, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-portfolio-cat-item ul {
+  color: #bcbcbc;
+  padding-left: 0;
+}
+/* line 223, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-portfolio-cat-item ul a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 229, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-portfolio-cat-item ul a:hover {
+  color: #fcc83d;
+}
+/* line 233, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-portfolio-cat-item ul li {
+  display: inline;
+  list-style: none;
+  margin: 0 0.5rem;
+}
+/* line 240, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-article-bottom,
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-article-top {
+  display: none;
+}
+/* line 245, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-intro {
+  color: #444444;
+  padding-top: 155px;
+}
+/* line 249, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-intro li:last-child .mpcth-cat-separator {
+  display: inline;
+}
+/* line 254, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper #mpcth_main_content {
+  margin-bottom: -60px;
+}
+/* line 258, pages\_single-portfolio.scss */
+.mpcth-portfolio-single-alt #mpcth_wrapper #mpcth-respond-wrapper {
+  margin-top: 150px;
+  margin-bottom: 60px;
+}
+
+/* line 264, pages\_single-portfolio.scss */
+.mpcth-extra-images .mpcth-extra-image-wrapper {
+  line-height: 0;
+  margin-top: 15px;
+}
+
+/* line 269, pages\_single-portfolio.scss */
+.mpcth-extra-images img {
+  height: auto;
+  width: 100%;
+}
+
+/* ========================================================================== *
+ * 3.6. Home Page
+ * ========================================================================== */
+/* line 4, pages\_home-page.scss */
+.mpcth-home-wide-triangle {
+  border-top: 240px solid transparent;
+  border-right: 800px solid #f7ca18;
+  border-left: 0;
+  border-bottom: 0px solid transparent;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  z-index: 50;
+}
+
+/* line 15, pages\_home-page.scss */
+.mpcth-home-slim-triangle {
+  border-bottom: 340px solid white;
+  border-left: 0px solid transparent;
+  border-right: 640px solid transparent;
+  height: 0;
+  width: 609px;
+  position: absolute;
+  bottom: -105px;
+  left: 20%;
+  z-index: 50;
+  -webkit-transform: rotate(-16deg);
+  -moz-transform: rotate(-16deg);
+  -o-transform: rotate(-16deg);
+  -ms-transform: rotate(-16deg);
+  transform: rotate(-16deg);
+}
+
+/* line 28, pages\_home-page.scss */
+body.home:not(.blog) {
+  overflow: hidden;
+}
+
+/* line 30, pages\_home-page.scss */
+#mpcth_content.mpcth-home {
+  height: 100%;
+  padding-bottom: 0 !important;
+  width: 100%;
+  position: absolute;
+}
+/* line 36, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-post-thumbnail {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 43, pages\_home-page.scss */
+#mpcth_content.mpcth-home .tp-leftarrow {
+  left: 15px !important;
+}
+/* line 47, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-slider {
+  height: inherit;
+}
+/* line 50, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-slider .slick-prev {
+  left: 45px;
+}
+/* line 51, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-slider .slick-next {
+  right: 30px;
+}
+/* line 54, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-gallery-item,
+#mpcth_content.mpcth-home .mpcth-slide-wrap {
+  height: 100%;
+}
+/* line 59, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-widget {
+  color: white;
+  font-weight: 600;
+  margin: 0 2.14rem 0 0;
+  padding-bottom: 0 !important;
+  position: absolute;
+  bottom: 65px;
+  right: 0;
+  text-align: right;
+  width: 420px;
+  z-index: 55;
+}
+/* line 71, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-widget h1 {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 3.43rem;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: .15rem;
+  padding: 0;
+  margin: 0 0 .5rem 0;
+}
+/* line 81, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-widget p, #mpcth_content.mpcth-home .mpcth-home-widget ul {
+  color: inherit;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+/* line 87, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-widget ul {
+  padding: 0;
+  margin: .7rem 0 .5rem 0;
+}
+/* line 91, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-widget ul li {
+  display: inline-block;
+  margin: 0 0 0 0.7rem;
+}
+/* line 96, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-widget ul li:not(:first-child):before {
+  content: '';
+  border: 2px solid;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  position: relative;
+  left: -0.9em;
+  display: inline-block;
+  height: 0;
+  width: 3px;
+  margin-bottom: 0.3em;
+  margin-right: -3px;
+  margin-left: 6px;
+}
+/* line 112, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-widget a {
+  color: inherit;
+  text-decoration: none;
+}
+/* line 115, pages\_home-page.scss */
+#mpcth_content.mpcth-home .mpcth-home-widget a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================================================== *
+ * 4. Post Formats
+ * ========================================================================== */
+/* line 4, post-formats\_aside.scss */
+.format-aside .mpcth-post-title a,
+.format-aside .mpcth-post-lead {
+  display: none;
+}
+/* line 9, post-formats\_aside.scss */
+.format-aside .mpcth-post-title {
+  padding-bottom: 1px;
+}
+/* line 12, post-formats\_aside.scss */
+.single .format-aside .mpcth-post-title {
+  padding-bottom: .5em;
+}
+/* line 17, post-formats\_aside.scss */
+.format-aside .mpcth-post-meta {
+  margin-top: 0;
+}
+/* line 21, post-formats\_aside.scss */
+.format-aside .mpcth-post-content {
+  padding-top: 0;
+}
+/* line 25, post-formats\_aside.scss */
+.format-aside .mpcth-post-footer {
+  display: none;
+}
+
+/* line 5, post-formats\_audio.scss */
+.format-audio .mpcth-audio-embed {
+  margin: 1rem 0 4rem 0;
+}
+/* line 8, post-formats\_audio.scss */
+.format-audio .mpcth-audio-shortcode {
+  margin-top: -1em;
+}
+/* line 11, post-formats\_audio.scss */
+.format-audio .mpcth-audio-shortcode .mejs-controls {
+  background: #333;
+}
+/* line 17, post-formats\_audio.scss */
+.format-audio .mpcth-empty + .mpcth-post-thumbnail .mpcth-audio-embed,
+.format-audio .mpcth-empty + .mpcth-post-thumbnail .mpcth-audio-shortcode {
+  margin-top: 2.5em;
+}
+
+/* line 3, post-formats\_chat.scss */
+.page .mpcth-post-thumbnail-smaller.mpcth-post-thumbnail-smaller-chat {
+  display: block;
+  opacity: 1;
+}
+
+/* line 9, post-formats\_chat.scss */
+.mpcth-blog-narrow .mpcth-chat-wrapper {
+  top: 15px;
+  margin: 0 auto;
+  height: 316px;
+  padding: 0 45px;
+}
+
+/* line 17, post-formats\_chat.scss */
+.mpcth-chat-wrapper {
+  color: #ffffff;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 100;
+  overflow-y: auto;
+  top: 7%;
+  margin: 0 auto;
+  height: 545px;
+  padding: 0 270px;
+  line-height: 1.5;
+}
+/* line 35, post-formats\_chat.scss */
+.mpcth-chat-wrapper span {
+  display: block;
+}
+/* line 39, post-formats\_chat.scss */
+.mpcth-chat-wrapper .mpcth-chat-message {
+  color: #f7ca18;
+  clear: both;
+  display: inline-block;
+  padding: .5rem 0rem;
+  margin: .5rem 0;
+  width: 85%;
+}
+/* line 47, post-formats\_chat.scss */
+.mpcth-chat-wrapper .mpcth-chat-message .mpcth-chat-name {
+  color: inherit;
+  font-size: .86rem;
+  margin-top: 5px;
+}
+/* line 54, post-formats\_chat.scss */
+.mpcth-chat-wrapper .mpcth-chat-message-odd {
+  color: #ffffff;
+  float: right;
+  text-align: right;
+}
+
+/* line 4, post-formats\_gallery.scss */
+.mpcth-home-page .slick-list,
+.mpcth-home-page .slick-track {
+  height: 100%;
+}
+/* line 9, post-formats\_gallery.scss */
+.mpcth-home-page .mpcth-slider .slick-prev {
+  transform: translate(0, -100%) rotate(-45deg);
+  -ms-transform: translate(0, -100%) rotate(-45deg);
+  -webkit-transform: translate(0, -100%) rotate(-45deg);
+}
+/* line 15, post-formats\_gallery.scss */
+.mpcth-home-page .mpcth-slider .slick-next {
+  transform: translate(0, -100%) rotate(45deg);
+  -ms-transform: translate(0, -100%) rotate(45deg);
+  -webkit-transform: translate(0, -100%) rotate(45deg);
+}
+
+/* line 25, post-formats\_gallery.scss */
+.format-gallery .slick-list {
+  overflow: visible;
+}
+/* line 30, post-formats\_gallery.scss */
+.format-gallery .slick-slide .mpcth-slide-wrap {
+  padding: 0;
+}
+/* line 36, post-formats\_gallery.scss */
+.format-gallery .slick-center .mpcth-slide-wrap {
+  padding: 0;
+}
+
+/* line 43, post-formats\_gallery.scss */
+.mpcth-slider .slick-slide img {
+  height: auto;
+  min-width: 100%;
+  width: 100%;
+}
+/* line 49, post-formats\_gallery.scss */
+.mpcth-slider .slick-prev,
+.mpcth-slider .slick-next {
+  height: 3rem;
+  width: 1rem;
+  top: 50%;
+}
+/* line 56, post-formats\_gallery.scss */
+.mpcth-slider .slick-prev:before, .mpcth-slider .slick-next:before {
+  color: #ffffff;
+  font-size: 2rem;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 62, post-formats\_gallery.scss */
+.mpcth-slider .slick-prev:before:hover, .mpcth-slider .slick-next:before:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 71, post-formats\_gallery.scss */
+.mpcth-portfolio-single-alt .mpcth-slider, .mpcth-portfolio-single-alt .slick-list {
+  height: auto;
+}
+
+/* line 78, post-formats\_gallery.scss */
+.mpcth-portfolio-mp .mpcth-post-thumbnail {
+  overflow: hidden;
+}
+/* line 80, post-formats\_gallery.scss */
+.mpcth-portfolio-mp .mpcth-post-thumbnail .mpcth-slider, .mpcth-portfolio-mp .mpcth-post-thumbnail .slick-list {
+  height: inherit;
+}
+
+/* line 86, post-formats\_gallery.scss */
+.mpcth-slider .slick-prev {
+  left: 30px;
+}
+/* line 88, post-formats\_gallery.scss */
+.mpcth-slider .slick-prev:before {
+  position: absolute;
+  left: -39px;
+}
+
+/* line 94, post-formats\_gallery.scss */
+.mpcth-slider .slick-next {
+  right: 30px;
+}
+/* line 96, post-formats\_gallery.scss */
+.mpcth-slider .slick-next:before {
+  position: absolute;
+  left: 31px;
+}
+
+/* line 103, post-formats\_gallery.scss */
+.mpcth-slider .slick-prev,
+.mpcth-slider .slick-next {
+  height: 3.5rem;
+  width: 3.5rem;
+  color: #000000;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 112, post-formats\_gallery.scss */
+.mpcth-slider .slick-prev {
+  border-bottom: 3.5rem solid transparent;
+  border-left: 3.5rem solid rgba(0, 0, 0, 0.4);
+  border-right: none;
+  border-top: 0px solid transparent;
+  transform: translate(0, -25%) rotate(-45deg);
+  -ms-transform: translate(0, -25%) rotate(-45deg);
+  -webkit-transform: translate(0, -25%) rotate(-45deg);
+}
+/* line 123, post-formats\_gallery.scss */
+.mpcth-slider .slick-next {
+  border-bottom: 3.5rem solid transparent;
+  border-right: 3.5rem solid rgba(0, 0, 0, 0.4);
+  border-left: none;
+  border-top: 0px solid transparent;
+  transform: translate(0, -25%) rotate(45deg);
+  -ms-transform: translate(0, -25%) rotate(45deg);
+  -webkit-transform: translate(0, -25%) rotate(45deg);
+}
+/* line 135, post-formats\_gallery.scss */
+.mpcth-slider .slick-prev:before {
+  display: block;
+  transform: translate(0, 0) rotate(45deg);
+  -ms-transform: translate(0, 0) rotate(45deg);
+  -webkit-transform: translate(0, 0) rotate(45deg);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 144, post-formats\_gallery.scss */
+.mpcth-slider .slick-next:before {
+  display: block;
+  transform: translate(0, 0) rotate(-45deg);
+  -ms-transform: translate(0, 0) rotate(-45deg);
+  -webkit-transform: translate(0, 0) rotate(-45deg);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 154, post-formats\_gallery.scss */
+.slick-prev:hover {
+  border-left: 3.5rem solid rgba(0, 0, 0, 0.8);
+}
+
+/* line 155, post-formats\_gallery.scss */
+.slick-next:hover {
+  border-right: 3.5rem solid rgba(0, 0, 0, 0.8);
+}
+
+/* line 3, post-formats\_link.scss */
+.mpcth-blog-narrow a.mpcth-post-format-link {
+  height: 315px;
+}
+
+/* line 7, post-formats\_link.scss */
+a.mpcth-post-format-link {
+  color: #ffffff;
+  font-size: 3rem;
+  display: table-cell;
+  position: relative;
+  z-index: 100;
+  margin: 0 auto;
+  vertical-align: middle;
+  height: 547px;
+  line-height: 3rem;
+  text-align: center;
+  width: inherit;
+  z-index: 10;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 21, post-formats\_link.scss */
+a.mpcth-post-format-link:hover {
+  color: #dddddd;
+  text-decoration: underline;
+}
+
+/* line 4, post-formats\_quote.scss */
+.mpcth-blog-narrow .mpcth-quote-text {
+  top: 15%;
+  margin: 0 auto;
+  padding: 0px 45px;
+}
+
+/* line 11, post-formats\_quote.scss */
+.mpcth-blog.mpcth-blog-narrow .mpcth-quote-text {
+  height: 315px;
+}
+
+/* line 15, post-formats\_quote.scss */
+.mpcth-quote-text {
+  color: #ffffff;
+  cursor: default;
+  display: table-cell;
+  font-size: 1.43rem;
+  font-style: normal;
+  height: 500px;
+  position: relative;
+  top: 0px;
+  z-index: 100;
+  max-height: inherit;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 270px;
+  overflow-y: auto;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+/* line 33, post-formats\_quote.scss */
+.mpcth-quote-text span {
+  display: none;
+}
+/* line 37, post-formats\_quote.scss */
+.mpcth-quote-text .mpcth_quote_before,
+.mpcth-quote-text .mpcth_quote_after {
+  display: inline-block;
+}
+/* line 42, post-formats\_quote.scss */
+.mpcth-quote-text .mpcth_quote_before {
+  margin-left: -10px;
+}
+/* line 46, post-formats\_quote.scss */
+.mpcth-quote-text span.mpcth-quote-author {
+  display: block;
+  font-size: 1.3rem;
+  position: relative;
+  text-align: right;
+  width: 100%;
+}
+
+/* line 6, post-formats\_standard.scss */
+.format-image .mpcth-post-thumbnail img,
+.format-standard .mpcth-post-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 3, post-formats\_status.scss */
+.mpcth-blog-narrow .mpcth-post-status-wrapper {
+  height: 315px;
+}
+
+/* line 7, post-formats\_status.scss */
+.mpcth-blog .mpcth-post-thumbnail-smaller.mpcth-post-thumbnail-smaller-link {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 15px;
+  bottom: 15px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 16, post-formats\_status.scss */
+.mpcth-post-status-wrapper {
+  display: table-cell;
+  position: relative;
+  z-index: 100;
+  margin: 0 auto;
+  vertical-align: middle;
+  height: 547px;
+  width: inherit;
+}
+/* line 25, post-formats\_status.scss */
+.mpcth-post-status-wrapper iframe {
+  width: 440px;
+  margin: 0 auto !important;
+}
+
+/* line 32, post-formats\_status.scss */
+article.format-status {
+  font-size: 1.29rem;
+}
+
+/* line 5, post-formats\_video.scss */
+.format-video .mpcth-post-thumbnail .mpcth-video-wrap {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+/* line 11, post-formats\_video.scss */
+.format-video .mpcth-post-thumbnail .mpcth-video-wrap.mpcth-video-embed > iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* line 21, post-formats\_video.scss */
+.format-video .mpcth-post-thumbnail .mpcth-video-wrap.mpcth-video-shortcode > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* line 29, post-formats\_video.scss */
+.format-video .mpcth-post-thumbnail .mpcth-video-wrap.mpcth-video-shortcode .mejs-layer,
+.format-video .mpcth-post-thumbnail .mpcth-video-wrap.mpcth-video-shortcode .wp-video-shortcode {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* line 35, post-formats\_video.scss */
+.format-video .mpcth-post-thumbnail .mpcth-video-wrap.mpcth-video-shortcode .mejs-overlay-button {
+  margin-top: -50px !important;
+}
+/* line 43, post-formats\_video.scss */
+.format-video .mpcth-fake-empty .mpcth-post-thumbnail {
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 670px) {
+  /* line 54, post-formats\_video.scss */
+  .format-video .mpcth-post-header {
+    min-height: inherit;
+  }
+  /* line 58, post-formats\_video.scss */
+  .format-video .mpcth-post-header-wrap {
+    position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  /* line 64, post-formats\_video.scss */
+  .format-video .mpcth-fake-empty .mpcth-post-header-wrap {
+    margin-bottom: 0;
+  }
+  /* line 67, post-formats\_video.scss */
+  .format-video .mpcth-post-title-wrap {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@media only screen and (min-width: 670.1px) {
+  /* line 76, post-formats\_video.scss */
+  .format-video .mpcth-post-header-wrap {
+    pointer-events: none;
+    visibility: visible;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -ms-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+  /* line 84, post-formats\_video.scss */
+  .format-video .mpcth-post-header:hover .mpcth-post-header-wrap {
+    visibility: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+/* ========================================================================== *
+ * 5.1. Comments
+ * ========================================================================== */
+/* line 6, elements\_comments.scss */
+#respond #mpcth_comment_form {
+  padding-bottom: 28px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* line 12, elements\_comments.scss */
+#mpcth_comments_wrap,
+#mpcth-respond-wrapper {
+  background: #f5f5f5;
+  position: relative;
+  padding: 28px 0 28px;
+  margin: 65px auto;
+  width: 1200px;
+}
+/* line 20, elements\_comments.scss */
+#mpcth_comments_wrap ul.children,
+#mpcth-respond-wrapper ul.children {
+  margin-left: 2.3rem;
+}
+/* line 22, elements\_comments.scss */
+#mpcth_comments_wrap ul.children .mpcth-triangle-bottom,
+#mpcth_comments_wrap ul.children .mpcth-triangle-top,
+#mpcth-respond-wrapper ul.children .mpcth-triangle-bottom,
+#mpcth-respond-wrapper ul.children .mpcth-triangle-top {
+  display: none;
+}
+
+/* line 29, elements\_comments.scss */
+.mpcth-full-width #mpcth_comments_wrap,
+.mpcth-full-width #mpcth-respond-wrapper {
+  width: auto;
+}
+
+/* line 34, elements\_comments.scss */
+#mpcth-respond-wrapper {
+  padding: 56px 0 84px;
+}
+
+/* line 38, elements\_comments.scss */
+.comment-reply-title,
+.mpcth-comments-title {
+  color: #444444;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 3.43rem;
+  margin: 0 auto;
+  max-width: 660px;
+  padding: 0 0 65px 0;
+  text-align: left;
+}
+
+/* line 49, elements\_comments.scss */
+#reply-title {
+  padding: 0 0 20px 0;
+}
+/* line 52, elements\_comments.scss */
+#reply-title small {
+  font-size: 2rem;
+}
+
+/* line 57, elements\_comments.scss */
+.mpcth-comments {
+  color: #444444;
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 0;
+}
+/* line 63, elements\_comments.scss */
+.mpcth-comments li {
+  list-style: none;
+}
+/* line 67, elements\_comments.scss */
+.mpcth-comments article {
+  margin: 0 0 40px 0;
+  padding: 0;
+  width: auto;
+}
+/* line 73, elements\_comments.scss */
+.mpcth-comments .children .mpcth-triangle-top,
+.mpcth-comments .children .mpcth-triangle-bottom {
+  display: none;
+}
+/* line 78, elements\_comments.scss */
+.mpcth-comments .mpcth-comment-avatar-wrap {
+  position: absolute;
+  left: -7rem;
+}
+/* line 83, elements\_comments.scss */
+.mpcth-comments .mpcth-comment-author {
+  font-size: 1.14rem;
+  color: #444444;
+  font-weight: 800 !important;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  top: -3px;
+}
+/* line 95, elements\_comments.scss */
+.mpcth-comments .mpcth-comment-meta {
+  color: #444444;
+  display: block;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 400;
+  margin-top: -3px;
+}
+/* line 104, elements\_comments.scss */
+.mpcth-comments a {
+  color: #444444;
+  text-decoration: none;
+}
+/* line 109, elements\_comments.scss */
+.mpcth-comments a:hover {
+  color: #fcc83d;
+}
+/* line 113, elements\_comments.scss */
+.mpcth-comments .comment-reply-link,
+.mpcth-comments .comment-edit-link {
+  text-transform: uppercase;
+}
+/* line 118, elements\_comments.scss */
+.mpcth-comments .mpcth-comment-footer {
+  clear: both;
+}
+
+/* line 127, elements\_comments.scss */
+#respond .comment-form {
+  color: #444444;
+  margin: 0 auto;
+  max-width: 660px;
+  width: 100%;
+}
+
+/* line 135, elements\_comments.scss */
+.comment-notes,
+.form-allowed-tags {
+  display: none;
+}
+
+/* line 140, elements\_comments.scss */
+.comment-form {
+  position: relative;
+}
+/* line 143, elements\_comments.scss */
+.comment-form .form-submit {
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  bottom: -4px;
+  right: 0;
+}
+/* line 150, elements\_comments.scss */
+.comment-form .form-submit input {
+  background: none;
+  color: #999999;
+  padding: 7px 1rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  letter-spacing: 1px;
+}
+/* line 160, elements\_comments.scss */
+.comment-form .form-submit input:hover {
+  color: #f7ca18;
+}
+
+/* line 173, elements\_comments.scss */
+.comment-form-comment label,
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label {
+  z-index: 0;
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+  color: #ffffff;
+  background: #ff7f7f;
+  padding: 15px 10px;
+  line-height: 1;
+  font-size: 1rem;
+  opacity: 0;
+  top: 0;
+  right: 100% !important;
+  -webkit-font-smoothing: initial;
+}
+/* line 189, elements\_comments.scss */
+.comment-form-comment label:after,
+.comment-form-author label:after,
+.comment-form-email label:after,
+.comment-form-url label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 17px;
+  border: 6px solid transparent;
+}
+@media only screen and (max-width: 73.14rem) {
+  /* line 173, elements\_comments.scss */
+  .comment-form-comment label,
+  .comment-form-author label,
+  .comment-form-email label,
+  .comment-form-url label {
+    display: none;
+  }
+}
+
+/* line 207, elements\_comments.scss */
+.comment-form-comment label,
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label {
+  right: 1px;
+  margin-right: 1rem;
+}
+/* line 211, elements\_comments.scss */
+.comment-form-comment label:after,
+.comment-form-author label:after,
+.comment-form-email label:after,
+.comment-form-url label:after {
+  right: -10px;
+  border-left: 0.3rem solid #ff7f7f;
+}
+/* line 216, elements\_comments.scss */
+.comment-form-comment .mpcth-input-invalid + label,
+.comment-form-author .mpcth-input-invalid + label,
+.comment-form-email .mpcth-input-invalid + label,
+.comment-form-url .mpcth-input-invalid + label {
+  opacity: 1;
+}
+
+/* line 223, elements\_comments.scss */
+.comment-form-comment label {
+  left: auto;
+  right: -170px !important;
+  margin-left: 14px;
+}
+/* line 228, elements\_comments.scss */
+.comment-form-comment label:after {
+  left: -4px;
+  border-right: 4px solid #ff7f7f;
+  right: auto;
+  border-left: none;
+}
+/* line 235, elements\_comments.scss */
+.comment-form-comment .mpcth-input-invalid + label {
+  left: 100%;
+}
+
+/* line 239, elements\_comments.scss */
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+input:-moz-placeholder {
+  color: #f00;
+}
+
+/* line 251, elements\_comments.scss */
+.comment-form-comment textarea,
+.comment-form-comment input,
+.comment-form-author textarea,
+.comment-form-author input,
+.comment-form-email textarea,
+.comment-form-email input,
+.comment-form-url textarea,
+.comment-form-url input {
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  background: none;
+  border: 1px solid #dddddd;
+  border-radius: 0;
+  color: #999999;
+  letter-spacing: 1px;
+}
+/* line 265, elements\_comments.scss */
+.comment-form-comment textarea:hover, .comment-form-comment textarea:focus, .comment-form-comment textarea:active,
+.comment-form-comment input:hover,
+.comment-form-comment input:focus,
+.comment-form-comment input:active,
+.comment-form-author textarea:hover,
+.comment-form-author textarea:focus,
+.comment-form-author textarea:active,
+.comment-form-author input:hover,
+.comment-form-author input:focus,
+.comment-form-author input:active,
+.comment-form-email textarea:hover,
+.comment-form-email textarea:focus,
+.comment-form-email textarea:active,
+.comment-form-email input:hover,
+.comment-form-email input:focus,
+.comment-form-email input:active,
+.comment-form-url textarea:hover,
+.comment-form-url textarea:focus,
+.comment-form-url textarea:active,
+.comment-form-url input:hover,
+.comment-form-url input:focus,
+.comment-form-url input:active {
+  outline: none;
+  text-shadow: none;
+}
+/* line 272, elements\_comments.scss */
+.comment-form-comment textarea:focus,
+.comment-form-comment input:focus,
+.comment-form-author textarea:focus,
+.comment-form-author input:focus,
+.comment-form-email textarea:focus,
+.comment-form-email input:focus,
+.comment-form-url textarea:focus,
+.comment-form-url input:focus {
+  color: #444444;
+}
+/* line 276, elements\_comments.scss */
+.comment-form-comment textarea.mpcth-input-invalid,
+.comment-form-comment input.mpcth-input-invalid,
+.comment-form-author textarea.mpcth-input-invalid,
+.comment-form-author input.mpcth-input-invalid,
+.comment-form-email textarea.mpcth-input-invalid,
+.comment-form-email input.mpcth-input-invalid,
+.comment-form-url textarea.mpcth-input-invalid,
+.comment-form-url input.mpcth-input-invalid {
+  color: #555555;
+}
+@media only screen and (max-width: 73.14rem) {
+  /* line 279, elements\_comments.scss */
+  .comment-form-comment textarea.mpcth-input-invalid,
+  .comment-form-comment input.mpcth-input-invalid,
+  .comment-form-author textarea.mpcth-input-invalid,
+  .comment-form-author input.mpcth-input-invalid,
+  .comment-form-email textarea.mpcth-input-invalid,
+  .comment-form-email input.mpcth-input-invalid,
+  .comment-form-url textarea.mpcth-input-invalid,
+  .comment-form-url input.mpcth-input-invalid {
+    color: #ffffff;
+    background: #ff7f7f;
+  }
+}
+
+/* line 289, elements\_comments.scss */
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+  color: #444444;
+  margin-bottom: 20px;
+  width: 47%;
+  position: relative;
+}
+/* line 297, elements\_comments.scss */
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input {
+  padding: 12px;
+}
+
+/* line 303, elements\_comments.scss */
+.comment-form-comment {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 47%;
+}
+/* line 310, elements\_comments.scss */
+.comment-form-comment textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 175px;
+  padding: 14px;
+  resize: none;
+}
+/* line 318, elements\_comments.scss */
+.ie .comment-form-comment textarea {
+  min-height: 205px;
+}
+
+/* line 325, elements\_comments.scss */
+.logged-in .comment-form-comment {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width: 54.87rem) {
+  /* line 331, elements\_comments.scss */
+  .comment-form-author,
+  .comment-form-email,
+  .comment-form-url,
+  .comment-form-comment,
+  .form-submit {
+    position: relative;
+    float: none;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 54.87rem) {
+  /* line 343, elements\_comments.scss */
+  .form-submit {
+    bottom: -24px !important;
+  }
+}
+
+/* line 353, elements\_comments.scss */
+.logged-in .comment-form .comment-form-comment {
+  margin-bottom: 1rem;
+}
+/* line 357, elements\_comments.scss */
+.logged-in .comment-form .form-submit {
+  width: auto;
+}
+/* line 360, elements\_comments.scss */
+.logged-in .comment-form .form-submit input {
+  width: auto;
+}
+
+/* ========================================================================== *
+ * 5.2. Contact
+ * ========================================================================== */
+/* line 5, elements\_contact.scss */
+.wpcf7 {
+  position: relative;
+}
+/* line 8, elements\_contact.scss */
+.wpcf7 p {
+  margin: 0;
+}
+
+/* line 13, elements\_contact.scss */
+.wpcf7 .wpcf7-mail-sent-ok,
+.wpcf7 .wpcf7-validation-errors {
+  margin: 0;
+  color: white;
+  clear: both;
+  background: #ff7f7f;
+  border: none;
+  padding: 8px 10px;
+  position: relative;
+  top: 14px;
+  -webkit-font-smoothing: initial;
+}
+
+/* line 26, elements\_contact.scss */
+.wpcf7 .wpcf7-mail-sent-ok {
+  background: #6cce68;
+}
+
+/* line 30, elements\_contact.scss */
+.wpcf7 .contact-form-message .wpcf7-not-valid-tip:after,
+.wpcf7 .wpcf7-not-valid-tip:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 12px;
+  border: 4px solid transparent;
+}
+
+/* line 39, elements\_contact.scss */
+.wpcf7 .contact-form-message .wpcf7-not-valid-tip:after,
+.wpcf7 .wpcf7-not-valid-tip:after {
+  right: -8px;
+  border-left: 4px solid #ff7f7f;
+}
+
+/* line 45, elements\_contact.scss */
+div.wpcf7-mail-sent-ng {
+  background: #ff7f7f;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  clear: both;
+  position: relative;
+  top: 20px;
+}
+
+/* line 60, elements\_contact.scss */
+.wpcf7 .contact-form-message .wpcf7-not-valid-tip,
+.wpcf7 .your-name .wpcf7-not-valid-tip,
+.wpcf7 .your-email .wpcf7-not-valid-tip,
+.wpcf7 .your-website .wpcf7-not-valid-tip {
+  z-index: 0;
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+  color: white;
+  background: #ff7f7f;
+  padding: 8px 10px;
+  line-height: 1;
+  font-size: .88em;
+  -webkit-font-smoothing: initial;
+}
+/* line 73, elements\_contact.scss */
+.wpcf7 .contact-form-message .wpcf7-not-valid-tip:after,
+.wpcf7 .your-name .wpcf7-not-valid-tip:after,
+.wpcf7 .your-email .wpcf7-not-valid-tip:after,
+.wpcf7 .your-website .wpcf7-not-valid-tip:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.85rem;
+  border: 0.3rem solid transparent;
+}
+@media only screen and (max-width: 73.14rem) {
+  /* line 60, elements\_contact.scss */
+  .wpcf7 .contact-form-message .wpcf7-not-valid-tip,
+  .wpcf7 .your-name .wpcf7-not-valid-tip,
+  .wpcf7 .your-email .wpcf7-not-valid-tip,
+  .wpcf7 .your-website .wpcf7-not-valid-tip {
+    display: none;
+  }
+}
+/* line 86, elements\_contact.scss */
+.wpcf7 .contact-form-message .wpcf7-not-valid ~ .wpcf7-not-valid-tip,
+.wpcf7 .your-name .wpcf7-not-valid ~ .wpcf7-not-valid-tip,
+.wpcf7 .your-email .wpcf7-not-valid ~ .wpcf7-not-valid-tip,
+.wpcf7 .your-website .wpcf7-not-valid ~ .wpcf7-not-valid-tip {
+  top: 0;
+}
+
+/* line 92, elements\_contact.scss */
+span.wpcf7-not-valid-tip {
+  z-index: 0;
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+  color: white;
+  background: #ff7f7f;
+  padding: 8px 10px;
+  line-height: 1;
+  font-size: 1rem;
+  right: 103%;
+  top: 16%;
+  -webkit-font-smoothing: initial;
+}
+
+/* line 107, elements\_contact.scss */
+span.wpcf7-form-control-wrap {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+/* line 112, elements\_contact.scss */
+.wpcf7 input,
+.wpcf7 textarea {
+  background: none;
+  border: 1px solid #dddddd;
+  color: #444444;
+  padding: 12px;
+  width: 100%;
+  text-transform: none;
+}
+/* line 121, elements\_contact.scss */
+.wpcf7 input .wpcf7-not-valid-tip,
+.wpcf7 textarea .wpcf7-not-valid-tip {
+  color: #f00;
+  font-size: 1rem;
+  display: block;
+  position: absolute;
+  top: 28%;
+  left: 1rem;
+}
+
+/* line 131, elements\_contact.scss */
+input:focus, textarea:focus {
+  outline: 0;
+}
+
+/* line 135, elements\_contact.scss */
+.wpcf7 textarea {
+  height: 175px;
+  resize: none;
+}
+
+/* line 142, elements\_contact.scss */
+.mpcth-contact-left-side {
+  float: left;
+  width: 47%;
+}
+
+/* line 147, elements\_contact.scss */
+.mpcth-contact-right-side {
+  float: right;
+  width: 47%;
+}
+
+/* line 151, elements\_contact.scss */
+.ajax-loader {
+  display: none;
+}
+
+/* line 155, elements\_contact.scss */
+.mpcth-in-border {
+  position: absolute;
+}
+
+/* line 159, elements\_contact.scss */
+.mpcth-contact-btn {
+  clear: both;
+  float: right;
+  position: relative;
+}
+/* line 164, elements\_contact.scss */
+.mpcth-contact-btn .wpcf7-submit {
+  background: none;
+  color: #999999;
+  padding: .5rem 1rem;
+  border: none;
+}
+/* line 171, elements\_contact.scss */
+.mpcth-contact-btn .wpcf7-submit:hover {
+  color: #f7ca18;
+}
+
+/* line 176, elements\_contact.scss */
+.mpcth-in-border-left {
+  top: 0;
+  left: 0;
+}
+
+/* line 181, elements\_contact.scss */
+.mpcth-in-border-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* line 186, elements\_contact.scss */
+.mpcth-in-border-top {
+  top: 0;
+  left: 0;
+}
+
+/* line 191, elements\_contact.scss */
+.mpcth-in-border-bottom {
+  bottom: 0;
+  right: 0;
+}
+
+/* line 196, elements\_contact.scss */
+span.mpcth-in-border {
+  position: absolute;
+  z-index: 10;
+}
+
+/* line 201, elements\_contact.scss */
+span.mpcth-in-border-ver {
+  border-left: 1px solid transparent;
+}
+
+/* line 205, elements\_contact.scss */
+span.mpcth-in-border-hor {
+  border-top: 1px solid transparent;
+}
+
+/* line 209, elements\_contact.scss */
+.mpcth-in-border-ver {
+  height: 100%;
+}
+
+/* line 213, elements\_contact.scss */
+.mpcth-in-border-hor {
+  width: 100%;
+}
+
+/* ========================================================================== *
+ * 5.3. Menu
+ * ========================================================================== */
+/* line 4, elements\_menu.scss */
+#mpcth_main_menu {
+  font-weight: 800;
+  position: relative;
+  text-transform: uppercase;
+  text-align: right;
+}
+#mpcth_main_menu .overlay {
+  display: block;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+/* line 10, elements\_menu.scss */
+#mpcth_main_menu ul {
+  list-style: none;
+  margin: 0.8rem 0 0 0;
+  padding: 0;
+}
+/* line 15, elements\_menu.scss */
+#mpcth_main_menu ul li {
+  display: inline-block;
+  padding: 0 0 .8rem 0;
+  margin: 0 .93rem 0 0;
+  position: relative;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 23, elements\_menu.scss */
+#mpcth_main_menu ul li:hover a {
+  color: #fcc83d;
+}
+/* line 27, elements\_menu.scss */
+#mpcth_main_menu ul li a {
+  color: #333333;
+  font-weight: 600;
+  font-size: .87rem;
+  position: relative;
+  padding: .4rem .4rem .2rem .5rem;
+  text-decoration: none;
+}
+/* line 38, elements\_menu.scss */
+#mpcth_main_menu ul ul {
+  background: #fcc83d;
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  margin: 1.2rem 0 0 -1.43rem;
+  text-align: left;
+}
+/* line 48, elements\_menu.scss */
+#mpcth_main_menu ul ul ul {
+  display: none;
+  margin: 1.93rem 0 0 0px;
+  position: absolute;
+  left: 100%;
+  top: -75%;
+}
+/* line 56, elements\_menu.scss */
+#mpcth_main_menu ul ul li {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+/* line 61, elements\_menu.scss */
+#mpcth_main_menu ul ul li a {
+  display: block;
+  padding: .71rem 1rem;
+  white-space: pre;
+}
+/* line 66, elements\_menu.scss */
+#mpcth_main_menu ul ul li a:hover {
+  background: white;
+}
+/* line 72, elements\_menu.scss */
+#mpcth_main_menu ul li:hover li a {
+  color: white;
+}
+/* line 76, elements\_menu.scss */
+#mpcth_main_menu ul li:hover li a:hover {
+  color: #fcc83d;
+}
+/* line 80, elements\_menu.scss */
+#mpcth_main_menu li.current-menu-ancestor li.current-menu-parent li a {
+  color: white;
+}
+@media only screen and (max-width: 54.87rem) {
+  /* line 4, elements\_menu.scss */
+  #mpcth_main_menu {
+    display: none;
+  }
+}
+
+/* line 89, elements\_menu.scss */
+.menu-item {
+  position: relative;
+}
+
+/* line 95, elements\_menu.scss */
+ul.children .mpcth-border-tl,
+ul.children .mpcth-border-br,
+ul.sub-menu .mpcth-border-tl,
+ul.sub-menu .mpcth-border-br {
+  display: none;
+}
+
+/* line 99, elements\_menu.scss */
+.mpcth-border-tl,
+.mpcth-border-br {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 109, elements\_menu.scss */
+.mpcth-border-tl {
+  top: 0;
+  left: 0;
+  border-left: 1px solid;
+  border-top: 1px solid;
+}
+
+/* line 116, elements\_menu.scss */
+.mpcth-border-br {
+  bottom: 0;
+  right: 0;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+/* line 123, elements\_menu.scss */
+.page_item:hover .mpcth-border-tl,
+.page_item:hover .mpcth-border-br,
+.menu-item:hover .mpcth-border-tl,
+.menu-item:hover .mpcth-border-br {
+  color: #fcc83d;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  opacity: 1;
+}
+
+/* line 133, elements\_menu.scss */
+#mpcth_main_menu li.current-menu-parent a {
+  color: #fcc83d;
+}
+
+/* line 135, elements\_menu.scss */
+#mpcth_main_menu li.current_page_item a,
+#mpcth_main_menu li.current-menu-item a {
+  color: #fcc83d;
+}
+
+/* line 139, elements\_menu.scss */
+#mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-tl,
+#mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-br,
+#mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-tl,
+#mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-br {
+  color: #fcc83d;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  opacity: 1;
+}
+
+/* line 149, elements\_menu.scss */
+.mpcth-triangle-top,
+.mpcth-triangle-bottom {
+  border-top: 15px solid transparent;
+  border-right: 40px solid #fcc83d;
+  border-bottom: 0px solid transparent;
+  position: absolute;
+  top: -15px;
+  width: 100%;
+}
+
+/* line 159, elements\_menu.scss */
+.mpcth-triangle-bottom {
+  border-bottom: 15px solid transparent;
+  border-left: 40px solid #fcc83d;
+  border-right: none;
+  border-top: 0px solid transparent;
+  top: auto;
+  bottom: -15px;
+}
+
+/* line 170, elements\_menu.scss */
+.mpcth-menu-mobile {
+  position: relative;
+  margin: 0 0 1.5em 0;
+  padding: .5em .5em 1em;
+  list-style: none;
+ /* max-height: 70%;
+  overflow: auto;  */
+}
+/* line 178, elements\_menu.scss */
+.mpcth-menu-mobile .mpcth-triangle-top,
+.mpcth-menu-mobile .mpcth-triangle-bottom {
+  display: none;
+}
+/* line 181, elements\_menu.scss */
+.mpcth-menu-mobile ul {
+  list-style: none;
+  padding-left: 0;
+}
+/* line 186, elements\_menu.scss */
+.mpcth-menu-mobile ul.sub-menu {
+  display: none;
+}
+/* line 188, elements\_menu.scss */
+.mpcth-menu-mobile ul.sub-menu a {
+  font-size: 1.2rem;
+}
+/* line 192, elements\_menu.scss */
+.mpcth-menu-mobile a {
+  color: #444444;
+  padding: .25em .5em;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+}
+/* line 200, elements\_menu.scss */
+.mpcth-menu-mobile a:hover {
+  color: #ffffff;
+}
+
+/* line 207, elements\_menu.scss */
+#mpcth_nav_mobile .mpcth-search-form input.mpcth-search {
+  border: 1px solid #444444;
+  color: #444444;
+}
+/* line 212, elements\_menu.scss */
+#mpcth_nav_mobile .fa-search {
+  color: #444444;
+}
+
+/* line 218, elements\_menu.scss */
+.mpcth-nav-mobile {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  overflow: auto;
+  z-index: 50;
+  visibility: hidden;
+  width: 100%;
+  background: #fcc83d;
+  text-align: center;
+  color: #fcc83d;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.mpcth-nav-wrapper {
+  position: relative;
+  display: inline-table;
+  width: 100%;
+  height: 100%;
+}
+/* line 237, elements\_menu.scss */
+.mpcth-nav-mobile .mpcth-nav-mobile-holder {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 242, elements\_menu.scss */
+.mpcth-nav-mobile.mpcth-active {
+  visibility: visible;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 256, elements\_menu.scss */
+.mpcth-nav-mobile .mpcth-search-form {
+  margin: 1rem 2rem;
+}
+/* line 260, elements\_menu.scss */
+.mpcth-nav-mobile li.menu-item-has-children li.menu-item-has-children a {
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+/* line 265, elements\_menu.scss */
+.mpcth-nav-mobile li.menu-item-has-children li.menu-item-has-children li a {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+/* line 271, elements\_menu.scss */
+.mpcth-active + .mpcth-menu-mobile-toggle {
+  right: 21px;
+}
+
+/* line 276, elements\_menu.scss */
+.mpcth-menu-mobile-toggle {
+  position: fixed;
+  color: #444444;
+  top: .5rem;
+  right: 6.5rem;
+  display: none;
+  z-index: 100;
+}
+/* line 284, elements\_menu.scss */
+.mpcth-menu-mobile-toggle a {
+  color: inherit;
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: .35rem .25rem;
+}
+/* line 290, elements\_menu.scss */
+.mpcth-menu-mobile-toggle .fa {
+  line-height: 1;
+  height: 1.6rem;
+  width: 1.6rem;
+}
+/* line 297, elements\_menu.scss */
+.mpcth-menu-mobile-toggle .mpcth-flip {
+  height: 1.6rem;
+  width: 1.6rem;
+}
+/* line 302, elements\_menu.scss */
+.mpcth-menu-mobile-toggle .mpcth-flip:hover .fa {
+  top: 0;
+}
+/* line 305, elements\_menu.scss */
+.mpcth-menu-mobile-toggle .mpcth-flip:hover .fa.mpcth-hover {
+  top: 1.7rem;
+}
+/* line 312, elements\_menu.scss */
+.mpcth-menu-mobile-toggle.mpcth-scrolled {
+  /*    a {
+  			color: $base_content_color_dark;
+  			background: rgba(0, 0, 0, .15);
+
+  			@include opacity(.5);
+  		}*/
+}
+
+/* line 323, elements\_menu.scss */
+.mpcth-nav-mobile.mpcth-active + .mpcth-menu-mobile-toggle a {
+  background: none;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 330, elements\_menu.scss */
+.mpcth-nav-mobile.mpcth-active + .mpcth-menu-mobile-toggle .mpcth-flip .fa {
+  top: -1.65rem;
+}
+/* line 331, elements\_menu.scss */
+.mpcth-nav-mobile.mpcth-active + .mpcth-menu-mobile-toggle .mpcth-flip .fa.mpcth-hover {
+  top: 0;
+}
+
+/* line 335, elements\_menu.scss */
+.admin-bar .mpcth-nav-mobile,
+.admin-bar .mpcth-menu-mobile-toggle {
+  top: 2.8rem;
+}
+
+@media only screen and (max-width: 54.87rem) {
+  /* line 344, elements\_menu.scss */
+  .mpcth-menu-mobile-toggle {
+    display: block;
+  }
+}
+/* line 350, elements\_menu.scss */
+.mpcth-nav {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+/* line 355, elements\_menu.scss */
+.mpcth-toggle {
+  position: relative;
+  vertical-align: middle;
+  display: table-cell;
+  width: 1em;
+}
+/* line 77, _mixins.scss */
+.mpcth-toggle:hover .mpcth-flip .fa {
+  top: -1.2em;
+}
+/* line 78, _mixins.scss */
+.mpcth-toggle:hover .mpcth-flip .fa.mpcth-hover {
+  top: 0;
+}
+/* line 363, elements\_menu.scss */
+.mpcth-toggle a {
+  display: inline-block;
+  padding: .75rem .5rem;
+}
+
+/* line 368, elements\_menu.scss */
+.mpcth-search-toggle {
+  right: -.25rem;
+}
+
+/* line 371, elements\_menu.scss */
+.mpcth-sidebar-toggle {
+  right: -.5rem;
+}
+
+@media only screen and (max-width: 54.87rem) {
+  /* line 376, elements\_menu.scss */
+  .mpcth-search-toggle,
+  .mpcth-sidebar-toggle {
+    display: none;
+  }
+}
+/* ========================================================================== *
+ * 5.4. Pagination
+ * ========================================================================== */
+/*.mpcth-blog-narrow section#footer,
+.mpcth-blog-wide section#footer {
+	.mpcth-post-pagination{
+		top: -85px;
+	}
+}*/
+/* line 13, elements\_pagination.scss */
+section#footer .mpcth-post-pagination #mpcth_load_more {
+  padding: 20px 0;
+}
+/* line 17, elements\_pagination.scss */
+section#footer .mpcth-post-pagination #mpcth_pagination_wrap {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+/* line 22, elements\_pagination.scss */
+section#footer .mpcth-post-pagination a:hover.mpcth-next-post {
+  color: #f7ca18;
+  margin-right: 14px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 29, elements\_pagination.scss */
+section#footer .mpcth-post-pagination a:hover.mpcth-prev-post {
+  color: white;
+  margin-left: 14px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 38, elements\_pagination.scss */
+.mpcth-post-pagination {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 50;
+  top: -75px;
+  width: 100%;
+}
+.mpcth-post-pagination.infinite {
+  display: none;
+}
+/* line 67, _mixins.scss */
+.mpcth-post-pagination:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* line 49, elements\_pagination.scss */
+.mpcth-post-pagination a {
+  display: inline-block;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 1.71rem;
+  line-height: 100%;
+  margin: 0;
+  text-decoration: none;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 59, elements\_pagination.scss */
+.mpcth-post-pagination a:hover, .mpcth-post-pagination span.current {
+  color: #444444;
+}
+/* line 63, elements\_pagination.scss */
+.mpcth-post-pagination span {
+  height: inherit;
+  max-width: 320px;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.mpcth-post-pagination .mpcth-prev-post span,
+.mpcth-post-pagination .mpcth-next-post span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* line 69, elements\_pagination.scss */
+.mpcth-post-pagination .mpcth-pag-left {
+  float: left;
+}
+/* line 72, elements\_pagination.scss */
+.mpcth-post-pagination .mpcth-pag-left:hover {
+  margin-left: 10px;
+}
+/* line 77, elements\_pagination.scss */
+.mpcth-post-pagination .mpcth-pag-right {
+  float: right;
+  text-align: right;
+  position: relative;
+  transform: translateY(-68%);
+}
+/* line 83, elements\_pagination.scss */
+.mpcth-post-pagination .mpcth-pag-right a {
+  float: right;
+}
+/* line 87, elements\_pagination.scss */
+.mpcth-post-pagination .mpcth-pag-right:hover {
+  margin-right: 10px;
+}
+/* line 92, elements\_pagination.scss */
+.mpcth-post-pagination a.mpcth-next-post {
+  color: #f7ca18;
+  font-size: 22px;
+  padding-right: 20px;
+  max-width: 230px;
+}
+/* line 97, elements\_pagination.scss */
+.mpcth-post-pagination a.mpcth-next-post i {
+  position: absolute;
+  height: 100%;
+  top: 0;
+}
+/* line 102, elements\_pagination.scss */
+.mpcth-post-pagination a.mpcth-next-post i.fa-angle-right:before {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 112, elements\_pagination.scss */
+.mpcth-post-pagination a.mpcth-prev-post {
+  color: white;
+  font-size: 1.6rem;
+  position: relative;
+  padding-left: 20px;
+  max-width: 300px;
+}
+/* line 119, elements\_pagination.scss */
+.mpcth-post-pagination a.mpcth-prev-post i {
+  left: 0;
+  position: absolute;
+  height: 100%;
+}
+/* line 124, elements\_pagination.scss */
+.mpcth-post-pagination a.mpcth-prev-post i.fa-angle-left:before {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* line 133, elements\_pagination.scss */
+.mpcth-post-pagination [rel=prev] i {
+  margin-right: .5em;
+}
+/* line 134, elements\_pagination.scss */
+.mpcth-post-pagination [rel=next] i {
+  margin-left: .5em;
+}
+/* line 135, elements\_pagination.scss */
+.mpcth-post-pagination [rel=prev] {
+  float: left;
+}
+/* line 136, elements\_pagination.scss */
+.mpcth-post-pagination [rel=next] {
+  float: right;
+}
+@media only screen and (max-width: 343rem) {
+  /* line 139, elements\_pagination.scss */
+  .mpcth-post-pagination [rel=prev], .mpcth-post-pagination [rel=next] {
+    float: none;
+    max-width: 200px;
+  }
+}
+
+/* line 145, elements\_pagination.scss */
+.mpcth-post-pages {
+  text-align: center;
+  font-weight: bold;
+  margin-top: -20px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+/* line 152, elements\_pagination.scss */
+.mpcth-post-pages p {
+  display: inline-block;
+  margin: 0;
+}
+
+/* line 158, elements\_pagination.scss */
+.mpcth-post-page {
+  display: inline-block;
+  padding: 0 14px 0 0;
+}
+
+/* line 164, elements\_pagination.scss */
+.mpcth-blog-narrow .mpcth-pagination {
+  padding-left: 20px;
+}
+
+/* line 169, elements\_pagination.scss */
+.mpcth-pagination {
+  font-weight: bold;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 1.71rem;
+  max-height: 75px;
+  text-transform: uppercase;
+  z-index: 50;
+  width: 1200px;
+  margin: 7px auto;
+  text-align: left;
+}
+/* line 180, elements\_pagination.scss */
+.mpcth-pagination h5 {
+  margin: 0;
+  font-size: 1.71rem;
+}
+/* line 185, elements\_pagination.scss */
+.mpcth-pagination .page-numbers {
+  color: white;
+  padding: 20px 14px 20px 0;
+}
+
+/* line 193, elements\_pagination.scss */
+.mpcth-portfolio-single-alt .mpcth-pagination,
+.mpcth-portfolio-mp-alt .mpcth-pagination {
+  width: 100%;
+  padding: 0 40px;
+}
+
+/* line 199, elements\_pagination.scss */
+.mpcth-load-more {
+  color: white;
+}
+/* line 201, elements\_pagination.scss */
+.mpcth-load-more .mpcth-loaded {
+  display: block;
+}
+/* line 202, elements\_pagination.scss */
+.mpcth-load-more .mpcth-loading {
+  display: none;
+  opacity: 0.25;
+  filter: alpha(opacity=25);
+}
+/* line 209, elements\_pagination.scss */
+.mpcth-load-more.mpcth-disabled .mpcth-loaded {
+  display: none;
+}
+/* line 213, elements\_pagination.scss */
+.mpcth-load-more.mpcth-disabled .mpcth-loading {
+  display: block;
+}
+/* line 218, elements\_pagination.scss */
+.mpcth-load-more.mpcth-infinite-scroll {
+  display: none;
+}
+
+/* line 223, elements\_pagination.scss */
+.mpcth-portfolio-page .mpcth-pagination .mpcth-load-more {
+  display: none;
+}
+
+/* line 227, elements\_pagination.scss */
+.mpcth-load-more h4 {
+  margin: 0;
+}
+
+/* line 233, elements\_pagination.scss */
+.mpcth-portfolio-page .mpcth-pagination-wrap .mpcth-portfolio-header {
+  visibility: visible;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 239, elements\_pagination.scss */
+.mpcth-portfolio-page .mpcth-pagination-wrap .mpcth-portfolio-thumbnail {
+  background: #f3f3f3;
+}
+/* line 242, elements\_pagination.scss */
+.mpcth-portfolio-page .mpcth-pagination-wrap .mpcth-portfolio-thumbnail img {
+  visibility: hidden;
+}
+/* line 245, elements\_pagination.scss */
+.mpcth-portfolio-page .mpcth-pagination-wrap .page-numbers {
+  padding: 0 .25em;
+}
+/* line 249, elements\_pagination.scss */
+.mpcth-portfolio-page .mpcth-pagination-wrap .dots {
+  padding: 0;
+}
+/* line 253, elements\_pagination.scss */
+.mpcth-portfolio-page .mpcth-pagination-wrap h4, .mpcth-portfolio-page .mpcth-pagination-wrap h5 {
+  margin: 0;
+}
+/* line 257, elements\_pagination.scss */
+.mpcth-portfolio-page .mpcth-pagination-wrap.mpcth-infinite-scroll {
+  display: none;
+}
+
+/* line 262, elements\_pagination.scss */
+.mpcth-load-more-container {
+  display: none;
+}
+
+/* ========================================================================== *
+ * 5.5. Socials
+ * ========================================================================== */
+/* line 4, elements\_socials.scss */
+.mpc-sc-icon-wrap {
+  display: inline;
+  font-size: 1rem;
+  padding: .2em 0;
+  /*margin-right: 16px;*/
+}
+/* line 9, elements\_socials.scss */
+.mpc-sc-icon-wrap.mpc-sc-block {
+  display: block;
+}
+
+/* line 14, elements\_socials.scss */
+.mpcth-socials {
+  float: right;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+/* line 19, elements\_socials.scss */
+.mpcth-socials li {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 343rem) {
+  /* line 26, elements\_socials.scss */
+  .mpcth-simple-wrapper .mpcth-socials {
+    float: none;
+    margin-bottom: 20px;
+  }
+}
+/* ========================================================================== *
+ * 6. Widgets
+ * ========================================================================== */
+/* line 4, widgets\_widgets.scss */
+.mpcth-sidebar-widgets .photostream ul {
+  margin-left: 0 !important;
+}
+
+/* line 8, widgets\_widgets.scss */
+.widget-title {
+  text-align: center;
+  position: relative;
+}
+
+/* line 13, widgets\_widgets.scss */
+#mpcth_sidebar .page_item_has_children ul.children {
+  padding-left: 1rem;
+}
+
+/* line 17, widgets\_widgets.scss */
+.widget {
+  margin-bottom: 2.86rem;
+  list-style: none;
+}
+/* line 21, widgets\_widgets.scss */
+.widget select {
+  padding: .5em 1em;
+  background: transparent;
+  border: 1px solid;
+  color: inherit;
+  width: 100%;
+  outline: none;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 29, widgets\_widgets.scss */
+.widget select:focus {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #444444;
+}
+/* line 36, widgets\_widgets.scss */
+.widget ul.sub-menu {
+  margin-left: 1rem;
+}
+/* line 40, widgets\_widgets.scss */
+.widget .post-date {
+  font-size: .86rem;
+}
+/* line 44, widgets\_widgets.scss */
+.widget p a, .widget #wp-calendar a {
+  color: #f7ca18;
+  text-decoration: underline;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 49, widgets\_widgets.scss */
+.widget p a:hover, .widget #wp-calendar a:hover {
+  color: #ebebeb;
+  text-decoration: none;
+}
+/* line 55, widgets\_widgets.scss */
+.widget p, .widget a {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.71rem;
+  text-decoration: none;
+}
+/* line 63, widgets\_widgets.scss */
+.widget a:hover {
+  color: #f7ca18;
+}
+/* line 67, widgets\_widgets.scss */
+.widget li {
+  font-size: 1rem;
+}
+/* line 69, widgets\_widgets.scss */
+.widget li a {
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 76, widgets\_widgets.scss */
+.widget .comment-author-link,
+.widget #calendar_wrap a {
+  color: #fcc83d;
+}
+/* line 81, widgets\_widgets.scss */
+.widget .mpcth-triangle-top,
+.widget .mpcth-triangle-bottom {
+  display: none;
+}
+
+/* line 87, widgets\_widgets.scss */
+.widget.widget_search #searchform {
+  position: relative;
+  left: 0;
+}
+/* line 91, widgets\_widgets.scss */
+.widget.widget_search #searchform #s {
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  color: white;
+  padding: .7rem 1rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* line 102, widgets\_widgets.scss */
+.widget.widget_search #mpcth_seach_form_holder,
+.widget.widget_search #searchform,
+.widget.widget_search #s {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 108, widgets\_widgets.scss */
+.widget.widget_search #s {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #fff;
+  font-size: 1rem;
+  text-align: left;
+}
+/* line 116, widgets\_widgets.scss */
+.widget.widget_search span {
+  border-width: 1px;
+}
+
+/* line 122, widgets\_widgets.scss */
+.mpcth-post-footer {
+  clear: both;
+}
+
+/* line 127, widgets\_widgets.scss */
+.mpcth-info-widget .widget {
+  display: none;
+}
+/* line 131, widgets\_widgets.scss */
+.mpcth-info-widget .widget.mpc-w-theme-info-widget {
+  display: block;
+}
+
+/* line 138, widgets\_widgets.scss */
+.mpcth-sidebar-widgets .mpc-w-theme-info-widget,
+.mpcth-footer-widgets .mpc-w-theme-info-widget {
+  display: none !important;
+}
+
+/* line 67, _mixins.scss */
+.bra-photostream-widget .photostream ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* line 8, widgets\_photostream.scss */
+.bra-photostream-widget .photostream li {
+  float: left;
+  margin: 0 1rem 1rem 0 !important;
+}
+/* line 13, widgets\_photostream.scss */
+.bra-photostream-widget .photostream a {
+  display: block;
+  overflow: hidden;
+  width: 4.3rem !important;
+  height: 4.3rem !important;
+  border: none !important;
+  padding: 0 !important;
+}
+/* line 21, widgets\_photostream.scss */
+.bra-photostream-widget .photostream a:hover {
+  background: none !important;
+  border: none !important;
+}
+/* line 27, widgets\_photostream.scss */
+.bra-photostream-widget .photostream img {
+  max-width: none !important;
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 32, widgets\_photostream.scss */
+.bra-photostream-widget .photostream img.landscape {
+  height: 100% !important;
+  width: auto !important;
+}
+/* line 36, widgets\_photostream.scss */
+.bra-photostream-widget .photostream img.portrait {
+  width: 100% !important;
+  height: auto !important;
+}
+/* line 41, widgets\_photostream.scss */
+.bra-photostream-widget .photostream img:hover {
+  opacity: 1 !important;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 3, widgets\_theme-info.scss */
+.mpc-w-theme-info-widget ul {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+/* line 8, widgets\_theme-info.scss */
+.mpc-w-theme-info-widget ul li {
+  display: inline-block;
+}
+
+/* line 12, widgets\_theme-info.scss */
+.mpc-w-theme-info-widget .mpcth-logo {
+  margin-bottom: 2.5em;
+  margin-right: 0;
+  line-height: .8;
+}
+
+/* line 18, widgets\_theme-info.scss */
+.mpc-w-theme-info-widget .mpcth-logo h2 {
+  margin-bottom: 0;
+}
+
+/* line 22, widgets\_theme-info.scss */
+.mpc-w-theme-info-widget .mpcth-logo:after {
+  content: '';
+  position: absolute;
+  bottom: -1.4em;
+  left: 50%;
+  height: 0;
+  width: 100px;
+  margin-left: -50px;
+  border-bottom: 1px solid;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+/* line 34, widgets\_theme-info.scss */
+.mpc-w-theme-info-widget .mpcth-logo .mpcth-logo-standard {
+  display: inline-block;
+}
+.mpcth-logo-retina {
+	display: none;
+}
+@media  (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi) {
+	.mpcth-logo-standard {
+		display: none;
+	}
+	.mpcth-logo-retina {
+		display: inline-block;
+	}
+}
+
+/* line 38, widgets\_theme-info.scss */
+.mpcth-ti-menu li {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 .5em;
+}
+
+/* line 44, widgets\_theme-info.scss */
+.mpcth-ti-socials {
+  margin-bottom: 1.5em;
+}
+
+/* line 48, widgets\_theme-info.scss */
+.mpcth-ti-copyrights {
+  font-style: italic;
+}
+
+/* line 4, widgets\_twitter.scss */
+.mpc-w-twitter-widget .header {
+  display: none;
+}
+/* line 5, widgets\_twitter.scss */
+.mpc-w-twitter-widget .tweet {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+/* line 11, widgets\_twitter.scss */
+.mpc-w-twitter-widget .u-url {
+  display: inline-block;
+  font-size: .88em;
+  margin-bottom: .5em;
+  font-style: italic;
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+}
+/* line 21, widgets\_twitter.scss */
+.mpc-w-twitter-widget .e-entry-content {
+  text-align: left;
+}
+/* line 25, widgets\_twitter.scss */
+.mpc-w-twitter-widget .e-entry-title {
+  margin: 0;
+}
+/* line 28, widgets\_twitter.scss */
+.mpc-w-twitter-widget .e-entry-title a:hover {
+  color: inherit;
+}
+/* line 32, widgets\_twitter.scss */
+.mpc-w-twitter-widget .retweet-credit,
+.mpc-w-twitter-widget .inline-media {
+  display: none;
+}
+
+/* line 38, widgets\_twitter.scss */
+#mpcth-sidebar .mpc-w-twitter-widget a {
+  color: #f7ca18;
+}
+
+/* line 42, widgets\_twitter.scss */
+#mpcth-sidebar .mpc-w-twitter-widget a:hover {
+  color: white;
+}
+
+/* line 4, widgets\_wp-widgets.scss */
+.widget_pages li {
+  list-style: none;
+}
+/* line 8, widgets\_wp-widgets.scss */
+.widget_pages .children {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, widgets\_wp-widgets.scss */
+.widget_text img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 22, widgets\_wp-widgets.scss */
+.widget_nav_menu li {
+  list-style: none;
+}
+/* line 26, widgets\_wp-widgets.scss */
+.widget_nav_menu .menu {
+  margin: 0;
+  padding: 0;
+}
+/* line 31, widgets\_wp-widgets.scss */
+.widget_nav_menu .sub-menu {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 38, widgets\_wp-widgets.scss */
+.widget_calendar table {
+  width: 100%;
+}
+/* line 42, widgets\_wp-widgets.scss */
+.widget_calendar th, .widget_calendar td {
+  text-align: center;
+  padding: .25em;
+  line-height: 1em;
+}
+/* line 48, widgets\_wp-widgets.scss */
+.widget_calendar #prev {
+  text-align: left;
+}
+/* line 52, widgets\_wp-widgets.scss */
+.widget_calendar #next {
+  text-align: right;
+}
+
+/* line 57, widgets\_wp-widgets.scss */
+.mpcth-search-form {
+  position: relative;
+}
+/* line 60, widgets\_wp-widgets.scss */
+.mpcth-search-form input.mpcth-search {
+  background: transparent;
+  color: inherit;
+  border: 1px solid;
+  border-radius: 0;
+  padding: .5em;
+  width: 100%;
+  font-size: 1.5rem;
+}
+/* line 70, widgets\_wp-widgets.scss */
+.mpcth-search-form i {
+  position: absolute;
+  top: .75em;
+  right: 1em;
+  color: inherit;
+  font-size: 1.5rem;
+}
+/* line 78, widgets\_wp-widgets.scss */
+.mpcth-search-form input.submit {
+  background: none;
+  border: none;
+  text-indent: -99999px;
+  width: 3em;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+/* Lightbox */
+/* line 149, widgets\_widgets.scss */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 153, widgets\_widgets.scss */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  z-index: 1000;
+}
+
+/* line 158, widgets\_widgets.scss */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 162, widgets\_widgets.scss */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 167, widgets\_widgets.scss */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 171, widgets\_widgets.scss */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* ========================================================================== *
+ * 7. Preloader
+ * ========================================================================== */
+/* line 5, elements\_preloader.scss */
+.mpcth-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 1000;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 17, elements\_preloader.scss */
+.mpcth-preloader.mpcth-loaded {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* line 20, elements\_preloader.scss */
+.mpcth-preloader-logo {
+  height: 49%;
+  margin-bottom: 1.75%;
+  vertical-align: bottom;
+}
+/* line 25, elements\_preloader.scss */
+.mpcth-preloader-logo:before {
+  display: inline-block;
+  content: '';
+  height: 100%;
+}
+/* line 31, elements\_preloader.scss */
+.mpcth-preloader-logo h2 {
+  font-size: 3em;
+  line-height: 1;
+  margin: 0;
+}
+
+/* line 37, elements\_preloader.scss */
+.mpcth-preloader-line {
+  width: 0;
+  border-top: 1px solid;
+  margin: 0 auto;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* line 45, elements\_preloader.scss */
+.mpcth-preloader-value {
+  line-height: 1;
+  margin-top: 1.25%;
+  font-size: 3em;
+}
+/* line 50, elements\_preloader.scss */
+.mpcth-preloader-value:after {
+  content: '%';
+  font-size: .5em;
+}
+/* fancy content */
+.fancy-content-handler > div {
+  position: relative;
+  z-index: 10;
+}
+@media only screen and (max-width: 1024px) {
+  .fancy-content-handler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: .25em;
+    right: 0;
+    width: 100%;
+    /*height: 100%;*/
+    opacity: .80;
+  }
+
+  .fancy-content-handler > div {
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    max-width: 100% !important;
+    padding: 3em !important;
+    border: 0 !important;
+  }
+
+  .fancy-content-handler > div > div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .fancy-content {
+    overflow: hidden;
+  }
+  .fancy-content > img {
+    max-width: auto;
+    width: auto;
+    height: 100%;
+    position: absolute;
+  }
+  .fancy-content > div {
+    position: initial;
+  }
+}
+
+@media only screen and (min-width: 1199px) and (max-width: 1400px) {
+  /* line 2, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-content {
+    width: 100%;
+    padding: 0 60px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  /* line 9, _responsive.scss */
+  .mpcth-intro,
+  .mpcth-pagination,
+  #mpcth_wrapper .mpcth-article-wrapper article,
+  #mpcth_wrapper .mpcth-article-wrapper,
+  .mpcth-blog-page,
+  .mpcth-post-thumbnail,
+  #mpcth_footer,
+  #mpcth_comments_wrap,
+  #mpcth-respond-wrapper,
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth_blog_content,
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-post-thumbnail,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper article,
+  #mpcth_portfolio_content,
+  #mpcth_wrapper.mpcth-portfolio-mp article,
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content,
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail,
+  .error404 .mpcth-search-page .mpcth-post-not-found,
+  .search .mpcth-search-page .mpcth-post-not-found {
+    width: 950px;
+  }
+
+  /* line 32, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-content {
+    width: 100%;
+    padding: 0 60px;
+  }
+
+  /* line 39, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail,
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-thumbnail {
+    margin-bottom: 0;
+  }
+  /* line 43, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page article,
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width article {
+    padding: 40px 0;
+  }
+
+  /* portfolio */
+  /* line 49, _responsive.scss */
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper .mpcth-post-content {
+    padding: 25px 0 40px 0;
+  }
+
+  /* line 54, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail {
+    height: 333px;
+    min-height: 333px;
+    width: 500px;
+  }
+  /* line 60, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content {
+    height: 293px;
+  }
+  /* line 64, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp article {
+    margin: 0 0 40px 0;
+  }
+  /* line 69, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-dt .mpcth-portfolio-title {
+    font-size: 2rem;
+  }
+
+  /* portfolio - single item */
+  /* line 77, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-portfolio-content {
+    position: relative;
+    z-index: 99;
+  }
+  /* line 82, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-post-thumbnail {
+    /*			height: auto !important;
+    			min-height: 450px;*/
+    width: 800px;
+  }
+  /* line 88, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-post-thumbnail-gallery {
+    float: left;
+  }
+  /* line 92, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-extra-images {
+    margin-left: 0;
+  }
+  /* line 96, _responsive.scss */
+  .mpcth-portfolio-single .format-gallery .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+  .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom {
+    border-left-width: 800px;
+    bottom: -35px;
+  }
+  /* line 102, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top {
+    border-right-width: 800px;
+    top: -35px;
+  }
+  /* line 108, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content {
+    width: 800px;
+    padding: 0;
+  }
+  /* line 112, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-content {
+    background: none !important;
+    height: auto !important;
+    width: 800px;
+  }
+  /* line 118, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-content .mpcth-portfolio-main-content {
+    height: auto !important;
+    background: #fcc83d;
+    overflow: visible;
+    position: relative;
+    padding: 40px 50px;
+  }
+  /* line 127, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-article-wrapper article {
+    margin-top: 25px;
+  }
+
+  /* portfolio end*/
+  /* line 134, _responsive.scss */
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper {
+    margin-left: 0;
+  }
+  /* line 136, _responsive.scss */
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper .mpcth-post-content {
+    width: 660px;
+  }
+
+  /* line 142, _responsive.scss */
+  #mpcth_wrapper.mpcth-full-width .mpcth-article-wrapper,
+  #mpcth_wrapper .mpcth-article-wrapper article {
+    width: 100%;
+  }
+
+  /* line 147, _responsive.scss */
+  #mpcth_wrapper .mpcth-article-wrapper article {
+    margin: 0 auto;
+  }
+
+  /* line 151, _responsive.scss */
+  .archive .mpcth-article-top,
+  .page .mpcth-article-top,
+  .search.search-no-results .mpcth-article-top,
+  .error404 .mpcth-article-top,
+  .single .mpcth-article-top,
+  article .mpcth-article-top {
+    border-right-width: 950px;
+  }
+
+  /* line 159, _responsive.scss */
+  .archive .mpcth-article-bottom,
+  .page .mpcth-article-bottom,
+  .search.search-no-results .mpcth-article-bottom,
+  .error404 .mpcth-article-bottom,
+  .single .mpcth-article-bottom,
+  article .mpcth-article-bottom {
+    border-left-width: 950px;
+  }
+
+  /* line 167, _responsive.scss */
+  .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
+  #mpcth-respond-wrapper .mpcth-article-top {
+    border-right-width: 950px;
+  }
+
+  /* line 173, _responsive.scss */
+  .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top,
+  #mpcth-respond-wrapper .mpcth-article-bottom {
+    border-left-width: 950px;
+  }
+
+  /* line 179, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content {
+    width: 450px;
+  }
+
+  /* line 183, _responsive.scss */
+  .mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top {
+    border-left-width: 450px;
+  }
+
+  /* line 188, _responsive.scss */
+  .mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom {
+    border-right-width: 450px;
+  }
+
+  /* line 192, _responsive.scss */
+  #footer .mpcth-widget-place {
+    background: none;
+    float: none;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+
+  /* contact form start */
+  /* line 201, _responsive.scss */
+  .wpcf7-form .mpcth-contact-right-side,
+  .wpcf7-form .mpcth-contact-left-side {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 207, _responsive.scss */
+  .wpcf7-form .mpcth-contact-btn {
+    width: 100%;
+  }
+
+  /* contact form end */
+  /* quote, chat  start */
+  /* line 213, _responsive.scss */
+  .mpcth-quote-text,
+  .mpcth-chat-wrapper {
+    padding: 50px 50px;
+  }
+
+  /* quote, chat  end */
+  /* thumbnail size, gallery size */
+  /* line 220, _responsive.scss */
+  .mpcth-masonry-right {
+    margin-left: 0;
+  }
+
+  /* comments start */
+  /* line 226, _responsive.scss */
+  #mpcth_content .mpcth-comments {
+    max-width: 75%;
+    width: 75%;
+    margin-left: 7rem;
+  }
+
+  /* line 232, _responsive.scss */
+  .comment-form .form-submit {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0 2rem;
+    top: 0;
+    right: 0;
+  }
+
+  /* line 240, _responsive.scss */
+  #mpcth_comments_wrap ul.children,
+  #mpcth-respond-wrapper ul.children {
+    padding: 0;
+  }
+
+  /* line 245, _responsive.scss */
+  #mpcth-respond-wrapper {
+    padding-bottom: 0;
+  }
+
+  /* line 249, _responsive.scss */
+  .mpcth-comments {
+    max-width: 560px;
+    margin-left: 170px;
+  }
+
+  /* comments end */
+  /* footer triangles and pagination start */
+  /* line 257, _responsive.scss */
+  .mpcth-pagination {
+    margin: 0px;
+    padding: 0 25px 0 40px;
+    width: 100%;
+  }
+
+  /* line 262, _responsive.scss */
+  .mpcth-blog-narrow .mpcth-pagination {
+    margin-left: 40px;
+  }
+
+  /* footer triangles and pagination end */
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* line 270, _responsive.scss */
+  .mpcth-intro,
+  .mpcth-pagination,
+  #mpcth_wrapper .mpcth-article-wrapper article,
+  #mpcth_wrapper .mpcth-article-wrapper,
+  .mpcth-blog-page,
+  .mpcth-post-thumbnail,
+  #mpcth_footer,
+  #mpcth_comments_wrap,
+  #mpcth-respond-wrapper,
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth_blog_content,
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-post-thumbnail,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper article,
+  #mpcth_portfolio_content,
+  #mpcth_wrapper.mpcth-portfolio-mp article,
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content,
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail,
+  .error404 .mpcth-search-page .mpcth-post-not-found,
+  .search .mpcth-search-page .mpcth-post-not-found {
+    width: 700px;
+  }
+
+  /* line 293, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-content {
+    width: 100%;
+    padding: 0 60px;
+  }
+
+  /* line 298, _responsive.scss */
+  .comment-reply-title,
+  .mpcth-comments-title,
+  #respond .comment-form,
+  #mpcth_wrapper .mpcth-article-wrapper .mpcth-post-content,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper .mpcth-post-content {
+    width: 600px;
+  }
+
+  /* line 308, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail,
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-thumbnail {
+    margin-bottom: 0;
+  }
+  /* line 312, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page article,
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width article {
+    padding: 40px 0;
+  }
+
+  /* portfolio */
+  /* line 318, _responsive.scss */
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper .mpcth-post-content {
+    padding: 25px 0 40px 0;
+  }
+
+  /* line 323, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail {
+    margin-bottom: -40px;
+  }
+  /* line 327, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content {
+    height: auto;
+    padding: 40px 50px;
+  }
+  /* line 332, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp article {
+    margin: 0 0 80px 0;
+  }
+
+  /* portfolio - single item */
+  /* line 339, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-portfolio-content {
+    position: relative;
+    z-index: 99;
+  }
+  /* line 344, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-post-thumbnail {
+    height: auto !important;
+    min-height: 450px;
+    width: 700px;
+  }
+  /* line 350, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-post-thumbnail-gallery {
+    float: left;
+  }
+  /* line 354, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-extra-images {
+    margin-left: 0;
+  }
+  /* line 358, _responsive.scss */
+  .mpcth-portfolio-single .format-gallery .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+  .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom {
+    border-left-width: 700px;
+    bottom: -35px;
+  }
+  /* line 364, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top {
+    border-right-width: 700px;
+    top: -35px;
+  }
+  /* line 370, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content {
+    width: 700px;
+    padding: 0;
+  }
+  /* line 374, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-content {
+    background: none !important;
+    height: auto !important;
+    width: 700px;
+  }
+  /* line 380, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-content .mpcth-portfolio-main-content {
+    height: auto !important;
+    background: #fcc83d;
+    overflow: visible;
+    position: relative;
+    padding: 40px 50px;
+  }
+  /* line 389, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-article-wrapper article {
+    margin-top: 25px;
+  }
+
+  /* portfolio end*/
+  /* line 396, _responsive.scss */
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper {
+    margin-left: 0;
+  }
+
+  /* line 400, _responsive.scss */
+  #mpcth_wrapper.mpcth-full-width .mpcth-article-wrapper,
+  #mpcth_wrapper .mpcth-article-wrapper article {
+    width: 100%;
+  }
+
+  /* line 405, _responsive.scss */
+  #mpcth_wrapper .mpcth-article-wrapper article {
+    margin: 0 auto;
+  }
+
+  /* line 409, _responsive.scss */
+  .archive .mpcth-article-top,
+  .page .mpcth-article-top,
+  .search.search-no-results .mpcth-article-top,
+  .error404 .mpcth-article-top,
+  .single .mpcth-article-top,
+  article .mpcth-article-top {
+    border-right-width: 700px;
+  }
+
+  /* line 417, _responsive.scss */
+  .archive .mpcth-article-bottom,
+  .page .mpcth-article-bottom,
+  .search.search-no-results .mpcth-article-bottom,
+  .error404 .mpcth-article-bottom,
+  .single .mpcth-article-bottom,
+  article .mpcth-article-bottom{
+    border-left-width: 700px;
+  }
+
+  /*#mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-triangle-top,*/
+  /* line 426, _responsive.scss */
+  .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
+  #mpcth-respond-wrapper .mpcth-article-top {
+    border-right-width: 700px !important;
+  }
+
+  /* line 432, _responsive.scss */
+  .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top,
+  #mpcth-respond-wrapper .mpcth-article-bottom {
+    border-left-width: 700px !important;
+  }
+
+  /* line 438, _responsive.scss */
+  section#footer .mpcth-footer-widgets {
+    width: inherit;
+  }
+
+  /* line 442, _responsive.scss */
+  section#footer .mpcth-footer-widgets li.widget {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    width: 100% !important;
+  }
+
+  /* line 450, _responsive.scss */
+  #mpcth_footer .footer-widget-title {
+    text-align: center;
+  }
+
+  /* line 454, _responsive.scss */
+  #footer .mpcth-widget-place {
+    background: none;
+    float: none;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+
+  /* contact form start */
+  /* line 462, _responsive.scss */
+  .wpcf7-form .mpcth-contact-right-side,
+  .wpcf7-form .mpcth-contact-left-side {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 468, _responsive.scss */
+  .wpcf7-form .mpcth-contact-btn {
+    width: 100%;
+  }
+
+  /* contact form end */
+  /* quote, chat  start */
+  /* line 474, _responsive.scss */
+  .mpcth-quote-text,
+  .mpcth-chat-wrapper {
+    padding: 0px 30px;
+  }
+
+  /* quote, chat  end */
+  /* thumbnail size, gallery size */
+  /* line 481, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-post-thumbnail,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-slider,
+  .mpcth-blog.mpcth-blog-narrow .slick-list,
+  .mpcth-blog .mpcth-slider,
+  .mpcth-post-thumbnail {
+    height: 466px;
+    min-height: 466px;
+    min-height: inherit;
+  }
+
+  /* line 492, _responsive.scss */
+  .mpcth-masonry-right {
+    margin-left: 0;
+  }
+
+  /* comments start */
+  /* line 498, _responsive.scss */
+  #mpcth_content .mpcth-comments {
+    max-width: 75%;
+    width: 75%;
+    margin-left: 7rem;
+  }
+
+  /* line 504, _responsive.scss */
+  .comment-form .form-submit {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0 2rem;
+    top: 0;
+    right: 0;
+  }
+
+  /* line 512, _responsive.scss */
+  #mpcth_comments_wrap ul.children,
+  #mpcth-respond-wrapper ul.children {
+    padding: 0;
+  }
+
+  /* line 517, _responsive.scss */
+  #mpcth-respond-wrapper {
+    padding-bottom: 0;
+  }
+
+  /* line 521, _responsive.scss */
+  .mpcth-comments {
+    max-width: 460px;
+  }
+
+  /* comments end */
+  /* footer triangles and pagination start */
+  /* line 528, _responsive.scss */
+  .mpcth-pagination {
+    margin: 0px;
+    padding: 0 25px 0 40px;
+    width: 100%;
+  }
+  /* line 533, _responsive.scss */
+  .mpcth-pagination .mpcth-pag-left {
+    transform: translateY(50%);
+  }
+
+  /* line 537, _responsive.scss */
+  .mpcth-blog-narrow .mpcth-pagination {
+    margin-left: 40px;
+  }
+
+  /* footer triangles and pagination end */
+}
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  /* line 545, _responsive.scss */
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
+
+  /* line 551, _responsive.scss */
+  .mpcth-home-page .mpcth-home-slim-triangle,
+  .mpcth-home-page .mpcth-home-wide-triangle {
+    display: none;
+  }
+  /* line 557, _responsive.scss */
+  .mpcth-home-page #mpcth_content.mpcth-home .mpcth-home-widget {
+    background: #fcc83d;
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+    bottom: 45px;
+  }
+
+  /* line 566, _responsive.scss */
+  .mpc-sc-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* line 571, _responsive.scss */
+  .error404 .mpcth-search-page .mpcth-post-not-found .mpcth-post-content,
+  .search .mpcth-search-page .mpcth-post-not-found .mpcth-post-content,
+  .comment-reply-title,
+  .mpcth-comments-title,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper .mpcth-post-content,
+  #mpcth_wrapper .mpcth-article-wrapper .mpcth-post-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* line 581, _responsive.scss */
+  .mpcth-intro,
+  .mpcth-pagination,
+  #mpcth_wrapper .mpcth-article-wrapper article,
+  #mpcth_wrapper .mpcth-article-wrapper,
+  .mpcth-blog-page,
+  .mpcth-post-thumbnail,
+  #mpcth_footer,
+  #mpcth_comments_wrap,
+  #mpcth-respond-wrapper,
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth_blog_content,
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-post-thumbnail,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper article,
+  #mpcth_portfolio_content,
+  #mpcth_wrapper.mpcth-portfolio-mp article,
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content,
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail,
+  .error404 .mpcth-search-page .mpcth-post-not-found,
+  .search .mpcth-search-page .mpcth-post-not-found {
+    width: 450px;
+  }
+
+  /* line 604, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-content {
+    width: 100%;
+    padding: 0 25px;
+  }
+
+  /* line 611, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail,
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-thumbnail {
+    margin-bottom: 0;
+  }
+  /* line 615, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page article,
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width article {
+    padding: 20px 0;
+  }
+
+  /* portfolio */
+  /* wide portfolio template start */
+  /* line 624, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-content {
+    display: none;
+  }
+
+  /* line 630, _responsive.scss */
+  .mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail:hover .mpcth-post-thumbnail-smaller,
+  .mobile.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail .mpcth-post-thumbnail-smaller {
+    left: 15px;
+  }
+
+  /* wide portfolio template end */
+  /* line 637, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail {
+    margin-bottom: -40px;
+  }
+  /* line 641, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content {
+    height: auto;
+    padding: 20px;
+  }
+  /* line 646, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp article {
+    margin: 0 0 60px 0;
+  }
+
+  /* portfolio - single item */
+  /* line 653, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-portfolio-content {
+    position: relative;
+    z-index: 99;
+  }
+  /* line 658, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-post-thumbnail {
+    height: auto !important;
+    min-height: 300px;
+    width: 450px;
+  }
+  /* line 664, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-post-thumbnail-gallery {
+    float: left;
+  }
+  /* line 668, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-extra-images {
+    margin-left: 0;
+  }
+  /* line 672, _responsive.scss */
+  .mpcth-portfolio-single .format-gallery .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+  .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom {
+    border-left-width: 450px;
+    bottom: -35px;
+  }
+  /* line 678, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top {
+    border-right-width: 450px;
+    top: -35px;
+  }
+  /* line 684, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content {
+    width: 450px;
+    padding: 0;
+  }
+  /* line 688, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  /* line 693, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-content {
+    background: none !important;
+    height: auto !important;
+    width: 450px;
+  }
+  /* line 699, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-content .mpcth-portfolio-main-content {
+    height: auto !important;
+    background: #fcc83d;
+    overflow: visible;
+    position: relative;
+    padding: 20px;
+  }
+  /* line 708, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-article-wrapper article {
+    margin-top: 25px;
+  }
+
+  /* portfolio end*/
+  /* line 715, _responsive.scss */
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper {
+    margin-left: 0;
+  }
+
+  /* line 720, _responsive.scss */
+  #mpcth_wrapper.mpcth-full-width .mpcth-article-wrapper,
+  #mpcth_wrapper .mpcth-article-wrapper article {
+    width: 100%;
+  }
+
+  /* line 726, _responsive.scss */
+  #mpcth_wrapper .mpcth-article-wrapper article {
+    margin: 0 auto;
+  }
+
+  /* line 730, _responsive.scss */
+  .archive .mpcth-article-top,
+  .page .mpcth-article-top,
+  .search.search-no-results .mpcth-article-top,
+  .error404 .mpcth-article-top,
+  .single .mpcth-article-top,
+  article .mpcth-article-top {
+    border-right-width: 450px;
+  }
+
+  /* line 738, _responsive.scss */
+  .archive .mpcth-article-bottom,
+  .page .mpcth-article-bottom,
+  .search.search-no-results .mpcth-article-bottom,
+  .error404 .mpcth-article-bottom,
+  .single .mpcth-article-bottom,
+  article .mpcth-article-bottom {
+    border-left-width: 450px;
+  }
+
+  /* line 746, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-triangle-top,
+  .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
+  #mpcth-respond-wrapper .mpcth-article-top {
+    border-right-width: 450px !important;
+  }
+
+  /* line 754, _responsive.scss */
+  .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top,
+  #mpcth-respond-wrapper .mpcth-article-bottom {
+    border-left-width: 450px !important;
+  }
+
+  /* line 760, _responsive.scss */
+  section#footer .mpcth-footer-widgets {
+    width: inherit;
+  }
+
+  /* line 764, _responsive.scss */
+  section#footer .mpcth-footer-widgets li.widget {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    width: 100% !important;
+  }
+
+  /* line 772, _responsive.scss */
+  #mpcth_footer .footer-widget-title {
+    text-align: center;
+  }
+
+  /* line 776, _responsive.scss */
+  #footer .mpcth-widget-place {
+    background: none;
+    float: none;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+
+  /* contact form start */
+  /* line 784, _responsive.scss */
+  .wpcf7-form .mpcth-contact-right-side,
+  .wpcf7-form .mpcth-contact-left-side {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 790, _responsive.scss */
+  .wpcf7-form .mpcth-contact-btn {
+    width: 100%;
+  }
+
+  /* contact form end */
+  /* titles size */
+  /* line 796, _responsive.scss */
+  #reply-title, .mpcth-comments-title {
+    padding: 0 20px;
+  }
+
+  /* line 800, _responsive.scss */
+  .mpcth-post-title a,
+  .mpcth-post-title,
+  .mpcth-intro h2,
+  .mpcth-portfolio-title,
+  .mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-title,
+  #mpcth_content.mpcth-home .mpcth-home-widget h1,
+  #reply-title, .mpcth-comments-title
+  #searchform input {
+    font-size: 2.5rem;
+    line-height: 2.7rem;
+  }
+
+  /* titles size end */
+  /* intro */
+  /* line 814, _responsive.scss */
+  /*.mpcth-intro,
+  .mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-intro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }             */
+  .mpcth-intro,
+  .mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-intro {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  /* thumbnail size, gallery size */
+  /* line 821, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-post-thumbnail,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-slider,
+  .mpcth-blog.mpcth-blog-narrow .slick-list,
+  .mpcth-blog .mpcth-slider,
+  .mpcth-post-thumbnail {
+    height: 300px;
+    /*min-height: 300px*/
+    min-height: inherit;
+  }
+
+  /* line 832, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-post-thumbnail {
+    height: 300px !important;
+    min-height: 300px;
+  }
+
+  /* line 836, _responsive.scss */
+  .mpcth-masonry-right {
+    margin-left: 0;
+  }
+
+  /* quote, chat  start */
+  /* line 841, _responsive.scss */
+  .mpcth-quote-text,
+  .mpcth-chat-wrapper {
+    padding: 0px 30px;
+    height: 300px;
+  }
+
+  /* quote, chat  end */
+  /* comments start */
+  /* line 850, _responsive.scss */
+  #respond .comment-form {
+    padding: 0 20px;
+  }
+
+  /* line 854, _responsive.scss */
+  #mpcth_content .mpcth-comments {
+    max-width: 75%;
+    width: 75%;
+    margin-left: 7rem;
+  }
+
+  /* line 860, _responsive.scss */
+  .comment-form .form-submit {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0 2rem;
+    top: 0;
+    right: 0;
+  }
+
+  /* line 868, _responsive.scss */
+  #mpcth_comments_wrap ul.children,
+  #mpcth-respond-wrapper ul.children {
+    padding: 0;
+  }
+
+  /* line 873, _responsive.scss */
+  #mpcth-respond-wrapper {
+    padding-bottom: 0;
+  }
+
+  /* line 877, _responsive.scss */
+  .comment-reply-title,
+  .mpcth-comments-title {
+    max-width: 450px;
+  }
+
+  /* line 882, _responsive.scss */
+  .mpcth-comments {
+    padding: 0 20px;
+    font-size: .9rem;
+  }
+  /* line 886, _responsive.scss */
+  .mpcth-comments .mpcth-comment-avatar-wrap {
+    display: none;
+  }
+
+  /* comments end */
+  /* footer triangles and pagination start */
+  /* line 893, _responsive.scss */
+  .mpcth-pagination {
+    margin: 0px;
+    padding: 0 15px 0 30px;
+    width: 100%;
+  }
+  /* line 898, _responsive.scss */
+  .mpcth-pagination a.mpcth-prev-post,
+  .mpcth-pagination a.mpcth-next-post {
+    font-size: 1.2rem;
+  }
+  /* line 903, _responsive.scss */
+  .mpcth-pagination .mpcth-pag-left {
+    transform: translateY(50%);
+  }
+
+  /* line 908, _responsive.scss */
+  .mpcth-blog-narrow .mpcth-pagination {
+    margin-left: 40px;
+  }
+
+  /* footer triangles and pagination end */
+  /* contact form start */
+  /* line 914, _responsive.scss */
+  .wpcf7-form {
+    margin-top: 1.5rem;
+  }
+
+  /* contact form end */
+}
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+  #mpcth_main_content {
+    margin-bottom: -40px;
+  }
+  /* line 926, _responsive.scss */
+  .mpcth-home-page .mpcth-home-slim-triangle,
+  .mpcth-home-page .mpcth-home-wide-triangle {
+    display: none;
+  }
+  /* line 931, _responsive.scss */
+  .mpcth-home-page #mpcth_content.mpcth-home .mpcth-home-widget {
+    background: #fcc83d;
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+    bottom: 45px;
+  }
+
+  /* line 940, _responsive.scss */
+  .slick-next,
+  .slick-prev,
+  .mpcth-bar {
+    display: none !important;
+  }
+
+  /* line 946, _responsive.scss */
+  .mpc-sc-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* line 952, _responsive.scss */
+  .error404 .mpcth-search-page .mpcth-post-not-found .mpcth-post-content,
+  .search .mpcth-search-page .mpcth-post-not-found .mpcth-post-content,
+  .comment-reply-title,
+  .mpcth-comments-title,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper .mpcth-post-content,
+  #mpcth_wrapper .mpcth-article-wrapper .mpcth-post-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* line 962, _responsive.scss */
+  .mpcth-intro,
+  .mpcth-pagination,
+  #mpcth_wrapper .mpcth-article-wrapper article,
+  #mpcth_wrapper .mpcth-article-wrapper,
+  .mpcth-blog-page,
+  .mpcth-post-thumbnail,
+  #mpcth_footer,
+  #mpcth_comments_wrap,
+  #mpcth-respond-wrapper,
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth_blog_content,
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-post-thumbnail,
+  #mpcth_wrapper.mpcth-blog-narrow .mpcth-article-wrapper article,
+  #mpcth_portfolio_content,
+  #mpcth_wrapper.mpcth-portfolio-mp article,
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content,
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail,
+  .error404 .mpcth-search-page .mpcth-post-not-found,
+  .search .mpcth-search-page .mpcth-post-not-found {
+    width: 300px;
+  }
+
+  /* line 985, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-content {
+    width: 100%;
+    padding: 0 25px;
+  }
+
+  /* line 992, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page .mpcth-post-thumbnail,
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width .mpcth-post-thumbnail {
+    margin-bottom: 0;
+  }
+  /* line 996, _responsive.scss */
+  #mpcth_wrapper.mpcth-single-page article,
+  #mpcth_wrapper.mpcth-single-page.mpcth-full-width article {
+    padding: 20px 0;
+  }
+
+  /* portfolio */
+  /* wide portfolio template start */
+  /* line 1005, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-content {
+    display: none;
+  }
+
+  /* line 1011, _responsive.scss */
+  .mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail:hover .mpcth-post-thumbnail-smaller,
+  .mobile.mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-thumbnail .mpcth-post-thumbnail-smaller {
+    left: 15px;
+  }
+
+  /* wide portfolio template end */
+  /* line 1018, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail {
+    margin-bottom: -40px;
+  }
+  /* line 1022, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content {
+    height: auto;
+    padding: 20px;
+  }
+  /* line 1027, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp article {
+    margin: 0 0 60px 0;
+  }
+
+  /* portfolio - single item */
+  /* line 1034, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-portfolio-content {
+    position: relative;
+    z-index: 99;
+  }
+  /* line 1039, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-post-thumbnail {
+    height: auto !important;
+    min-height: 200px;
+    width: 300px;
+  }
+  /* line 1045, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-post-thumbnail-gallery {
+    float: left;
+  }
+  /* line 1049, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-extra-images {
+    margin-left: 0;
+  }
+  /* line 1053, _responsive.scss */
+  .mpcth-portfolio-single .format-gallery .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+  .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom {
+    border-left-width: 300px;
+    bottom: -35px;
+  }
+  /* line 1059, _responsive.scss */
+  .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top {
+    border-right-width: 300px;
+    top: -35px;
+  }
+  /* line 1065, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content {
+    width: 300px;
+    padding: 0;
+  }
+  /* line 1069, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-title {
+    font-size: 2rem;
+    linr-hright: 2.5rem;
+  }
+  /* line 1074, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-content {
+    background: none !important;
+    height: auto !important;
+    width: 300px;
+  }
+  /* line 1080, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-post-content .mpcth-portfolio-content .mpcth-portfolio-main-content {
+    height: auto !important;
+    background: #fcc83d;
+    overflow: visible;
+    position: relative;
+    padding: 20px;
+  }
+  /* line 1089, _responsive.scss */
+  .mpcth-portfolio-single #mpcth_wrapper .mpcth-article-wrapper article {
+    margin-top: 25px;
+  }
+
+  /* portfolio end*/
+  /* line 1096, _responsive.scss */
+  #mpcth_wrapper.mpcth-blog-narrow #mpcth-masonary-wrapper {
+    margin-left: 0;
+  }
+
+  /* line 1101, _responsive.scss */
+  #mpcth_wrapper.mpcth-full-width .mpcth-article-wrapper,
+  #mpcth_wrapper .mpcth-article-wrapper article {
+    width: 100%;
+  }
+
+  /* line 1107, _responsive.scss */
+  #mpcth_wrapper .mpcth-article-wrapper article {
+    margin: 0 auto;
+  }
+
+  /* line 1111, _responsive.scss */
+  .archive .mpcth-article-top,
+  .page .mpcth-article-top,
+  .search.search-no-results .mpcth-article-top,
+  .error404 .mpcth-article-top,
+  .single .mpcth-article-top,
+  article .mpcth-article-top {
+    border-right-width: 300px;
+  }
+
+  /* line 1119, _responsive.scss */
+  .archive .mpcth-article-bottom,
+  .page .mpcth-article-bottom,
+  .search.search-no-results .mpcth-article-bottom,
+  .error404 .mpcth-article-bottom,
+  .single .mpcth-article-bottom,
+  article .mpcth-article-bottom {
+    border-left-width: 300px;
+  }
+
+  /* line 1127, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-triangle-top,
+  .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
+  #mpcth-respond-wrapper .mpcth-article-top {
+    border-right-width: 300px !important;
+  }
+
+  /* line 1135, _responsive.scss */
+  .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top,
+  #mpcth-respond-wrapper .mpcth-article-bottom {
+    border-left-width: 300px !important;
+  }
+
+  /* line 1141, _responsive.scss */
+  section#footer .mpcth-footer-widgets {
+    width: inherit;
+  }
+
+  /* line 1145, _responsive.scss */
+  section#footer .mpcth-footer-widgets li.widget {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    width: 100% !important;
+  }
+
+  /* line 1153, _responsive.scss */
+  #mpcth_footer .footer-widget-title {
+    text-align: center;
+  }
+
+  /* line 1157, _responsive.scss */
+  #footer .mpcth-widget-place {
+    background: none;
+    float: none;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+
+  /* contact form start */
+  /* line 1165, _responsive.scss */
+  .wpcf7-form .mpcth-contact-right-side,
+  .wpcf7-form .mpcth-contact-left-side {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 1171, _responsive.scss */
+  .wpcf7-form .mpcth-contact-btn {
+    width: 100%;
+  }
+
+  /* contact form end */
+  /* titles size */
+  /* line 1177, _responsive.scss */
+  #reply-title, .mpcth-comments-title {
+    padding: 0 20px;
+  }
+
+  /* line 1181, _responsive.scss */
+  .mpcth-post-title a,
+  .mpcth-post-title,
+  .mpcth-intro h2,
+  .mpcth-portfolio-title,
+  .mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-post-title,
+  #mpcth_content.mpcth-home .mpcth-home-widget h1,
+  #reply-title, .mpcth-comments-title,
+  #searchform input {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  /* titles size end */
+  /* intro */
+  /* line 1195, _responsive.scss */
+  .mpcth-intro,
+  .mpcth-portfolio-single-alt #mpcth_wrapper .mpcth-intro {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  /* thumbnail size, gallery size */
+  /* line 1202, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp .mpcth-post-thumbnail,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-post-thumbnail,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-slider,
+  .mpcth-blog.mpcth-blog-narrow .slick-list,
+  .mpcth-blog .mpcth-slider,
+  .mpcth-post-thumbnail {
+    height: 200px;
+    /*min-height: 200px*/
+    min-height: inherit;
+  }
+
+  /* line 1213, _responsive.scss */
+  #mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-post-thumbnail {
+    height: 200px !important;
+    min-height: 200px;
+  }
+
+  /* line 1217, _responsive.scss */
+  .mpcth-masonry-right {
+    margin-left: 0;
+  }
+
+  /* quote, chat  start */
+  /* line 1222, _responsive.scss */
+  .mpcth-quote-text,
+  .mpcth-chat-wrapper {
+    padding: 0px 30px;
+    font-size: .9rem;
+    height: 200px;
+  }
+  /* line 1228, _responsive.scss */
+  .mpcth-quote-text span.mpcth-quote-author,
+  .mpcth-chat-wrapper span.mpcth-quote-author {
+    font-size: 1rem;
+  }
+
+  /* line 1233, _responsive.scss */
+  .mpcth-blog-narrow .mpcth-chat-wrapper,
+  .mpcth-blog.mpcth-blog-narrow .mpcth-quote-text,
+  .mpcth-chat-wrapper {
+    display: block;
+    height: 160px;
+  }
+
+  /* quote, chat  end */
+  /* comments start */
+  /* line 1243, _responsive.scss */
+  #respond .comment-form {
+    padding: 0 20px;
+  }
+
+  /* line 1247, _responsive.scss */
+  #mpcth_content .mpcth-comments {
+    max-width: 75%;
+    width: 75%;
+    margin-left: 7rem;
+  }
+
+  /* line 1253, _responsive.scss */
+  .comment-form .form-submit {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0 2rem;
+    top: 0;
+    right: 0;
+  }
+
+  /* line 1261, _responsive.scss */
+  #mpcth_comments_wrap ul.children,
+  #mpcth-respond-wrapper ul.children {
+    padding: 0;
+  }
+
+  /* line 1266, _responsive.scss */
+  #mpcth-respond-wrapper {
+    padding-bottom: 0;
+  }
+
+  /* line 1270, _responsive.scss */
+  .comment-reply-title,
+  .mpcth-comments-title {
+    max-width: 300px;
+  }
+
+  /* line 1275, _responsive.scss */
+  .mpcth-comments {
+    padding: 0 20px;
+    font-size: .9rem;
+  }
+  /* line 1279, _responsive.scss */
+  .mpcth-comments .mpcth-comment-avatar-wrap {
+    display: none;
+  }
+
+  /* comments end */
+  /* footer triangles and pagination start */
+  /* line 1286, _responsive.scss */
+  #mpcth_footer {
+    margin-top: -60px;
+    padding: 0;
+  }
+
+  /* line 1291, _responsive.scss */
+  .mpcth-single-page #mpcth_footer,
+  .mpcth-full-width #mpcth_footer {
+    margin-top: -25px;
+    padding: 40px 0 0 0;
+  }
+
+  /* line 1297, _responsive.scss */
+  .mpcth-post-pagination {
+    background: #fcc83d;
+    padding: 20px  0;
+    height: auto;
+    z-index: 5;
+    position: relative;
+    min-height: 75px;
+  }
+
+  /* line 1306, _responsive.scss */
+  section#footer .mpcth-post-pagination #mpcth_pagination_wrap {
+    margin: 0 auto;
+  }
+
+  /* line 1310, _responsive.scss */
+  .mpcth-portfolio-single-alt .mpcth-pagination,
+  .mpcth-portfolio-mp-alt .mpcth-pagination,
+  .mpcth-pagination {
+    margin: 0;
+    padding: 0 10px;
+    max-height: none;
+    width: 100%;
+    text-align: center;
+  }
+  /* line 1319, _responsive.scss */
+  .mpcth-portfolio-single-alt .mpcth-pagination .mpcth-next-post,
+  .mpcth-portfolio-mp-alt .mpcth-pagination .mpcth-next-post,
+  .mpcth-pagination .mpcth-next-post {
+    color: #ffffff !important;
+  }
+  /* line 1323, _responsive.scss */
+  .mpcth-portfolio-single-alt .mpcth-pagination a.mpcth-prev-post,
+  .mpcth-portfolio-single-alt .mpcth-pagination a.mpcth-next-post,
+  .mpcth-portfolio-mp-alt .mpcth-pagination a.mpcth-prev-post,
+  .mpcth-portfolio-mp-alt .mpcth-pagination a.mpcth-next-post,
+  .mpcth-pagination a.mpcth-prev-post,
+  .mpcth-pagination a.mpcth-next-post {
+    font-size: 1.2rem;
+  }
+  /* line 1328, _responsive.scss */
+  .mpcth-portfolio-single-alt .mpcth-pagination .mpcth-pag-left,
+  .mpcth-portfolio-single-alt .mpcth-pagination .mpcth-pag-right,
+  .mpcth-portfolio-mp-alt .mpcth-pagination .mpcth-pag-left,
+  .mpcth-portfolio-mp-alt .mpcth-pagination .mpcth-pag-right,
+  .mpcth-pagination .mpcth-pag-left,
+  .mpcth-pagination .mpcth-pag-right {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: inherit;
+    text-align: center;
+    transform: translateY(0%);
+  }
+  /* line 1338, _responsive.scss */
+  .mpcth-portfolio-single-alt .mpcth-pagination .mpcth-pag-left a,
+  .mpcth-portfolio-single-alt .mpcth-pagination .mpcth-pag-right a,
+  .mpcth-portfolio-mp-alt .mpcth-pagination .mpcth-pag-left a,
+  .mpcth-portfolio-mp-alt .mpcth-pagination .mpcth-pag-right a,
+  .mpcth-pagination .mpcth-pag-left a,
+  .mpcth-pagination .mpcth-pag-right a {
+    float: none;
+    width: auto;
+    max-width: inherit;
+    position: relative;
+  }
+
+  /* line 1349, _responsive.scss */
+  .mpcth-footer-right-side,
+  .mpcth-footer-left-side,
+  .mpcth-footer-top {
+    display: none;
+  }
+
+  /* line 1355, _responsive.scss */
+  .mpcth-blog-narrow .mpcth-pagination {
+    padding-left: 20px;
+  }
+
+  /* footer triangles and pagination end */
+  /* contact form start */
+  /* line 1362, _responsive.scss */
+  .wpcf7-form {
+    margin-top: 1.5rem;
+  }
+
+  /* contact form end */
+  /* line 1367, _responsive.scss */
+  .mpcth-social-icons {
+    display: none;
+  }
+
+  /* page single */
+  /* line 1374, _responsive.scss */
+  .page #mpcth_wrapper.mpcth-single-page .mpcth-article-wrapper {
+    margin-bottom: -70px;
+  }
+
+  #mpcth_wrapper.mpcth-portfolio-mp.mpcth-portfolio-mp-alt article {
+    padding-left: 0;
+  }
+}
+@media only screen
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .slick-next, .slick-prev { display: none !important; }
+}
+
+/* Widgets */
+.widget li select {
+  margin-top: .35em;
+}
+.widget_rss li {
+  margin-bottom: .5em;
+}
+.widget_rss li a {
+  display: block;
+  font-weight: bold;
+}
+
+.widget_recent_comments li {
+  margin-bottom: .5em;
+}
+
+.widget_recent_comments li a {
+  line-height: 1.3rem;
+}
