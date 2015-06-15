@@ -1679,7 +1679,7 @@ section#footer .mpcth-footer-widgets.mpcth-footer-columns-1 li.widget {
 /* line 60, layout\_footer.scss */
 .mpcth-footer-left-side {
   border-top: 160px solid transparent;
-  border-left: 500px solid #f7ca18;
+  border-left: 500px solid #4C97C1;
   border-right: 0;
   border-bottom: 0px solid transparent;
   top: -140px;
@@ -6796,7 +6796,7 @@ section#footer .mpcth-post-pagination a:hover.mpcth-prev-post {
   }
 
   /* line 1297, _responsive.scss */
-  .mpcth-post-pagination {
+  /*.mpcth-post-pagination {
     background: #fcc83d;
     padding: 20px  0;
     height: auto;
@@ -6804,7 +6804,7 @@ section#footer .mpcth-post-pagination a:hover.mpcth-prev-post {
     position: relative;
     min-height: 75px;
   }
-
+*/
   /* line 1306, _responsive.scss */
   section#footer .mpcth-post-pagination #mpcth_pagination_wrap {
     margin: 0 auto;
