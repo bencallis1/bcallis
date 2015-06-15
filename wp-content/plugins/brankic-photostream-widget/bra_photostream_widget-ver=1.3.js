@@ -39,7 +39,7 @@ function dump(arr,level) {
         bra_photostream: function(options) {
  
             var defaults = {
-                user: 'brankic1979',
+                user: 'bencallis',
                 limit: 10,
 				social_network: 'dribbble'
 				

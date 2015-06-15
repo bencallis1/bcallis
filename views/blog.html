@@ -6,19 +6,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yak</title>
+    <title>Ben Callis Blog</title>
     <link rel="pingback" href="../xmlrpc.php"/>
 
     <!--[if lt IE 9]>
     <script src="../wp-content/themes/yak/assets/js/html5.js"></script>
     <![endif]-->
 
-    <title>Yak</title>
+    <title>Ben Callis Blog</title>
     <link rel="alternate" type="application/rss+xml" title="Yak &raquo; Feed" href="../feed/index.rss"/>
     <link rel="alternate" type="application/rss+xml" title="Yak &raquo; Comments Feed"
           href="../comments/feed/index.rss"/>
-    <link rel="alternate" type="application/rss+xml" title="Yak &raquo; Classic Standard Comments Feed"
-          href="../blog/feed/index.rss"/>
+
     <link rel='stylesheet' id='contact-form-7-css'
           href='../wp-content/plugins/contact-form-7/includes/css/styles-ver=4.1.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='mpc-sh-styles-css' href='../wp-content/plugins/mpc-shortcodes/css/mpc-sh-ver=4.1.5.css'
@@ -33,501 +32,7 @@
           href='http://fonts.googleapis.com/css?family=Open+Sans%3A600&ver=4.1.5' type='text/css' media='all'/>
     <link rel='stylesheet' id='mpc-styles-css' href='../wp-content/themes/yak/style-ver=4.1.5.css' type='text/css'
           media='all'/>
-    <style id='mpc-styles-inline-css' type='text/css'>h1, h2, h3, h4, h5, h6 {
-        font-family: "Raleway";
-        font-weight: 800;
-    }
 
-    body, .sub-menu a {
-        font-family: Open Sans;
-        font-weight: 500;
-    }
-
-    .menu-item {
-        font-family: Open Sans;
-        font-weight: 600;
-    }
-
-    html, body {
-        font-size: 14px;
-    }
-
-    .mpcth-bar, .mpcth-logo-triangle {
-        border-left-color:
-    }
-
-    #header_main {
-        background-color:;
-    }
-
-    #header_main .mpcth-logo h2 {
-        color: #333333;
-    }
-
-    #header_main small.mpcth-description {
-        color: #333333;
-    }
-
-    body.mpcth-portfolio-single #mpcth_wrapper,
-    #mpcth_wrapper.mpcth-blog-wide,
-    #mpcth_wrapper.mpcth-blog-narrow,
-    #mpcth_wrapper.mpcth-portfolio-dt,
-    #mpcth_wrapper.mpcth-single-post {
-        background: #444349;
-    }
-
-    .mpcth-triangle-top,
-    .search-results .mpcth-article-top,
-    .search.search-no-results .mpcth-article-top,
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-triangle-top,
-    .mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
-    .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
-    .mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
-    .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
-    .mpcth-blog .mpcth-article-top,
-    .mpcth-home-wide-triangle {
-        border-right-color: #FCC83D;
-    }
-
-    .mpcth-home-wide-triangle {
-        border-bottom-color: #FCC83D;
-    }
-
-    .mpcth-triangle-bottom,
-    .search-results .mpcth-article-bottom,
-    .search.search-no-results .mpcth-article-bottom,
-    .mpcth-footer-left-side,
-    .mpcth-blog .mpcth-article-bottom,
-    .mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top,
-    .mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
-    .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
-    .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top {
-        border-left-color: #FCC83D;
-    }
-
-    .mpcth-search-form .mpcth-sb {
-        border-color: #FCC83D;
-    }
-
-    .mpcth-filters-wrap li a.portfolio-active-category,
-    .mpcth-filters-wrap li a:hover,
-    .mpcth-intro li a:hover,
-    .mpcth-intro li.current-cat a,
-    .widget .comment-author-link, .widget #calendar_wrap a,
-    .widget a:hover,
-    .widget p a, .widget #wp-calendar a,
-    #mpcth_main_menu ul li:hover a,
-    #mpcth_main_menu ul li:hover li a:hover,
-    #mpcth_main_menu li.current_page_item a,
-    #mpcth_main_menu li.current-menu-item a,
-    #mpcth_main_menu li.current-menu-ancestor a,
-    #mpcth_main_menu li.current-menu-parent a,
-    #mpcth_main_menu li.current-menu-ancestor li.current-menu-parent a,
-    #mpcth_main_menu li.current-menu-ancestor li.current-menu-parent li.current-menu-item a,
-    #mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-tl,
-    #mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-br,
-    #mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-tl,
-    #mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-br,
-    .menu-item:hover .mpcth-border-tl,
-    .menu-item:hover .mpcth-border-br,
-    .page_item:hover .mpcth-border-tl,
-    .page_item:hover .mpcth-border-br,
-    .mpcth-flip-icon:hover .fa.mpcth-icon-hover,
-    #searchform input,
-    .mpcth-post-pagination a.mpcth-next-post,
-    section#footer .mpcth-post-pagination a:hover.mpcth-next-post {
-        color: #FCC83D;
-    }
-
-    #mpcth_main_menu li.current-menu-ancestor li.current-menu-parent,
-    #mpcth_main_menu li.current-menu-parent li.current-menu-item a,
-    #mpcth_main_menu li.current-menu-parent li.page_item a {
-        color: #FCC83D;
-        background: #ffffff;
-    }
-
-    #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
-    .mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
-    .mpcth-portfolio-single .mpcth-portfolio-content,
-    #mpcth_main_menu ul ul,
-    #mpcth_main_menu ul ul ul,
-    .search-results article,
-    .search.search-no-results article,
-    .mpcth-blog article {
-        background: #FCC83D;
-    }
-
-    .mpcth-portfolio-single .mpcth-portfolio-title,
-    .mpcth-portfolio-title a,
-    .search-results .mpcth-post-title,
-    .search-results .mpcth-post-title a,
-    .mpcth-blog-wide .mpcth-post-title,
-    .mpcth-blog-wide .mpcth-post-title a,
-    .mpcth-blog-narrow .mpcth-post-title,
-    .mpcth-blog-narrow .mpcth-post-title a,
-    .mpcth-pagination .page-numbers {
-        color: #ffffff;
-    }
-
-    .mpcth-single-post.mpcth-blog article a,
-    .mpcth-blog.mpcth-blog-narrow .mpcth-post-meta a:hover,
-    .mpcth-blog.mpcth-blog-wide .mpcth-post-meta a:hover,
-    .mpcth-blog.mpcth-search-page .mpcth-post-meta a:hover,
-    .mpcth-post-pagination a:hover,
-    .mpcth-post-pagination span.current,
-    .mpcth-post-pagination a:hover,
-    .mpcth-post-pagination span.current,
-    .mpcth-blog article a:hover,
-    .mpcth-portfolio-title a:hover {
-        color: #444444;
-    }
-
-    #mpcth_content.mpcth-home .mpcth-home-widget {
-        color: #ffffff;
-    }
-
-    .mpcth-blog.mpcth-search-page .mpcth-post-meta a,
-    .mpcth-blog.mpcth-blog-narrow .mpcth-post-meta a,
-    .mpcth-blog.mpcth-blog-wide .mpcth-post-meta a,
-    .mpcth-blog.mpcth-blog-narrow article,
-    .mpcth-blog.mpcth-blog-wide article,
-    .mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
-    .mpcth-portfolio-single .mpcth-portfolio-content,
-    #mpcth_main_menu ul ul, .mpcth-blog article,
-    .mpcth-portfolio-single .mpcth-portfolio-main-content,
-    .mpcth-blog article a,
-    .mpcth-blog article a.mpcth-button:hover,
-    .mpcth-button {
-        color: #ffffff;
-    }
-
-    .mpcth-intro,
-    .mpcth-intro li a {
-        color: #ffffff;
-    }
-
-    .comment-form .form-submit input:hover,
-    .mpcth-contact-btn .wpcf7-submit:hover,
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a:hover,
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a.portfolio-active-category,
-    .mpcth-blog .mpcth-post-meta a:hover,
-    #mpcth_content .mpcth-comments a:hover {
-        color: #FCC83D;
-    }
-
-    textarea:focus ~ span,
-    input:focus ~ span,
-    .comment-form .form-submit input:hover ~ span,
-    .mpcth-contact-btn .wpcf7-submit:hover ~ span {
-        border-color: #FCC83D;
-    }
-
-    #mpcth_wrapper,
-    #mpcth_wrapper.mpcth-single-page,
-    #mpcth_wrapper.mpcth-portfolio-mp-alt,
-    .mpcth-portfolio-single-alt #mpcth_wrapper.mpcth-single-post {
-        background: #ededed;
-    }
-
-    #respond .comment-form,
-    .mpcth-full-width article,
-    .mpcth-blog.mpcth-single-page article,
-    .mpcth-blog.mpcth-single-post article,
-    #mpcth_comments_wrap,
-    #mpcth-respond-wrapper {
-        background: #f5f5f5;
-        color: #444444;
-    }
-
-    .mpcth-blog article a.mpc-sc-lightbox,
-    .mpcth-blog .mpcth-post-meta a,
-    .mpcth-single-page article a {
-        color: #444444;
-    }
-
-    .mpcth-full-width .mpcth-article-top,
-    .mpcth-blog.mpcth-single-page .mpcth-article-top,
-    .mpcth-blog.mpcth-single-post .mpcth-article-top {
-        border-right-color: #f5f5f5;
-    }
-
-    .mpcth-full-width .mpcth-article-bottom,
-    .mpcth-blog.mpcth-single-page .mpcth-article-bottom,
-    .mpcth-blog.mpcth-single-post .mpcth-article-bottom {
-        border-left-color: #f5f5f5;
-    }
-
-    .mpcth-single-page .mpcth-post-title a,
-    .mpcth-single-page .mpcth-post-title,
-    .mpcth-full-width .mpcth-post-title a,
-    .mpcth-full-width .mpcth-post-title,
-    .mpcth-post-title a,
-    .mpcth-post-title,
-    .comment-reply-title,
-    .mpcth-comments-title {
-        color: #333333;
-    }
-
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-intro,
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a,
-    .mpcth-portfolio-single-alt .mpcth-intro {
-        color: #333333;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        font-family: "Raleway";
-        font-weight: 800;
-    }
-
-    body, .sub-menu a {
-        font-family: Open Sans;
-        font-weight: 500;
-    }
-
-    .menu-item {
-        font-family: Open Sans;
-        font-weight: 600;
-    }
-
-    html, body {
-        font-size: 14px;
-    }
-
-    .mpcth-bar, .mpcth-logo-triangle {
-        border-left-color:
-    }
-
-    #header_main {
-        background-color:;
-    }
-
-    #header_main .mpcth-logo h2 {
-        color: #333333;
-    }
-
-    #header_main small.mpcth-description {
-        color: #333333;
-    }
-
-    body.mpcth-portfolio-single #mpcth_wrapper,
-    #mpcth_wrapper.mpcth-blog-wide,
-    #mpcth_wrapper.mpcth-blog-narrow,
-    #mpcth_wrapper.mpcth-portfolio-dt,
-    #mpcth_wrapper.mpcth-single-post {
-        background: #444349;
-    }
-
-    .mpcth-triangle-top,
-    .search-results .mpcth-article-top,
-    .search.search-no-results .mpcth-article-top,
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-portfolio-triangle-top,
-    .mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
-    .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
-    .mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
-    .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-bottom,
-    .mpcth-blog .mpcth-article-top,
-    .mpcth-home-wide-triangle {
-        border-right-color: #FCC83D;
-    }
-
-    .mpcth-home-wide-triangle {
-        border-bottom-color: #FCC83D;
-    }
-
-    .mpcth-triangle-bottom,
-    .search-results .mpcth-article-bottom,
-    .search.search-no-results .mpcth-article-bottom,
-    .mpcth-footer-left-side,
-    .mpcth-blog .mpcth-article-bottom,
-    .mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top,
-    .mpcth-portfolio-mp .mpcth-portfolio-triangle.mpcth-portfolio-triangle-top,
-    .mpcth-portfolio-single .mpcth-portfolio-triangle.mpcth-portfolio-triangle-bottom,
-    .mpcth-blog.mpcth-blog-narrow .mpcth-masonry-left .mpcth-article-top {
-        border-left-color: #FCC83D;
-    }
-
-    .mpcth-search-form .mpcth-sb {
-        border-color: #FCC83D;
-    }
-
-    .mpcth-filters-wrap li a.portfolio-active-category,
-    .mpcth-filters-wrap li a:hover,
-    .mpcth-intro li a:hover,
-    .mpcth-intro li.current-cat a,
-    .widget .comment-author-link, .widget #calendar_wrap a,
-    .widget a:hover,
-    .widget p a, .widget #wp-calendar a,
-    #mpcth_main_menu ul li:hover a,
-    #mpcth_main_menu ul li:hover li a:hover,
-    #mpcth_main_menu li.current_page_item a,
-    #mpcth_main_menu li.current-menu-item a,
-    #mpcth_main_menu li.current-menu-ancestor a,
-    #mpcth_main_menu li.current-menu-parent a,
-    #mpcth_main_menu li.current-menu-ancestor li.current-menu-parent a,
-    #mpcth_main_menu li.current-menu-ancestor li.current-menu-parent li.current-menu-item a,
-    #mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-tl,
-    #mpcth_main_menu li.current-menu-ancestor.menu-item .mpcth-border-br,
-    #mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-tl,
-    #mpcth_main_menu li.current-menu-ancestor.page_item .mpcth-border-br,
-    .menu-item:hover .mpcth-border-tl,
-    .menu-item:hover .mpcth-border-br,
-    .page_item:hover .mpcth-border-tl,
-    .page_item:hover .mpcth-border-br,
-    .mpcth-flip-icon:hover .fa.mpcth-icon-hover,
-    #searchform input,
-    .mpcth-post-pagination a.mpcth-next-post,
-    section#footer .mpcth-post-pagination a:hover.mpcth-next-post {
-        color: #FCC83D;
-    }
-
-    #mpcth_main_menu li.current-menu-ancestor li.current-menu-parent,
-    #mpcth_main_menu li.current-menu-parent li.current-menu-item a,
-    #mpcth_main_menu li.current-menu-parent li.page_item a {
-        color: #FCC83D;
-        background: #ffffff;
-    }
-
-    #mpcth_wrapper.mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
-    .mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
-    .mpcth-portfolio-single .mpcth-portfolio-content,
-    #mpcth_main_menu ul ul,
-    #mpcth_main_menu ul ul ul,
-    .search-results article,
-    .search.search-no-results article,
-    .mpcth-blog article {
-        background: #FCC83D;
-    }
-
-    .mpcth-portfolio-single .mpcth-portfolio-title,
-    .mpcth-portfolio-title a,
-    .search-results .mpcth-post-title,
-    .search-results .mpcth-post-title a,
-    .mpcth-blog-wide .mpcth-post-title,
-    .mpcth-blog-wide .mpcth-post-title a,
-    .mpcth-blog-narrow .mpcth-post-title,
-    .mpcth-blog-narrow .mpcth-post-title a,
-    .mpcth-pagination .page-numbers {
-        color: #ffffff;
-    }
-
-    .mpcth-single-post.mpcth-blog article a,
-    .mpcth-blog.mpcth-blog-narrow .mpcth-post-meta a:hover,
-    .mpcth-blog.mpcth-blog-wide .mpcth-post-meta a:hover,
-    .mpcth-blog.mpcth-search-page .mpcth-post-meta a:hover,
-    .mpcth-post-pagination a:hover,
-    .mpcth-post-pagination span.current,
-    .mpcth-post-pagination a:hover,
-    .mpcth-post-pagination span.current,
-    .mpcth-blog article a:hover,
-    .mpcth-portfolio-title a:hover {
-        color: #444444;
-    }
-
-    #mpcth_content.mpcth-home .mpcth-home-widget {
-        color: #ffffff;
-    }
-
-    .mpcth-blog.mpcth-search-page .mpcth-post-meta a,
-    .mpcth-blog.mpcth-blog-narrow .mpcth-post-meta a,
-    .mpcth-blog.mpcth-blog-wide .mpcth-post-meta a,
-    .mpcth-blog.mpcth-blog-narrow article,
-    .mpcth-blog.mpcth-blog-wide article,
-    .mpcth-portfolio-mp .mpcth-portfolio-content .mpcth-portfolio-main-content,
-    .mpcth-portfolio-single .mpcth-portfolio-content,
-    #mpcth_main_menu ul ul, .mpcth-blog article,
-    .mpcth-portfolio-single .mpcth-portfolio-main-content,
-    .mpcth-blog article a,
-    .mpcth-blog article a.mpcth-button:hover,
-    .mpcth-button {
-        color: #ffffff;
-    }
-
-    .mpcth-intro,
-    .mpcth-intro li a {
-        color: #ffffff;
-    }
-
-    .comment-form .form-submit input:hover,
-    .mpcth-contact-btn .wpcf7-submit:hover,
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a:hover,
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a.portfolio-active-category,
-    .mpcth-blog .mpcth-post-meta a:hover,
-    #mpcth_content .mpcth-comments a:hover {
-        color: #FCC83D;
-    }
-
-    textarea:focus ~ span,
-    input:focus ~ span,
-    .comment-form .form-submit input:hover ~ span,
-    .mpcth-contact-btn .wpcf7-submit:hover ~ span {
-        border-color: #FCC83D;
-    }
-
-    #mpcth_wrapper,
-    #mpcth_wrapper.mpcth-single-page,
-    #mpcth_wrapper.mpcth-portfolio-mp-alt,
-    .mpcth-portfolio-single-alt #mpcth_wrapper.mpcth-single-post {
-        background: #ededed;
-    }
-
-    #respond .comment-form,
-    .mpcth-full-width article,
-    .mpcth-blog.mpcth-single-page article,
-    .mpcth-blog.mpcth-single-post article,
-    #mpcth_comments_wrap,
-    #mpcth-respond-wrapper {
-        background: #f5f5f5;
-        color: #444444;
-    }
-
-    .mpcth-blog article a.mpc-sc-lightbox,
-    .mpcth-blog .mpcth-post-meta a,
-    .mpcth-single-page article a {
-        color: #444444;
-    }
-
-    .mpcth-full-width .mpcth-article-top,
-    .mpcth-blog.mpcth-single-page .mpcth-article-top,
-    .mpcth-blog.mpcth-single-post .mpcth-article-top {
-        border-right-color: #f5f5f5;
-    }
-
-    .mpcth-full-width .mpcth-article-bottom,
-    .mpcth-blog.mpcth-single-page .mpcth-article-bottom,
-    .mpcth-blog.mpcth-single-post .mpcth-article-bottom {
-        border-left-color: #f5f5f5;
-    }
-
-    .mpcth-single-page .mpcth-post-title a,
-    .mpcth-single-page .mpcth-post-title,
-    .mpcth-full-width .mpcth-post-title a,
-    .mpcth-full-width .mpcth-post-title,
-    .mpcth-post-title a,
-    .mpcth-post-title,
-    .comment-reply-title,
-    .mpcth-comments-title {
-        color: #333333;
-    }
-
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-intro,
-    .mpcth-portfolio-mp.mpcth-portfolio-mp-alt .mpcth-filters-wrap li a,
-    .mpcth-portfolio-single-alt .mpcth-intro {
-        color: #333333;
-    }
-
-    .mpcth-read-more-trim {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 90%);
-        background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 1)));
-        background-image: -moz-linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 90%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#ffFFFFFF);
-        -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#ffFFFFFF);
-    }
-
-    #mpcth_main_content .mpcth-post-content {
-        font-weight: 500 !important;
-    }
-
-    </style>
     <link rel='stylesheet' id='font-awesome-css'
           href='../wp-content/themes/yak/assets/fonts/font-awesome.min-ver=4.1.5.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='mpc-plugins-css-css' href='../wp-content/themes/yak/assets/css/plugins.min-ver=4.1.5.css'
@@ -537,14 +42,14 @@
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc.php-rsd.xml"/>
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml"/>
     <meta name="generator" content="WordPress 4.1.5"/>
-    <link rel='canonical' href='blog.html'/>
-    <link rel='shortlink' href='blog.html'/>
+    <link rel='canonical' href='portfolio.html'/>
+    <link rel='shortlink' href='portfolio.html'/>
 </head>
 <body class="page page-id-19 page-template page-template-templates page-template-blog page-template-templatesblog-php mpcth-sidebar-right mpcth-responsive">
 <span id="mpcth_overlay"></span>
 
 <div id="mpcth_seach_form_holder">
-    <form method="get" id="searchform" class="mpcth-search-form" action="http://yak.mpcreation.net/">
+    <form method="get" id="searchform" class="mpcth-search-form" action="http://bcallis.com/">
 
         <div>
             <input type="text" class="field mpcth-search" name="s" id="s" value="SEARCH..."
@@ -562,45 +67,43 @@
     <div class="mpcth-social-icons-wrapper">
         <div class="mpcth-logo mpcth-left">
             <span class="mpcth-logo-triangle"></span>
-
             <h2>
-                <a href="../index.html" title="logo">BC</a>
+                <a href="index.html" title="logo" >BC</a>
             </h2>
         </div>
         <!-- .mpcth-logo -->
-
         <div class="mpcth-social-icons  mpcth-left">
             <ul class="mpcth-socials">
                 <li>
-                    <a href="" class="mpcth-social-facebook">
-												<span class="mpcth-flip-icon">
-													<i class="fa fa-fw fa-facebook"></i>
-													<i class="fa fa-fw fa-facebook mpcth-icon-hover"></i>
-												</span>
+                    <a href="https://github.com/bencallis1" class="mpcth-social-github">
+                                                    <span class="mpcth-flip-icon">
+                                                        <i class="fa fa-fw fa-github"></i>
+                                                        <i class="fa fa-fw fa-github mpcth-icon-hover"></i>
+                                                    </span>
                     </a>
                 </li>
                 <li>
-                    <a href="" class="mpcth-social-instagram">
-												<span class="mpcth-flip-icon">
-													<i class="fa fa-fw fa-instagram"></i>
-													<i class="fa fa-fw fa-instagram mpcth-icon-hover"></i>
-												</span>
+                    <a href="https://instagram.com/bencallis1/" class="mpcth-social-instagram">
+                                                    <span class="mpcth-flip-icon">
+                                                        <i class="fa fa-fw fa-instagram"></i>
+                                                        <i class="fa fa-fw fa-instagram mpcth-icon-hover"></i>
+                                                    </span>
                     </a>
                 </li>
                 <li>
-                    <a href="" class="mpcth-social-linkedin">
-												<span class="mpcth-flip-icon">
-													<i class="fa fa-fw fa-linkedin"></i>
-													<i class="fa fa-fw fa-linkedin mpcth-icon-hover"></i>
-												</span>
+                    <a href="https://www.linkedin.com/in/bencallis1" class="mpcth-social-linkedin">
+                                                    <span class="mpcth-flip-icon">
+                                                        <i class="fa fa-fw fa-linkedin"></i>
+                                                        <i class="fa fa-fw fa-linkedin mpcth-icon-hover"></i>
+                                                    </span>
                     </a>
                 </li>
                 <li>
-                    <a href="" class="mpcth-social-twitter">
-												<span class="mpcth-flip-icon">
-													<i class="fa fa-fw fa-twitter"></i>
-													<i class="fa fa-fw fa-twitter mpcth-icon-hover"></i>
-												</span>
+                    <a href="https://twitter.com/bencallis1" class="mpcth-social-twitter">
+                                                    <span class="mpcth-flip-icon">
+                                                        <i class="fa fa-fw fa-twitter"></i>
+                                                        <i class="fa fa-fw fa-twitter mpcth-icon-hover"></i>
+                                                    </span>
                     </a>
                 </li>
             </ul>
@@ -636,7 +139,7 @@
     <nav id="mpcth_main_menu" class="mpcth-nav mpcth-right" role="navigation">
         <ul id="menu-main-menu" class="mpcth-menu">
             <li id="menu-item-214"
-                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-214">
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-214">
                 <a href="../index.html">Home
                     <span class="mpcth-border-tl"></span>
                     <span class="mpcth-border-br"></span>
@@ -650,7 +153,7 @@
                 </a>
             </li>
             <li id="menu-item-382"
-                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-382">
+                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-382">
                 <a href="blog.html">Blog
                     <span class="mpcth-border-tl"></span>
                     <span class="mpcth-border-br"></span>
@@ -681,7 +184,7 @@
         <div class="mpcth-nav-wrapper">
             <div class="mpcth-nav-mobile-holder">
                 <ul id="mpcth_menu_mobile" class="mpcth-menu-mobile">
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-214">
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-214">
                         <a href="../index.html">Home</a>
 
                     </li>
@@ -689,7 +192,7 @@
                         <a href="portfolio.html">Portfolio</a>
 
                     </li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-382">
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-382">
                         <a href="blog.html">Blog</a>
 
                     </li>
@@ -729,7 +232,7 @@
 
     <div id="mpcth_main_content" class="mpcth-blog-page">
         <div class="mpcth-intro">
-            <h2 style="text-align: center">Latest News</h2>
+            <h2 style="text-align: center">To The Point</h2>
 
             <div class="mpc-sc-divider"><span class="mpcth-divider-part mpcth-divider-part-left"
                                               style="background:#cccccc"></span><span
@@ -740,21 +243,19 @@
                     class="mpcth-divider-part mpcth-divider-part-right" style="background:#cccccc"></span><span
                     class="mpcth-divider-part mpcth-divider-part-left" style="background:#cccccc"></span><span
                     class="mpcth-divider-part mpcth-divider-part-right" style="background:#cccccc"></span></div>
-            Pellentesque pellentesque pharetra lacus, eget aliquet mi mattis eu. Cum sociis natoque penatibus et magnis
-            dis parturient montes, nascetur ridiculus mus. Nullam ut mi in dui consectetur egestas eget vitae odio.
-            Morbi ut ligula arcu.</p>
+           </p>
             <div id="mpcth_filters_wrap" class="mpcth-filters-wrap mpcth-waypoint">
                 <ul id="mpcth_filters" class="mpcth-filters-list">
                     <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter="*"
                                                           class="portfolio-active-category">All</a><span
                             class="mpcth-cat-separator"> / </span></li>
-                    <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter=".filter-media">Media</a> <span
+                    <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter=".filter-media">Web Dev</a> <span
                             class="mpcth-cat-separator"> / </span></li>
-                    <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter=".filter-norway">Norway</a>
+                    <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter=".filter-norway">UI/UX</a>
                         <span class="mpcth-cat-separator"> / </span></li>
-                    <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter=".filter-photography">Photography</a>
+                    <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter=".filter-photography">Family</a>
                         <span class="mpcth-cat-separator"> / </span></li>
-                    <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter=".filter-uncategorized">Uncategorized</a>
+                    <li class="mpcth-portfolio-filter"><a href="blog.html#" data-filter=".filter-uncategorized">Life</a>
                         <span class="mpcth-cat-separator"> / </span></li>
                 </ul>
             </div>
@@ -771,7 +272,7 @@
                             class="mpcth-lightbox mpcth-lightbox-type-image"
                             href="../wp-content/uploads/2014/12/post12.jpg" title=""><i
                             class="fa fa-expand"></i></a><span class="mpcth-smaller-overlay"><a
-                            href="../blog/syberia-fashion-week/index.html"></a></span></div>
+                            href="../blog/UI-UX/wireframes1.html"></a></span></div>
                 </div>
                 <article id="post-23"
                          class="post-23 post type-post status-publish format-standard has-post-thumbnail hentry category-photography mpcth-post">
@@ -781,7 +282,7 @@
 
                             <div class="mpcth-post-title-wrap">
                                 <h2 class="mpcth-post-title">
-                                    <a href="../blog/syberia-fashion-week/index.html" title="Read &amp; learn">Read
+                                    <a href="../blog/UI-UX/wireframes1.html" title="Read &amp; learn">Read
                                         &amp; learn</a>
                                 </h2>
 
@@ -793,7 +294,7 @@
 									<span class="mpcth-blog-categories"> - <a
                                             href="../blog/category/photography/index.html" rel="category tag">Photography</a> </span>
 								<span></span>
-			 - <a href="../blog/syberia-fashion-week/index.html#comments" title="Comment on Read &amp; learn">3
+			 - <a href="../blog/UI-UX/wireframes1.html#comments" title="Comment on Read &amp; learn">3
         comments</a>
 	</span>
                                 </div>
@@ -807,7 +308,7 @@
 
                         <p>In eget nisl in justo mattis accumsan eu nec magna. Pellentesque pellentesque pharetra lacus,
                             eget aliquet mi mattis eu.<a class="more-link mpcth-button"
-                                                         href="../blog/syberia-fashion-week/index.html">Read more<span
+                                                         href="../blog/UI-UX/wireframes1.html">Read more<span
                                     class="mpcth-in-border mpcth-in-border-left mpcth-in-border-ver"></span><span
                                     class="mpcth-in-border mpcth-in-border-right mpcth-in-border-ver"></span><span
                                     class="mpcth-in-border mpcth-in-border-top mpcth-in-border-hor"></span><span
@@ -1112,86 +613,63 @@
 
     <section id="mpcth_sidebar">
         <ul class="mpcth-sidebar-widgets">
-            <li id="recent-posts-2" class="widget widget_recent_entries"><h5 class="widget-title sidebar-widget-title">
-                Recent Posts</h5>
+            <li id="recent-posts-2" class="widget widget_recent_entries">
+                <h5 class="widget-title sidebar-widget-title">Recent Posts</h5>
                 <ul>
                     <li>
-                        <a href="../blog/syberia-fashion-week/index.html">Read &amp; learn</a>
+                        <a href="blog/syberia-fashion-week/index.html">Front End Development</a>
                     </li>
                     <li>
-                        <a href="../blog/on-the-road-very-long-title/index.html">On the lonesome road very long
-                            title</a>
+                        <a href="blog/on-the-road-very-long-title/index.html">WireFraming</a>
                     </li>
                     <li>
-                        <a href="../blog/sky-is-the-limit/index.html">Sky is the limit</a>
+                        <a href="blog/sky-is-the-limit/index.html">Learning REACT</a>
                     </li>
                     <li>
-                        <a href="../blog/aside/index.html">Aside</a>
+                        <a href="blog/aside/index.html">Building Personas</a>
                     </li>
                     <li>
-                        <a href="../blog/gallery-post/index.html">Gallery Post</a>
+                        <a href="blog/gallery-post/index.html">So you want a <strong>ROCKSTAR?</strong></a>
                     </li>
                 </ul>
             </li>
-            <li id="archives-2" class="widget widget_archive"><h5 class="widget-title sidebar-widget-title">
-                Archives</h5>
-                <ul>
-                    <li><a href='../blog/2014/12/index.html'>December 2014</a></li>
-                </ul>
-            </li>
-            <li id="categories-2" class="widget widget_categories"><h5 class="widget-title sidebar-widget-title">
-                Categories</h5>
-                <ul>
-                    <li class="cat-item cat-item-2"><a href="../blog/category/media/index.html">Media</a>
-                    </li>
-                    <li class="cat-item cat-item-3"><a href="../blog/category/norway/index.html">Norway</a>
-                    </li>
-                    <li class="cat-item cat-item-4"><a href="../blog/category/photography/index.html">Photography</a>
-                    </li>
-                    <li class="cat-item cat-item-1"><a
-                            href="../blog/category/uncategorized/index.html">Uncategorized</a>
-                    </li>
-                </ul>
-            </li>
-            <li id="bra_photostream_widget-1" class="widget bra-photostream-widget"><h5
-                    class="widget-title sidebar-widget-title">Your Photostream</h5>
 
+            <li id="categories-2" class="widget widget_categories">
+                <h5 class="widget-title sidebar-widget-title">Categories</h5>
+                <ul>
+                    <li class="cat-item cat-item-2">
+                        <a href="blog/category/media/index.html" >Web Dev</a>
+                    </li>
+                    <li class="cat-item cat-item-3">
+                        <a href="blog/category/norway/index.html" >UI/UX</a>
+                    </li>
+                    <li class="cat-item cat-item-4">
+                        <a href="blog/category/photography/index.html" >Sketch</a>
+                    </li>
+                    <li class="cat-item cat-item-1">
+                        <a href="blog/category/uncategorized/index.html" >Uncategorized</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="bra_photostream_widget-1" class="widget bra-photostream-widget">
+                <h5 class="widget-title sidebar-widget-title">Instagram</h5>
                 <div class="photostream" id="twistedforkdribbble9"></div>
-                <script type="text/javascript"> jQuery(document).ready(function ($) {
-                    $("#twistedforkdribbble9").bra_photostream({
-                        user: "twistedfork",
-                        limit: 9,
-                        social_network: "dribbble"
-                    });
-                });</script>
-                <style type="text/css"><!--
-                .photostream li a:hover {
-                    background-color: #000000 !important;
-                    border: 1px solid #000000 !important;
-                }
-
-                --></style>
+                <script type="text/javascript"> jQuery(document).ready(function($){ $("#twistedforkdribbble9").bra_photostream({user: "bencallis1", limit:9, social_network: "instagram"});});</script>
+                <style type="text/css">
+                    <!-- .photostream li a:hover{background-color: #000000!important; border: 1px solid #000000!important; }-->
+                </style>
             </li>
-            <li id="twitter_widget-1" class="widget mpc-w-twitter-widget"><h5 class="widget-title sidebar-widget-title">
-                Latest Tweets</h5>
-                <ul id="mpc_w_twitter_CYht1" class="mpc-w-twitter-wrap"
+            <li id="twitter_widget-1" class="widget mpc-w-twitter-widget">
+                <h5 class="widget-title sidebar-widget-title">Tweets</h5>
+                <ul id="mpc_w_twitter_CDU2q" class="mpc-w-twitter-wrap"
                     data-number="2"
-                    data-id="535429160983068672"
-                    data-unique="CYht1">
-                </ul>
+                    data-id="1062292970"
+                    data-unique="CDU2q"></ul>
             </li>
-            <li id="meta-2" class="widget widget_meta"><h5 class="widget-title sidebar-widget-title">Meta</h5>
-                <ul>
-                    <li><a href="../wp-login.php.html">Log in</a></li>
-                    <li><a href="../feed/index.rss">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-                    <li><a href="../comments/feed/index.rss">Comments <abbr title="Really Simple Syndication">RSS</abbr></a>
-                    </li>
-                    <li><a href="https://wordpress.org/"
-                           title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>
-                    </li>
-                </ul>
-            </li>
+
         </ul>
+    </section>
+    <!-- #mpc-sidebar -->
         <section id="footer">
             <div class="mpcth-post-pagination standard">
                 <div class="mpcth-pagination">
@@ -1237,13 +715,13 @@
                                         href="../index.html">Home</a></li>
                                 <li id="menu-item-216"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216"><a
-                                        href="blog.html">Blog</a></li>
+                                        href="portfolio.html">Portfolio</a></li>
                                 <li id="menu-item-191"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a
                                         href="about.html">About</a></li>
                                 <li id="menu-item-192"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-192"><a
-                                        href="contact.html">Get In Touch</a></li>
+                                        href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </li>
@@ -1268,7 +746,7 @@
                             class="widget-title footer-widget-title">Recent</h5>
                         <ul>
                             <li>
-                                <a href="../blog/syberia-fashion-week/index.html">WireFraming</a>
+                                <a href="../blog/UI-UX/wireframes1.html">WireFraming</a>
                             </li>
                             <li>
                                 <a href="../blog/on-the-road-very-long-title/index.html">Building Personas</a>
