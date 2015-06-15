@@ -2,11 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb2b776c-1a49-494a-b63b-6a47d5b4efd3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/page/3/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/about.html" afterPath="$PROJECT_DIR$/views/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/page/2/index.html" afterPath="$PROJECT_DIR$/views/page/2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/portfolio.html" afterPath="$PROJECT_DIR$/views/portfolio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/yak/style-ver=4.1.5.css" afterPath="$PROJECT_DIR$/wp-content/themes/yak/style-ver=4.1.5.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/4EVER.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/ActionTrak.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/Artboard 1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/PM1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/REACT1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/VC1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/angular1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/angular2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/construction.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/crossFit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/crossfitSketch.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/likeABoss.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/portfolio3BG.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/portfolio6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/shopAndDrop.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sketch2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sketch3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sketch4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sketch5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/vc2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/vcLogin.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="yak.mpcreation.net.iws" />
@@ -28,10 +44,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2264152">
+            <state vertical-scroll-proportion="5.1548295">
               <caret line="209" column="54" selection-start-line="209" selection-start-column="54" selection-end-line="209" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -58,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8175583">
+            <state vertical-scroll-proportion="7.892857">
               <caret line="298" column="157" selection-start-line="298" selection-start-column="157" selection-end-line="298" selection-end-column="157" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -185,9 +201,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1744" />
-    <option name="y" value="27" />
-    <option name="width" value="1410" />
+    <option name="x" value="1798" />
+    <option name="y" value="61" />
+    <option name="width" value="1431" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -405,12 +421,18 @@
       <option name="project" value="LOCAL" />
       <updated>1434349292674</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Working on the about page&#10;">
+      <created>1434355847145</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1434355847145</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1744" y="27" width="1410" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="1798" y="61" width="1431" height="877" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -418,7 +440,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15838733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15602838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -446,7 +468,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added more photos to portfolio and also added the blog page." />
     <MESSAGE value="PICTURES PICTURES PICTURES" />
-    <option name="LAST_COMMIT_MESSAGE" value="PICTURES PICTURES PICTURES" />
+    <MESSAGE value="Working on the about page&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on the about page&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -593,24 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2264152">
-          <caret line="209" column="54" selection-start-line="209" selection-start-column="54" selection-end-line="209" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#3;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/yak/assets/css/plugins.min-ver=4.1.5.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -680,7 +685,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8175583">
+        <state vertical-scroll-proportion="7.892857">
           <caret line="298" column="157" selection-start-line="298" selection-start-column="157" selection-end-line="298" selection-end-column="157" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -718,6 +723,24 @@
             <element signature="n#style#0;n#span#7;n#span#2;n#div#0;n#div#1;n#div#1;n#section#0;n#article#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#section#0;n#article#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#2;n#section#0;n#article#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.1548295">
+          <caret line="209" column="54" selection-start-line="209" selection-start-column="54" selection-end-line="209" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
