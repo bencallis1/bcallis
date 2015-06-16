@@ -1756,7 +1756,9 @@ section#footer .mpcth-footer-widgets.mpcth-footer-columns-1 li.widget {
   margin: 0;
   text-decoration: none;
 }
-
+ #post-23 p {
+   color: #fff;
+ }
 /* line 13, pages\_page.scss */
 article {
   position: relative;
