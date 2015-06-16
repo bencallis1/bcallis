@@ -1763,6 +1763,10 @@ article {
   color: #444444;
   font-weight: 500;
 }
+.camera1 {
+  border-bottom:  solid #fcc83d 5px;
+
+}
 /* line 18, pages\_page.scss */
 article .mpcth-article-top {
   border-top: 25px solid transparent;
@@ -5402,6 +5406,10 @@ section#footer .mpcth-post-pagination a:hover.mpcth-prev-post {
   }
   .fancy-content > div {
     position: initial;
+  }
+  .camera1 {
+   display: none;
+
   }
 }
 
